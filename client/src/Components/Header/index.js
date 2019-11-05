@@ -9,10 +9,11 @@ const Header = () => (
       <ListItems to="/">Heim</ListItems>
       <ListItems to="/menu">Matseðill</ListItems>
       <ListItems to="/whatwedo">Þjónusta</ListItems>
-      <ListItems to="/about">Um Tryggvaskála</ListItems>
+      <ListItems to="/about">Gallery</ListItems>
     </LinkList>
   </Container>
 );
+
 
 export default Header;
 
@@ -27,7 +28,11 @@ const Container = styled.header`
   justify-content: flex-end;
   align-items: center;
   border-bottom: 1px solid ${Colors.WHITE};
+  mix-blend-mode: difference;
 `;
+
+
+
 
 const LinkList = styled.ul`
   height: 100%;

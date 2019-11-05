@@ -3,18 +3,20 @@ import { TimelineMax } from "gsap";
 export default function ShowModal(Node) {
   const tl = new TimelineMax({ paused: true });
   let [Modal, OpacityModal] = Node.current;
-  const WidthofModal = 1000;
+  const WidthofModal = 600;
+  const time = 0;
   let Animation;
+  
 
   Animation = tl
     .fromTo(
       Modal.current,
-      0,
+      time,
       { width: 0, x: 0 },
       { width: WidthofModal, x: -WidthofModal / 2 }
     )
-    .fromTo(Modal.current, 0, { height: 0, y: 0 }, { height: 600, y: -700 })
-    .fromTo(OpacityModal.current, 0, { opacity: 0 }, { opacity: 1 });
+    .fromTo(Modal.current, time, { height: 0, y: 0 }, { height: 700, y: -800 })
+    .fromTo(OpacityModal.current, time, { opacity: 0 }, { opacity: 1 });
 
   return Animation;
 }

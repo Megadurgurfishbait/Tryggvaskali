@@ -3,8 +3,13 @@ import styled from "styled-components";
 import { Colors } from "../../Assets";
 
 const InputField = React.forwardRef(
-  ({ Text, Name, Placeholder, myType }, ref) => (
+  ({ Text, Name, Placeholder, myType, isError }, ref) => (
     <IFContainer myType={myType}>
+      {isError ? (
+        <ErrorMessage> {isError} </ErrorMessage>
+      ) : (
+        <ErrorMessage></ErrorMessage>
+      )}
       {myType === "textArea" ? (
         <textarea id={Name} ref={ref} placeholder={Placeholder} />
       ) : (
@@ -25,43 +30,66 @@ const InputField = React.forwardRef(
 
 export default InputField;
 
+const ErrorMessage = styled.h5`
+  position: absolute;
+  color: red;
+  margin: 1px;
+  top: -20px;
+  padding-left: 7px;
+  left: 0px;
+  z-index: 5;
+  font-weight: 100;
+`;
+
 const IFContainer = styled.div`
   display: flex;
-  height: ${props => (props.myType === "textArea" ? "300px" : "60px")};
-  width: 350px;
-  background-color: ${Colors.LIGHT_GREEN};
+  height: ${props => (props.myType === "textArea" ? "300px" : "100%")};
+  max-height: ${props => (props.myType === "textArea" ? "200px" : "40px")};
+  width: 450px;
+  background-color: ${Colors.DARK_GREEN};
   border-radius: 5px;
-  justify-content: center;
-  overflow: hidden;
-  margin-top: 30px;
+  justify-content: space-between;
+  position: relative;
   & > * {
     margin: auto;
   }
   & > label {
-    width: 50px;
-    color: ${Colors.DARK_GREEN};
+    width: 150px;
+    color: ${Colors.WHITE};
+    text-align: center;
   }
 
   & > textarea {
     box-sizing: border-box;
-
     width: 100%;
     resize: none;
     padding: 10px;
     margin: 10px;
     border: none;
+    background-color: ${Colors.WHITE};
+
+    &::placeholder {
+      color: ${Colors.DARK_GREEN};
+      opacity: 0.5;
+    }
   }
 `;
 
 const Input = styled.input`
-  height: ${props => (props.myType === "textArea" ? "100%" : "40px")};
-  width: ${props => (props.myType === "textArea" ? "100%" : "200px")};
+  height: 100%;
+  width: 100%;
   border: none;
-  border-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
   overflow: hidden;
+  padding: 0px;
+  background-color: ${Colors.WHITE};
+
+  padding-left: 8px;
 
   &::placeholder {
     font-size: 12px;
-    padding-left: 5px;
+    color: ${Colors.DARK_GREEN};
+    opacity: 0.5;
   }
 `;

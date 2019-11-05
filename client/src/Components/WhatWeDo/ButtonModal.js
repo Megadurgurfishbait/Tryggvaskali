@@ -1,10 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
-import { Colors } from "../../Assets/index";
+import { Colors, VAR } from "../../Assets/index";
 import { SplitScreen } from "../Reusables";
 import InputField from "./inputfield";
 import useValidation from "../../hooks/useValidation";
-
 
 /*
   FIXME: Til að hafa modalið opið að forrita, breyta Animation tímanum í Animation/ShowModal í 0.
@@ -50,18 +49,15 @@ const ButtonModal = React.forwardRef((props, ref) => {
       <OpacityContainer ref={ref.current[1]} noValidate onSubmit={handleSubmit}>
         <h1>Hvernig getum við aðstoðað þig í dag?</h1>
         <InputContainer>
-          <SplitScreen
-            column
-            compAi={"center"}
-            compJc={"center"}
-            compHeight={"100"}
-          >
+          <SplitScreen compAi={"center"} compJc={"space-around"} compWidth={100} compHeight={100} column>
+
             <InputField
               Text={"Nafn"}
               Name={"nafnEinstaklings"}
               Placeholder={"Jón Jónsson"}
               ref={nafnRef}
               myType={"Text"}
+              isError={error ? error.name: null}
             />
             <InputField
               Text={"Símanúmer"}
@@ -69,6 +65,7 @@ const ButtonModal = React.forwardRef((props, ref) => {
               Placeholder={"4821390"}
               myType={"tel"}
               ref={simarnumerRef}
+              isError={error ? error.phone: null}
             />
             <InputField
               Text={"Netfang"}
@@ -76,21 +73,19 @@ const ButtonModal = React.forwardRef((props, ref) => {
               Placeholder={"Tryggvaskali@Tryggvaskali.is"}
               ref={netfangRef}
               myType={"email"}
+              isError={error ? error.email: null}
             />
-          </SplitScreen>
-          <SplitScreen compAi={"center"} compJc={"flex-end"} column>
+
             <InputField
               Text={"Texti"}
               Name={"textiEinstaklings"}
               Placeholder={"Þín fyrirspurn"}
               ref={textiRef}
               myType={"textArea"}
+              isError={error ? error.text: null}
             />
           </SplitScreen>
         </InputContainer>
-        <Error>
-          {error ? Object.values(error).map(values => <ErrorMessage>{values}</ErrorMessage>) : null}
-        </Error>
         <ButtonContainer>
           <button type="submit">Senda fyrirspurn</button>
         </ButtonContainer>
@@ -101,58 +96,62 @@ const ButtonModal = React.forwardRef((props, ref) => {
 
 export default ButtonModal;
 
-const ErrorMessage = styled.h5`
-  color: red;
-  margin: 2px;
-`;
-
-const Error = styled.div`
-  height: 100px;
-  width: 100%;
-  text-align: center;
-`;
-
 const ButtonContainer = styled.div`
   height: 50px;
   display: flex;
+
   & > button {
     margin: auto;
     margin-bottom: 20px;
     padding: 10px 30px;
     height: 40px;
     text-align: center;
+    border: none;
+    background-color: ${Colors.DARK_GREEN};
+    color: ${Colors.WHITE};
+
+    &:hover {
+      ${VAR.Hover};
+    }
+
   }
 `;
 
 const BMContainer = styled.div`
   position: absolute;
   left: 50%;
-  top: 5%;
+  top: 0%;
   right: 50%;
   height: 0px;
   width: 0px;
   box-sizing: border-box;
-  border: 2px solid ${Colors.WHITE};
+  border: 3px solid ${Colors.DARK_GREEN};
   border-radius: 5px;
   z-index: 1;
   overflow: hidden;
+
+
 `;
 const OpacityContainer = styled.form`
   height: 100%;
   width: 100%;
-  background-color: ${Colors.LIGHT_BLUE};
+  background-color: ${Colors.GREEN};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
   & > h1 {
-    margin: 5px;
+    font-size: 25px;
+    margin: 30px auto;
+    color: ${Colors.DARK_GREEN};
   }
 `;
 
 const InputContainer = styled.div`
-  height: 70%;
+  height: 100%;
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;

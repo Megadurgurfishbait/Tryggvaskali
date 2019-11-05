@@ -10,14 +10,12 @@ import TripAdvisor from "./TripAdvisorInfo";
 const FrontPage = () => {
   return (
     <Layout bgColor={Colors.LIGHT_BLUE} bgImage={Images.BackgroundImage}>
-      {/*       <SplitScreen column compWidth={50}>
+      <SplitScreen column compWidth={50}>
         <HeroText />
-        <TripAdvisor />
       </SplitScreen>
       <SplitScreen compWidth={50}>
         <ShowFood />
-      </SplitScreen> 
-      */}
+      </SplitScreen>
     </Layout>
   );
 };

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef, createRef } from "react";
 import styled from "styled-components";
 import ButtonModal from "./ButtonModal";
 import ShowModal from "../../Animation/ShowModal";
+import { Colors, VAR } from "../../Assets";
 
 const MegaButton = () => {
   let ButtonModalRef = useRef([createRef(), createRef()]);
@@ -23,7 +24,7 @@ const MegaButton = () => {
 
   return (
     <MBContainer>
-      <MyButton onClick={() => Toggle()}>Hæ</MyButton>
+      <MyButton onClick={() => Toggle()}>Hafa Samband</MyButton>
       <ButtonModal ref={ButtonModalRef}></ButtonModal>
     </MBContainer>
   );
@@ -32,20 +33,25 @@ const MegaButton = () => {
 export default MegaButton;
 
 const MBContainer = styled.div`
-  height: 40px;
-  width: 100px;
+  height: 60px;
+  width: 240px;
   display: flex;
   background-color: yellow;
   color: white;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 `;
 
 const MyButton = styled.button`
-  height: 100%;
-  width: 100%;
+  height: inherit;
+  width: inherit;
   z-index: 3;
-  &:hover{
-    cursor: pointer;
+  background-color: ${Colors.LIGHT_BLUE};
+  box-sizing: border-box;
+  border: none;
+  color: ${Colors.WHITE};
+  &:hover,
+  &:focus {
+    ${VAR.Hover};
   }
 `;
