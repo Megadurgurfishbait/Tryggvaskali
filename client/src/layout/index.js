@@ -2,13 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 const Layout = ({ children, bgColor, bgImage }) => (
-  <Div bgImage={bgImage}>
+  <Div bgImage={bgImage} >
     <HueonTop bgColor={bgColor} />
     {children}
   </Div>
 );
 
-export default React.memo(Layout);
+export default Layout;
 
 const Div = styled.div`
   display: flex;

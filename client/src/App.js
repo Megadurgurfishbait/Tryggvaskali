@@ -6,7 +6,6 @@ import useRouter from "./hooks/useRouter";
 
 import { About, FrontPage, Menu, Sidebar, Header } from "./Components";
 
-
 import LangContext from "./Context/Lang";
 import useLocalStorage from "./hooks/useLocalStorage";
 import WhatWeDo from "./Components/WhatWeDo";
@@ -22,25 +21,27 @@ export default function App() {
     leave: { opacity: 0, transform: "translate3d(-50%,0,0)" }
   });
 
-  return transitions.map(({ item, props, key }) => (
+  return (
     <LangContext.Provider value={{ English, setEnglish }}>
       <Container>
         {/* Tökum Header fyrir utan Animations */}
-         <Header /> 
+        <Header />
         {/* Setja inn Sidebar hér svo svo að Sidebar verði ekki partur af Animation heldur */}
         <Sidebar />
-        <Animate key={key} style={props}>
-          <Switch location={item}>
-            <Route path="/" exact component={FrontPage} />
-            <Route path="/frontpage" component={FrontPage} />
-            <Route path="/whatwedo" component={WhatWeDo} />
-            <Route path="/menu" component={Menu} />
-            <Route path="/about" component={About} />
-          </Switch>
-        </Animate>
+        {transitions.map(({ item, props, key }) => (
+          <Animate key={key} style={props}>
+            <Switch location={item}>
+              <Route path="/" exact component={FrontPage} />
+              <Route path="/frontpage" component={FrontPage} />
+              <Route path="/whatwedo" component={WhatWeDo} />
+              <Route path="/menu" component={Menu} />
+              <Route path="/about" component={About} />
+            </Switch>
+          </Animate>
+        ))}
       </Container>
     </LangContext.Provider>
-  ));
+  );
 }
 
 const Container = styled.div`
