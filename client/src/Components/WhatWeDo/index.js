@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Layout from "../../layout/";
 import { SplitScreen } from "../Reusables/";
 import MegaButton from "./MegaButton";
-import ListItems from "./ListItems";
+import ListItems from "../Shared/ListItems";
 import Picture from "./Picture";
 import Information from "./Information";
 import { WhatWeDoText, textB } from "../../Assets/Texts/WhatWeDo";

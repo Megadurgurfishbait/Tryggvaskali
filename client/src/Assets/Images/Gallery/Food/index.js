@@ -20,12 +20,28 @@ import Food19 from "./food19.jpg";
 import Food20 from "./food20.jpg";
 
 export const Photos = [
-  { src: `${Food2}`, width: 5, height: 6 },
-  { src: `${Food1}`, width: 5, height: 6 },
-  { src: `${Food3}`, width: 5, height: 6 },
-  { src: `${Food4}`, width: 5, height: 6 },
+  {
+    src: `${Food1}`,
+    width: 5,
+    height: 6,
+    caption: `Hægelduð grísasíða og plóma
+  Chili-plóma, plómumauk, stökk hráskinka og sinnepskrem`
+  },
+  {
+    src: `${Food2}`,
+    width: 5,
+    height: 6
+  },
+  { src: `${Food3}`, width: 5, height: 6, caption: "" },
+  {
+    src: `${Food4}`,
+    width: 5,
+    height: 6,
+    caption: `Lúxusborgari og hægeldaður nautaskanki 
+  Ostakrem, sýrður rauðlaukur, chili sulta, sinnepssósa, sætkartöflu franskar og bernaise sósa`
+  },
   { src: `${Food5}`, width: 5, height: 6 },
-  { src: `${Food6}`, width: 5, height: 6 },
+  { src: `${Food6}`, width: 5, height: 6, caption: `EFTIRRÉTTIR` },
   { src: `${Food7}`, width: 4, height: 3 },
   { src: `${Food8}`, width: 5, height: 6 },
   { src: `${Food9}`, width: 10, height: 7 },

@@ -49,15 +49,20 @@ const ButtonModal = React.forwardRef((props, ref) => {
       <OpacityContainer ref={ref.current[1]} noValidate onSubmit={handleSubmit}>
         <h1>Hvernig getum við aðstoðað þig í dag?</h1>
         <InputContainer>
-          <SplitScreen compAi={"center"} compJc={"space-around"} compWidth={100} compHeight={100} column>
-
+          <SplitScreen
+            compAi={"center"}
+            compJc={"space-around"}
+            compWidth={100}
+            compHeight={100}
+            column
+          >
             <InputField
               Text={"Nafn"}
               Name={"nafnEinstaklings"}
               Placeholder={"Jón Jónsson"}
               ref={nafnRef}
               myType={"Text"}
-              isError={error ? error.name: null}
+              isError={error ? error.name : null}
             />
             <InputField
               Text={"Símanúmer"}
@@ -65,7 +70,7 @@ const ButtonModal = React.forwardRef((props, ref) => {
               Placeholder={"4821390"}
               myType={"tel"}
               ref={simarnumerRef}
-              isError={error ? error.phone: null}
+              isError={error ? error.phone : null}
             />
             <InputField
               Text={"Netfang"}
@@ -73,7 +78,7 @@ const ButtonModal = React.forwardRef((props, ref) => {
               Placeholder={"Tryggvaskali@Tryggvaskali.is"}
               ref={netfangRef}
               myType={"email"}
-              isError={error ? error.email: null}
+              isError={error ? error.email : null}
             />
 
             <InputField
@@ -82,7 +87,7 @@ const ButtonModal = React.forwardRef((props, ref) => {
               Placeholder={"Þín fyrirspurn"}
               ref={textiRef}
               myType={"textArea"}
-              isError={error ? error.text: null}
+              isError={error ? error.text : null}
             />
           </SplitScreen>
         </InputContainer>
@@ -97,12 +102,12 @@ const ButtonModal = React.forwardRef((props, ref) => {
 export default ButtonModal;
 
 const ButtonContainer = styled.div`
-  height: 50px;
+  height: 70px;
   display: flex;
 
   & > button {
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding: 10px 30px;
     height: 40px;
     text-align: center;
@@ -113,7 +118,6 @@ const ButtonContainer = styled.div`
     &:hover {
       ${VAR.Hover};
     }
-
   }
 `;
 
@@ -129,8 +133,6 @@ const BMContainer = styled.div`
   border-radius: 5px;
   z-index: 1;
   overflow: hidden;
-
-
 `;
 const OpacityContainer = styled.form`
   height: 100%;

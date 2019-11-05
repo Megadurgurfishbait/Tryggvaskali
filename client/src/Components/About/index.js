@@ -2,21 +2,41 @@ import React from "react";
 import styled from "styled-components";
 import Layout from "../../layout/";
 import { Colors, Images } from "../../Assets";
-import ListItems from "../WhatWeDo/ListItems";
+import ListItems from "../Shared/ListItems";
 import MasonPictures from "./MasonPictures";
+import Photos from "../../Assets/Images/Gallery/";
 
-const About = () => (
-  <Layout bgColor={Colors.LIGHT_GREEN} bgImage={Images.BaruBakgrunnur}>
-    <Container>
-      <MasonPictures />
-      <ListButtons>
-        <ListItems Title="The Food" />
-        <ListItems index={2} Title="The Restaurant" />
-        {/* Index kemur í veg fyrir að það komi border til hægri við "The Restaurant" Textann */}
-      </ListButtons>
-    </Container>
-  </Layout>
-);
+const About = () => {
+  const [ShowMasonPictures, setShowMasonPictures] = React.useState(
+    "Restaurant"
+  );
+
+  const changeMyView = url => {
+    setShowMasonPictures(url);
+  };
+
+  const RenderTheseImages = Photos => Photos[ShowMasonPictures];
+
+  return (
+    <Layout bgColor={Colors.LIGHT_GREEN} bgImage={Images.BaruBakgrunnur}>
+      <Container>
+        <MasonPictures
+          Photos={RenderTheseImages(Photos)}
+        />
+        <ListButtons>
+          <ListItems Title="The Food" url={"Food"} setInfoText={changeMyView} />
+          <ListItems
+            index={2}
+            Title="The Restaurant"
+            url={"Restaurant"}
+            setInfoText={changeMyView}
+          />
+          {/* Index kemur í veg fyrir að það komi border til hægri við "The Restaurant" Textann */}
+        </ListButtons>
+      </Container>
+    </Layout>
+  );
+};
 
 export default About;
 

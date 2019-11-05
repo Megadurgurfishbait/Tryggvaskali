@@ -1,13 +1,14 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useRef, useEffect } from "react";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import Gallery from "react-photo-gallery";
 import styled from "styled-components";
-import { Colors} from "../../Assets";
-import { Photos } from "../../Assets/Images/Gallery/Food/index";
 
+import Slide from "../../Animation/SingleSimpleSlide";
+import { Colors } from "../../Assets";
 
-const MasonPictures = () => {
-  const [currentImage, setCurrentImage] = useState(0);
+const MasonPictures = ({ Photos }) => {
+  const ContainerRef = useRef();
+  const [currentImage, setCurrentImage] = useState(null);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
   const openLightbox = useCallback((event, { photo, index }) => {
@@ -20,17 +21,26 @@ const MasonPictures = () => {
     setViewerIsOpen(false);
   };
 
+  useEffect(() => {
+    Slide(ContainerRef);
+  }, [Photos]);
+
   return (
-    <PictureContainer>
-      <Gallery photos={Photos} onClick={openLightbox} direction={"column"}/>
+    <PictureContainer ref={ContainerRef}>
+      <Gallery
+        photos={Photos}
+        onClick={openLightbox}
+        direction={"column"}
+        margin={5}
+      />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightbox}>
             <Carousel
               currentIndex={currentImage}
               views={Photos.map(x => ({
-                ...x
-                /* caption: x.title */
+                ...x,
+                caption: x.caption ? x.caption : "Lýsing á mat?"
               }))}
             />
           </Modal>
@@ -44,6 +54,23 @@ export default MasonPictures;
 
 const PictureContainer = styled.div`
   margin-right: 60px;
-  background-color: ${Colors.LIGHT_BLUE};
-  overflow: auto
+  overflow-y: auto;
+  background-color: black;
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: ${Colors.GREEN};
+  }
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    background-color: #f5f5f5;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: ${Colors.LIGHT_BLUE};
+  }
 `;

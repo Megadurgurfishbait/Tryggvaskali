@@ -1,12 +1,18 @@
 import { TimelineMax } from "gsap";
 
 export default function CaruselSwitcher(NodeArray, position, Direction) {
-  console.log(position, Direction);
   const tl = new TimelineMax();
   let Animation;
   switch (position) {
-    default : console.log()
-        return tl.fromTo(NodeArray[0], .5, {x: 500, opacity: 0}, {x: 10, opacity: 1}).delay(1.5);
+    default:
+      return tl
+        .fromTo(
+          NodeArray[0],
+          0.5,
+          { x: 500, opacity: 0 },
+          { x: 10, opacity: 1 }
+        )
+        .delay(1);
     case 0:
       Direction === "Right"
         ? (Animation = tl
@@ -36,7 +42,7 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
               { x: 10, opacity: 1 }
             ));
       break;
-    case 1:console.log("Hér2", Direction);
+    case 1:
       Direction === "Right"
         ? (Animation = tl
             .fromTo(
@@ -66,7 +72,7 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
             ));
       break;
 
-    case 2: console.log("Hér3", Direction);
+    case 2:
       Direction === "Right"
         ? (Animation = tl
             .fromTo(
@@ -96,7 +102,7 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
             ));
       break;
 
-    case 3:console.log("Hér4", Direction);
+    case 3:
       Direction === "Right"
         ? (Animation = tl
             .fromTo(
@@ -125,7 +131,7 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
               { x: 10, opacity: 1 }
             ));
       break;
-    case 4:console.log("Hér5", Direction);
+    case 4:
       Direction === "Right"
         ? (Animation = tl
             .fromTo(
@@ -154,7 +160,6 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
               { x: 10, opacity: 1 }
             ));
       break;
-
-            }
+  }
   return Animation;
 }

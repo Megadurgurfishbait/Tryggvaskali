@@ -2,7 +2,7 @@ import { TimelineMax } from "gsap";
 
 export default function Slide(Node) {
   const tl = new TimelineMax();
-
+  
   let Animation;
   const [first, second] = Node;
 

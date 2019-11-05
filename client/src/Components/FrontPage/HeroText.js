@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useTrail, animated } from "react-spring";
 
 
-import { Colors, VAR } from '../../Assets';
+import { VAR } from '../../Assets';
 
 const items = ["Tryggvaskáli", "Restaurant"];
 const config = { mass: 5, tension: 2000, friction: 200 };
@@ -14,7 +14,7 @@ const HeroText = () => {
     opacity: 1,
     x: 0,
     height: 120,
-    delay: 1000,
+    delay: 500,
     from: { opacity: 0, x: 20, height: 0 }
   });
   return (

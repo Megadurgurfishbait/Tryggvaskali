@@ -4,7 +4,7 @@ export default function ShowModal(Node) {
   const tl = new TimelineMax({ paused: true });
   let [Modal, OpacityModal] = Node.current;
   const WidthofModal = 600;
-  const time = 0;
+  const time = .8;
   let Animation;
   
 
