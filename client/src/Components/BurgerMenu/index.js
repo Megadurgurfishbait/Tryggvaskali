@@ -6,6 +6,10 @@ import { Colors, BurgerMenuText } from "../../Assets";
 import { SplitScreen } from "../Reusables";
 import ListItem from "./ListItem";
 import BlueScreen from "./BlueScreen";
+
+import useWindowDimensions from "#Hooks/useWindowDimensions.js";
+
+
 // eslint-disable-next-line no-lone-blocks
 {
   /* 
