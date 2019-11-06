@@ -67,6 +67,7 @@ const BackgroundAnimation = styled.div`
   left: 0px;
   height: 100%;
   width: 100%;
+  opacity: .5;
 `;
 
 const Image = styled.img`
