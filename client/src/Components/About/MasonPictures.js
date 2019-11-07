@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import Slide from "../../Animation/SingleSimpleSlide";
 import { Colors } from "../../Assets";
+import Media from "../../Assets/Varibles/media";
 
 const MasonPictures = ({ Photos }) => {
   const ContainerRef = useRef();
@@ -56,7 +57,10 @@ const PictureContainer = styled.div`
   margin-right: 60px;
   overflow-y: auto;
   background-color: black;
-
+  ${Media.desktop`
+    overflow-y: scroll;
+    margin-right: 0px;
+  `}
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     border-radius: 10px;

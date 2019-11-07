@@ -4,6 +4,7 @@ import CaruselSwitcher from "../../../Animation/CarouselSwitcher";
 
 // Assets
 import { VAR, Colors, Images } from "../../../Assets";
+import Media from "../../../Assets/Varibles/media";
 
 const ShowFood = () => {
   const { Food } = Images;
@@ -62,6 +63,10 @@ const ImageDiv = styled.div`
   opacity: 0;
   right: 0;
   z-index: 40;
+
+  ${Media.large`
+  background-size: cover;
+  `}
 `;
 
 const DIV = styled.div`
@@ -72,6 +77,13 @@ const DIV = styled.div`
   justify-content: flex-end;
   margin-left: auto;
   flex-flow: nowrap;
+  transform: translateX(80px);
+
+  ${Media.large`
+    height: 400px;
+    width: 400px;
+    transform: translateX(55px);
+  `}
 
   ${VAR.Border};
 `;
@@ -113,4 +125,8 @@ const ImagesContainer = styled.div`
   background-size: cover;
   transform: translateX(-50px);
   position: relative;
+
+  ${Media.large`
+    transform: translateX(-40px);
+  `}
 `;

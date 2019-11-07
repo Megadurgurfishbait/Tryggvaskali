@@ -9,10 +9,20 @@ import Icons from "./Icons";
 import { Colors, Icon } from "../../Assets";
 import LangSwitch from "./LangSwitch";
 import BurgerMenuIcon from "./BurgerMenuIcon";
+import useWD from '../../hooks/useWindowDimensions';
+import { sizes } from "../../Assets/Varibles/media";
+
 
 const Sidebar = () => {
+  const {width} = useWD();
+
+
   return (
-    <SidebarContainer>
+    <SidebarContainer transparent={width > sizes.phone ? "false" : "true"}>
+
+    {
+      width > sizes.phone ? 
+      <>
       <Half bgCol={`${Colors.LIGHT_GREEN}`}>
         <BurgerMenuIcon />
       </Half>
@@ -20,6 +30,13 @@ const Sidebar = () => {
         <Icons IconItems={Icon} Icon />
         <LangSwitch />
       </Half>
+      </>
+      : <BurgerMenuIcon />
+
+
+
+    }
+
     </SidebarContainer>
   );
 };
@@ -29,7 +46,7 @@ export default Sidebar;
 const SidebarContainer = styled.aside`
   height: 100vh;
   width: 60px;
-  background-color: black;
+  background-color: ${props => props.transparent ? "transparent" : null};
   position: fixed;
   top: 0;
   right: 0;

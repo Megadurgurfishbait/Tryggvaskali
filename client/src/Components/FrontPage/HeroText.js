@@ -2,18 +2,21 @@ import React from "react";
 import styled from "styled-components";
 import { useTrail, animated } from "react-spring";
 
-
-import { VAR } from '../../Assets';
+import { VAR } from "../../Assets";
+import Media, { sizes } from "../../Assets/Varibles/media";
+import useWD from "../../hooks/useWindowDimensions";
 
 const items = ["Tryggvaskáli", "Restaurant"];
 const config = { mass: 5, tension: 2000, friction: 200 };
 
 const HeroText = () => {
+  let { width } = useWD();
+
   const trail = useTrail(items.length, {
     config,
     opacity: 1,
     x: 0,
-    height: 120,
+    height: width > sizes.large ? 120 : 40,
     delay: 500,
     from: { opacity: 0, x: 20, height: 0 }
   });
@@ -46,6 +49,14 @@ const Container = styled.div`
   display: flex;
   transform: translate3d(-40px, 100px, 0px);
   ${VAR.Border}
+  ${Media.large`
+    height: 200px;
+    transform: translate3d(0px, 100px, 0px);
+  `}
+  ${Media.phone`
+    height: 100px;
+    transform: translate3d(0px, 60px, 0px);
+  `}
 `;
 
 const TrailMain = styled.div`
@@ -57,6 +68,11 @@ const TrailMain = styled.div`
   justify-content: flex-end;
   align-items: center;
   margin-right: 40px;
+
+  ${Media.desktop`
+    justify-content: center;
+    margin: 0px;
+  `}
 `;
 
 const TrailText = styled(animated.div)`
@@ -69,6 +85,10 @@ const TrailText = styled(animated.div)`
   text-transform: uppercase;
   will-change: transform, opacity;
   overflow: hidden;
+
+  ${Media.large`
+    font-size: 2em;
+  `}
 
   & > div {
     overflow: hidden;

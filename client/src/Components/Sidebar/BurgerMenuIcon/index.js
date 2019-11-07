@@ -48,8 +48,8 @@ const Container = styled.div`
   display: flex;
   margin: 0px auto;
   position: relative;
-  border-bottom: 1px solid ${Colors.LIGHT_BLUE};
-
+  background-color: ${Colors.LIGHT_GREEN};
+  z-index: 100000000000000000000000000000;
   &:hover {
     cursor: pointer;
   }

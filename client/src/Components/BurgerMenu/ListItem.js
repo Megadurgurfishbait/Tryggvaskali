@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Colors } from "../../Assets";
-import {TitleText} from "../Reusables";
+import { TitleText } from "../Reusables";
+import Media from "../../Assets/Varibles/media";
 
 const ListItem = ({ Number, Title, Link }) => (
   <ListItemContainer className={"test"}>
     <NumberText>{Number}</NumberText>
-    <TitleText>
-      {Title}
-    </TitleText>
+    <TitleText>{Title}</TitleText>
   </ListItemContainer>
 );
 
@@ -20,6 +19,9 @@ const ListItemContainer = styled.li`
   margin: 5px auto;
   display: flex;
   color: ${Colors.LIGHT_BLUE};
+
+  ${Media.large`height: 60px;`}
+  ${Media.phone`height: 40px;`}
   &:hover {
     cursor: pointer;
   }

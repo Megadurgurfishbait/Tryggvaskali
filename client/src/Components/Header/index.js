@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Colors } from "../../Assets";
+import Media from "../../Assets/Varibles/media";
 
 const Header = () => (
   <Container>
@@ -17,6 +18,7 @@ const Header = () => (
 export default Header;
 
 const Container = styled.header`
+width: 100%;
   height: 60px;
   display: flex;
   position: fixed !important;
@@ -28,7 +30,6 @@ const Container = styled.header`
   border-bottom: 1px solid ${Colors.WHITE};
   background-color: black;
   opacity: 0.35;
-  border-bottom-left-radius: 15px;
   box-sizing: border-box;
   border: 2px solid black;
 `;
@@ -43,6 +44,9 @@ const LinkList = styled.ul`
   align-items: center;
   font-family: "Javanese Text";
   letter-spacing: 3px;
+
+  ${Media.large`width: 50%;`}
+  ${Media.desktop`width: 100%;`}
 `;
 
 const ListItems = styled(Link)`

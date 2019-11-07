@@ -35,11 +35,7 @@
       "last 1 safari version"
     ]
   },
-  "_moduleAliases": {
-    "#Assets"      : "./src/Assets",
-    "#Hooks"      : "./src/hooks",
-    "#Conextt"    : "./src/Context",
-    "#Components" : "./src/Components",
-    "#Animations" : "./src/Animation"
+  "devDependencies": {
+    "babel-plugin-module-resolver": "^3.2.0"
   }
 }

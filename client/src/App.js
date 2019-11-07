@@ -1,9 +1,6 @@
-import 'module-alias/register';
-
-
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { useTransition, animated } from "react-spring";
 import useRouter from "./hooks/useRouter";
 
@@ -12,6 +9,13 @@ import { About, FrontPage, Menu, Sidebar, Header } from "./Components";
 import LangContext from "./Context/Lang";
 import useLocalStorage from "./hooks/useLocalStorage";
 import WhatWeDo from "./Components/WhatWeDo";
+import useWD from "./hooks/useWindowDimensions";
+
+const GlobalStyles = createGlobalStyle`
+  body {
+    font-family: 'Montserrat', serif !important;
+  }
+`;
 
 export default function App() {
   const [English, setEnglish] = React.useState(
@@ -24,11 +28,14 @@ export default function App() {
     leave: { opacity: 0, transform: "translate3d(-50%,0,0)" }
   });
 
+  let { width } = useWD();
+
   return (
     <LangContext.Provider value={{ English, setEnglish }}>
+      <GlobalStyles />
       <Container>
         {/* Tökum Header fyrir utan Animations */}
-        <Header />
+        {width > 767 && <Header />}
         {/* Setja inn Sidebar hér svo svo að Sidebar verði ekki partur af Animation heldur */}
         <Sidebar />
         {transitions.map(({ item, props, key }) => (

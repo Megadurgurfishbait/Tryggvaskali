@@ -20,14 +20,12 @@ const BlueScreen = () => (
         </a>
       </TextInfo>
     </SplitScreen>
-    <SplitScreen  compWidth={100} compJc={"center"} compAi={"center"}column>
+    <SplitScreen compWidth={100} compJc={"center"} compAi={"center"} column>
       <BookNowText>
-      Komdu og njóttu kvöldsins hjá okkur í notalegu umhverfi.
-      Smelltu á takka hér að neðan til að athuga með laust borð.
+        Komdu og njóttu kvöldsins hjá okkur í notalegu umhverfi. Smelltu á takka
+        hér að neðan til að athuga með laust borð.
       </BookNowText>
-      <BookNowButton>
-          Book Now
-      </BookNowButton>
+      <BookNowButton>Book Now</BookNowButton>
     </SplitScreen>
   </BSContainer>
 );
@@ -36,9 +34,11 @@ export default React.memo(BlueScreen);
 
 const BSContainer = styled.div`
   height: 100vh;
+  width: 100%;
   color: ${Colors.LIGHT_BLUE};
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 `;
 
 const BookNowText = styled.div`
@@ -64,17 +64,17 @@ const BookNowButton = styled.button`
 
 const TextInfo = styled.div`
   height: 150px;
-  width: 500px;
+  width: 60%;
   margin: 30px auto;
   display: flex;
   flex-direction: column;
   & > a {
-    font-size: 30px;
+    font-size: 20px;
     text-decoration: none;
     color: ${Colors.LIGHT_BLUE};
     font-weight: 600;
     white-space: pre-line;
-    width: 100%;
+    line-height: 2;
   }
   & > h1 {
     margin: 5px auto;

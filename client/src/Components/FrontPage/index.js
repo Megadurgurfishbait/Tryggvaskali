@@ -5,19 +5,28 @@ import HeroText from "./HeroText";
 import { Colors, Images } from "../../Assets";
 import { SplitScreen } from "../Reusables";
 import ShowFood from "./ShowFood";
-import TripAdvisor from "./TripAdvisorInfo";
 import RestaurantDescription from "./RestaurantDescription/RestaurantDescription";
+import useRD from "../../hooks/useWindowDimensions";
+import { sizes } from "../../Assets/Varibles/media";
 
 const FrontPage = () => {
+  let { width } = useRD();
+
   return (
     <Layout bgColor={Colors.LIGHT_BLUE} bgImage={Images.BackgroundImage}>
-      <SplitScreen column compWidth={50} compAi={"center"}>
+      <SplitScreen
+        column
+        compWidth={width > sizes.desktop ? 50 : 100}
+        compAi={"center"}
+      >
         <HeroText />
         <RestaurantDescription />
       </SplitScreen>
-      <SplitScreen compWidth={50}>
-        <ShowFood />
-      </SplitScreen>
+      {width > sizes.desktop && (
+        <SplitScreen compWidth={50}>
+          <ShowFood />
+        </SplitScreen>
+      )}
     </Layout>
   );
 };

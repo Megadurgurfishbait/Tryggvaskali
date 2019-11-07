@@ -5,6 +5,7 @@ import { Colors, Images } from "../../Assets";
 import ListItems from "../Shared/ListItems";
 import MasonPictures from "./MasonPictures";
 import Photos from "../../Assets/Images/Gallery/";
+import Media from "../../Assets/Varibles/media";
 
 const About = () => {
   const [ShowMasonPictures, setShowMasonPictures] = React.useState(
@@ -20,9 +21,7 @@ const About = () => {
   return (
     <Layout bgColor={Colors.LIGHT_GREEN} bgImage={Images.BaruBakgrunnur}>
       <Container>
-        <MasonPictures
-          Photos={RenderTheseImages(Photos)}
-        />
+        <MasonPictures Photos={RenderTheseImages(Photos)} />
         <ListButtons>
           <ListItems Title="The Food" url={"Food"} setInfoText={changeMyView} />
           <ListItems
@@ -46,6 +45,10 @@ const Container = styled.div`
   margin: 60px auto 0px auto;
   display: flex;
   flex-direction: column;
+
+  ${Media.desktop`
+    margin: 0px auto;
+  `}
 `;
 
 const ListButtons = styled.ul`
@@ -60,4 +63,8 @@ const ListButtons = styled.ul`
   margin-bottom: 0px;
   right: 0px;
   bottom: 0px;
+
+  ${Media.desktop`
+    margin-right: 0px;
+  `}
 `;

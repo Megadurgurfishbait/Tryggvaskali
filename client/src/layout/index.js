@@ -1,12 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import useWindowDimensions from "../hooks/useWindowDimensions";
+import { sizes } from "../Assets/Varibles/media";
 
-const Layout = ({ children, bgColor, bgImage }) => (
-  <Div bgImage={bgImage} >
-    <HueonTop bgColor={bgColor} />
-    {children}
-  </Div>
-);
+const Layout = ({ children, bgColor, bgImage }) => {
+
+  const { width } = useWindowDimensions();
+
+
+  return (
+    <Div bgImage={bgImage} myWidth = {width}>
+      <HueonTop bgColor={bgColor} />
+      {children}
+    </Div>
+  );
+};
 
 export default Layout;
 
@@ -14,7 +22,7 @@ const Div = styled.div`
   display: flex;
   position: relative;
   justify-content: space-between;
-  width: 100vw;
+  width: ${props => props.myWidth > sizes.phone ?  "calc(100vw - 60px)" : "100vw"};
   height: 100vh;
   background: url(${props => props.bgImage});
   will-change: transform, opacity;
