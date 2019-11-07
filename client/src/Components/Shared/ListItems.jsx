@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Colors } from "../../Assets";
+import Media from "../../Assets/Varibles/media";
 
 const ListItems = ({ Title, index, url, setInfoText }) => (
   <>
@@ -47,4 +48,13 @@ const Button = styled.button`
     border-bottom: 1px solid ${Colors.LIGHT_BLUE};
     cursor: pointer;
   }
+
+
+  ${Media.tablet`
+    width: 100%;
+    margin: 0px;
+    font-size: 12px;
+  
+  `}
+
 `;

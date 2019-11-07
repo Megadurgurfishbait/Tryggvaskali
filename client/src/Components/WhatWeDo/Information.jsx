@@ -1,14 +1,12 @@
-import React, {forwardRef} from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 
-import { Colors } from '../../Assets/';
- 
-const Information = forwardRef(({
-  Tit = "HER KEMUR EH",
-  Par = "lika gsfknfnsbdfj bsdjfb sdjfb sjdbfjsd bfj bsdjhf bsdjhfbjshdbfjhsdbf jhsdbfj hsbdfjhhbs djhhfb sjhdbf jshdbf jhsdbfjs bdfjhbsdjhfb sjdhfb sjhdbf jhsdbf jhsdbfjhs bjfhb sdjf jhsbhdfj hbsdfjhbsdjhfb sjdhbf sjhdbf jshdbf jshdbf jhsbdf"
-}, ref) => {
+import { Colors } from "../../Assets/";
+import Media from "../../Assets/Varibles/media";
+
+const Information = forwardRef(({ Tit, Par }, ref) => {
   return (
-    <IContainer >
+    <IContainer>
       <Title ref={ref.current[0]}> {Tit}</Title>
       <Paragraph ref={ref.current[1]}>{Par}</Paragraph>
     </IContainer>
@@ -25,17 +23,31 @@ const IContainer = styled.div`
   align-items: center;
   flex-direction: column;
   color: ${Colors.LIGHT_BLUE};
+
+  ${Media.tablet`
+        justify-content: flex-end; `}
 `;
 
 const Title = styled.h1`
-    height: 20px;
-    width: 60%;
-    margin: 100px auto;
+  height: 20px;
+  width: 60%;
+  margin: 100px auto;
+
+  ${Media.tablet`
+        width: 90%;
+        font-size: 18px;
+        margin: 30px auto;
+    `}
 `;
 const Paragraph = styled.p`
-    height: 500px;
-    width: 60%;
-    line-height: 2;
-    font-size: 20px;
+  height: 500px;
+  width: 60%;
+  line-height: 2;
+  font-size: 20px;
 
+  ${Media.tablet`
+        width: 90%;
+        line-height: 1.6;
+        font-size: 14px;
+    `}
 `;

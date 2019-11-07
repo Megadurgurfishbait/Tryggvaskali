@@ -10,11 +10,18 @@ import { WhatWeDoText, textB } from "../../Assets/Texts/WhatWeDo";
 import Slide from "../../Animation/Slide";
 import { Colors, Images } from "../../Assets";
 
+import useWD from "../../hooks/useWindowDimensions";
+import Media, { sizes } from "../../Assets/Varibles/media";
+import MobileScroll from "./MobileScroll";
+import ScrollableInformation from './ScrollableInformation';
+
 
 const WhatWeDo = () => {
   let textRef = useRef([createRef(), createRef()]);
   const [InfoText, setInfoText] = useState(WhatWeDoText["hopa"]);
   const [Animation, setAnimation] = useState(null);
+
+  const { width } = useWD();
 
   const changeMyView = url => {
     setAnimation(Slide(textRef.current));
@@ -22,20 +29,32 @@ const WhatWeDo = () => {
   };
 
   return (
-    <Layout bgColor={Colors.LIGHT_GREEN} bgImage={Images.BaruBakgrunnur}>
-    <WWDContainer>
-      <SplitScreen compJc={"space-evenly"} compAi={"center"} compWidth={"100"}>
-        <Information ref={textRef} {...InfoText} />
-        <Picture />
-      </SplitScreen>
-      <ListButtons>
-        <MegaButton />
-        {textB.map((v, i) => (
-          <ListItems {...v} key={i} index={i} setInfoText={changeMyView} />
-        ))}
-      </ListButtons>
-    </WWDContainer>
-    </Layout >
+    <Layout bgColor={Colors.LIGHT_BLUE} bgImage={Images.BackgroundImage}>
+      {width > sizes.tablet ? (
+        <WWDContainer>
+          <SplitScreen
+            compJc={"space-evenly"}
+            compAi={"center"}
+            compWidth={"100"}
+          >
+            <Information ref={textRef} {...InfoText} />
+            {width > sizes.tablet && <Picture />}
+          </SplitScreen>
+          {/* setja þetta í nýjan component */}
+
+          <ListButtons>
+            <MegaButton />
+            {textB.map((v, i) => (
+              <ListItems {...v} key={i} index={i} setInfoText={changeMyView} />
+            ))}
+          </ListButtons>
+        </WWDContainer>
+      ) : (
+        <MobileScroll>
+              {Object.values(WhatWeDoText).map(v => <ScrollableInformation title={v.owner} paragraph={v.Par} list={v.List}/>)}
+        </MobileScroll>
+      )}
+    </Layout>
   );
 };
 
@@ -58,4 +77,10 @@ const ListButtons = styled.ul`
   margin-right: 60px;
   margin-bottom: 0px;
   border: none;
+
+  ${Media.tablet`
+    width: 100%;
+    margin: 0px;
+  
+  `}
 `;

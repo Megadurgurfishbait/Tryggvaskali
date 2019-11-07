@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ButtonModal from "./ButtonModal";
 import ShowModal from "../../Animation/ShowModal";
 import { Colors, VAR } from "../../Assets";
+import Media from "../../Assets/Varibles/media";
 
 const MegaButton = () => {
   let ButtonModalRef = useRef([createRef(), createRef()]);

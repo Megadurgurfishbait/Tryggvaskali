@@ -4,12 +4,10 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 import { sizes } from "../Assets/Varibles/media";
 
 const Layout = ({ children, bgColor, bgImage }) => {
-
   const { width } = useWindowDimensions();
 
-
   return (
-    <Div bgImage={bgImage} myWidth = {width}>
+    <Div bgImage={bgImage} myWidth={width}>
       <HueonTop bgColor={bgColor} />
       {children}
     </Div>
@@ -22,7 +20,8 @@ const Div = styled.div`
   display: flex;
   position: relative;
   justify-content: space-between;
-  width: ${props => props.myWidth > sizes.phone ?  "calc(100vw - 60px)" : "100vw"};
+  width: ${props =>
+    props.myWidth > sizes.phone ? "calc(100vw - 60px)" : "100vw"};
   height: 100vh;
   background: url(${props => props.bgImage});
   will-change: transform, opacity;
