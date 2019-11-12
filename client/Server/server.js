@@ -38,4 +38,3 @@ app.get(
 
 app.listen(port);
 
-console.log(`SERVER RUNNING ON ${port}`);

@@ -10,6 +10,7 @@ import BlueScreen from "./BlueScreen";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import MobileFooter from "./MobileFooter";
 import Media, { sizes } from "../../Assets/Varibles/media";
+import MobilePopup from "./MobilePopup/MobilePopup";
 
 // eslint-disable-next-line no-lone-blocks
 {
@@ -52,13 +53,14 @@ const BugerMenu = React.forwardRef((props, ref) => {
           <BlueScreen />
         </SplitScreen>
       ) : (
-        <MobileFooter />
+          <MobileFooter />
       )}
     </BurgerContainer>
   );
 });
 
 export default React.memo(BugerMenu);
+
 
 const BurgerContainer = styled.div`
   position: absolute;
@@ -70,9 +72,7 @@ const BurgerContainer = styled.div`
   overflow: hidden;
   background-color: ${Colors.LIGHT_GREEN};
   ${Media.large`
-  
   flex-direction: column;
-  
   `}
 `;
 

@@ -22,7 +22,7 @@ const Div = styled.div`
   justify-content: space-between;
   width: ${props =>
     props.myWidth > sizes.phone ? "calc(100vw - 60px)" : "100vw"};
-  height: 100vh;
+  height: 100%;
   background: url(${props => props.bgImage});
   will-change: transform, opacity;
   overflow: hidden;

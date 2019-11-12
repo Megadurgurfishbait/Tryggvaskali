@@ -4,6 +4,7 @@ import { Colors, VAR } from "../../Assets/index";
 import { SplitScreen } from "../Reusables";
 import InputField from "./inputfield";
 import useValidation from "../../hooks/useValidation";
+import Media from "../../Assets/Varibles/media";
 
 /*
   FIXME: Til að hafa modalið opið að forrita, breyta Animation tímanum í Animation/ShowModal í 0.
@@ -93,6 +94,7 @@ const ButtonModal = React.forwardRef((props, ref) => {
         </InputContainer>
         <ButtonContainer>
           <button type="submit">Senda fyrirspurn</button>
+          <button type="button" onClick={() => props.clickFunction()}>Hætta við </button>
         </ButtonContainer>
       </OpacityContainer>
     </BMContainer>
@@ -104,13 +106,14 @@ export default ButtonModal;
 const ButtonContainer = styled.div`
   height: 70px;
   display: flex;
-
+  justify-content: space-evenly;
+  width: 50%;
   & > button {
     margin: auto;
-    margin-bottom: 30px;
     padding: 10px 30px;
     height: 40px;
     text-align: center;
+
     border: none;
     background-color: ${Colors.DARK_GREEN};
     color: ${Colors.WHITE};
@@ -119,6 +122,13 @@ const ButtonContainer = styled.div`
       ${VAR.Hover};
     }
   }
+
+  ${Media.tablet`
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  
+  `}
 `;
 
 const BMContainer = styled.div`
@@ -129,9 +139,9 @@ const BMContainer = styled.div`
   height: 0px;
   width: 0px;
   box-sizing: border-box;
-  border: 3px solid ${Colors.DARK_GREEN};
+  border: 3px solid ${Colors.LIGHT_BLUE};
   border-radius: 5px;
-  z-index: 1;
+  z-index: 10;
   overflow: hidden;
 `;
 const OpacityContainer = styled.form`
@@ -142,11 +152,16 @@ const OpacityContainer = styled.form`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  z-index: 10;
 
   & > h1 {
     font-size: 25px;
     margin: 30px auto;
     color: ${Colors.DARK_GREEN};
+
+    ${Media.tablet`
+      font-size: 14px;
+    `}
   }
 `;
 

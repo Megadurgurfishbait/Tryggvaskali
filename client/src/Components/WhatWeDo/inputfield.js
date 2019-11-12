@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Colors } from "../../Assets";
+import Media from "../../Assets/Varibles/media";
 
 const InputField = React.forwardRef(
   ({ Text, Name, Placeholder, myType, isError }, ref) => (
@@ -39,6 +40,11 @@ const ErrorMessage = styled.h5`
   left: 0px;
   z-index: 5;
   font-weight: 100;
+
+  ${Media.tablet`
+        font-size: 12px;
+        top: -15px;
+  `}
 `;
 
 const IFContainer = styled.div`
@@ -50,6 +56,13 @@ const IFContainer = styled.div`
   border-radius: 5px;
   justify-content: space-between;
   position: relative;
+
+  ${Media.tablet`
+      width: 80%; 
+      border-radius: 0px;
+      margin-bottom: 15px;
+    `}
+
   & > * {
     margin: auto;
   }
@@ -57,10 +70,13 @@ const IFContainer = styled.div`
     width: 150px;
     color: ${Colors.WHITE};
     text-align: center;
+
+
   }
 
   & > textarea {
     box-sizing: border-box;
+
     width: 100%;
     resize: none;
     padding: 10px;
@@ -72,7 +88,19 @@ const IFContainer = styled.div`
       color: ${Colors.DARK_GREEN};
       opacity: 0.5;
     }
+
+    ${Media.tablet`
+    width: 90%;
+    height: fill-available ;
+    border-radius: none;
+`}
   }
+
+  ${Media.tablet`
+    width: 80%;
+    flex-direction: column;    
+    max-height: ${props => (props.myType === "textArea" ? "200px" : "50px")};
+`}
 `;
 
 const Input = styled.input`
@@ -85,11 +113,15 @@ const Input = styled.input`
   padding: 0px;
   background-color: ${Colors.WHITE};
 
-  padding-left: 8px;
-
   &::placeholder {
     font-size: 12px;
     color: ${Colors.DARK_GREEN};
     opacity: 0.5;
+    padding-left: 5px;
   }
+
+  ${Media.tablet` 
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+`}
 `;

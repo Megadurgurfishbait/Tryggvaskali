@@ -54,7 +54,6 @@ const MasonPictures = ({ Photos }) => {
 export default MasonPictures;
 
 const PictureContainer = styled.div`
-  margin-right: 60px;
   overflow-y: auto;
   background-color: black;
   ${Media.desktop`

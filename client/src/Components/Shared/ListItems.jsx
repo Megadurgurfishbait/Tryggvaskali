@@ -8,20 +8,10 @@ const ListItems = ({ Title, index, url, setInfoText }) => (
     <ListItem>
       <Button onClick={() => setInfoText(url)}>{Title}</Button>
     </ListItem>
-    {index === 2 ? null : <Break />}
   </>
 );
 
 export default ListItems;
-
-const Break = styled.span`
-  height: 30px;
-  width: 1px;
-  background-color: ${Colors.LIGHT_BLUE};
-  align-self: center;
-  margin-left: -1px;
-`;
-
 const ListItem = styled.li`
   margin: none;
   padding: none;
@@ -32,12 +22,12 @@ const ListItem = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
+
+
+
 `;
 const Button = styled.button`
   height: 30px;
-  width: 120px;
-  margin: none;
-  padding: none;
   border: none;
   color: inherit;
   background-color: transparent;
@@ -51,10 +41,8 @@ const Button = styled.button`
 
 
   ${Media.tablet`
-    width: 100%;
     margin: 0px;
     font-size: 12px;
-  
   `}
 
 `;

@@ -40,7 +40,7 @@ const About = () => {
 export default About;
 
 const Container = styled.div`
-  max-height: 100vh;
+  height: 100%;
   width: 100%;
   margin: 60px auto 0px auto;
   display: flex;
@@ -53,18 +53,24 @@ const Container = styled.div`
 
 const ListButtons = styled.ul`
   position: absolute;
-  height: 60px;
   width: 100%;
   list-style: none;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
-  margin-right: 60px;
-  margin-bottom: 0px;
   right: 0px;
   bottom: 0px;
+  margin-bottom: 0px;
 
   ${Media.desktop`
     margin-right: 0px;
+  `}
+
+  ${Media.tablet`
+    position: Sticky;
+    margin-top: 0px;
+    padding: 0px;
+  
+  
   `}
 `;

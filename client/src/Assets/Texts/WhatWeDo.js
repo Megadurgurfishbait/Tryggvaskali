@@ -1,6 +1,6 @@
 const WhatWeDoText = {
   hopa: {
-    owner: "Hópar",
+    owner: "Hópamatseðlar",
     Tit: "Við tökum vel á móti þínum hóp",
     Par: `Matreiðslumenn Tryggvaskála leggja áherslu á hráefni úr héraði og með virðingu fyrir störfum bænda, útbúa þeir vandaðan mat þar sem íslenskar- og erlendar matreiðsluaðferðir 
       blandast skemmtilega saman áherslu á hráefni úr héraði og með virðingu fyrir störfum bænda, útbúa þeir vandaðan mat þar sem íslenskar- og erlendar matreiðsluaðferðir blandast skemmtilega saman.`
@@ -10,7 +10,13 @@ const WhatWeDoText = {
     Tit: "TILVALIN GJÖF FYRIR ÞÁ SEM EIGA ALLT",
     Par: `Við bjóðum uppá 5.000,- kr, 10.000,- kr gjafabréf, þriggja rétta óvissuferð og fimm rétta óvissuferð. Þriggja rétta óvissuferð kostar 17.000,- kr fyrir tvo og fimm rétta óvissuferð kostar 21.800.- kr fyrir tvo.
 
-    Gjafabréfin gilda bæði í Tryggvaskála og á Kaffi Krús. Smelltu á hafa samband hér fyrir neðan til að fá frekari upplýsingar eða hringdu í síma 482 1390.`
+    Gjafabréfin gilda bæði í Tryggvaskála og á Kaffi Krús. Smelltu á hafa samband hér fyrir neðan til að fá frekari upplýsingar eða hringdu í síma 482 1390.`,
+    List: [
+      "5.000,- kr Gjafabréf",
+      "10.000,- kr Gjafabréf",
+      "Þriggja rétta óvissuferð",
+      "Fimm rétta óvissuferð"
+    ]
   },
   veislu: {
     owner: "Veisluþjónusta",

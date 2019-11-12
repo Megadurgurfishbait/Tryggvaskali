@@ -46,7 +46,8 @@ const WhiteBackground = styled.div`
   border-radius: 15px;
   opacity: 0.9;
 
-  ${Media.phone`border-radius: 0px;`}
+  ${Media.phone`border-radius: 0px;
+  min-height: 300px;`}
 `;
 
 const Title = styled.h1`

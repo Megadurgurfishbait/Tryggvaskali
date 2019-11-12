@@ -29,7 +29,7 @@ const WhatWeDo = () => {
   };
 
   return (
-    <Layout bgColor={Colors.LIGHT_BLUE} bgImage={Images.BackgroundImage}>
+    <Layout bgColor={Colors.LIGHT_GREEN} bgImage={Images.BaruBakgrunnur}>
       {width > sizes.tablet ? (
         <WWDContainer>
           <SplitScreen
@@ -61,8 +61,8 @@ const WhatWeDo = () => {
 export default WhatWeDo;
 
 const WWDContainer = styled.div`
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   position: relative;
   flex-direction: column;
@@ -70,14 +70,13 @@ const WWDContainer = styled.div`
 
 const ListButtons = styled.ul`
   height: 60px;
+  width: 60%;
   list-style: none;
   display: flex;
-  align-items: flex-end;
+  align-self: flex-end;
   justify-content: flex-end;
-  margin-right: 60px;
   margin-bottom: 0px;
   border: none;
-
   ${Media.tablet`
     width: 100%;
     margin: 0px;

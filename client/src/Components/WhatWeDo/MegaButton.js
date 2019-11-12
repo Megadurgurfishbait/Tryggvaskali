@@ -4,15 +4,18 @@ import ButtonModal from "./ButtonModal";
 import ShowModal from "../../Animation/ShowModal";
 import { Colors, VAR } from "../../Assets";
 import Media from "../../Assets/Varibles/media";
+import useWD from "../../hooks/useWindowDimensions";
 
 const MegaButton = () => {
   let ButtonModalRef = useRef([createRef(), createRef()]);
   const [ShowMenu, setShowMenu] = useState(false);
   const [Animation, setAnimation] = useState(null);
 
+  let WindowSize = useWD();
+
   useEffect(() => {
-    setAnimation(ShowModal(ButtonModalRef));
-  }, []);
+    setAnimation(ShowModal(ButtonModalRef, WindowSize));
+  }, [WindowSize]);
 
   function Toggle() {
     if (!ShowMenu) {
@@ -26,7 +29,7 @@ const MegaButton = () => {
   return (
     <MBContainer>
       <MyButton onClick={() => Toggle()}>Hafa Samband</MyButton>
-      <ButtonModal ref={ButtonModalRef}></ButtonModal>
+      <ButtonModal clickFunction={Toggle}l ref={ButtonModalRef}></ButtonModal>
     </MBContainer>
   );
 };

@@ -7,7 +7,11 @@ import Media from "../../Assets/Varibles/media";
 const ListItem = ({ Number, Title, Link }) => (
   <ListItemContainer className={"test"}>
     <NumberText>{Number}</NumberText>
-    <TitleText>{Title}</TitleText>
+    {Link ? (
+      <TitleText myLink={Link}>{Title}</TitleText>
+    ) : (
+      <TitleText >{Title}</TitleText>
+    )}
   </ListItemContainer>
 );
 

@@ -5,9 +5,11 @@ import ShowBurgerMenu from "../../../Animation/ShowBurgerMenu";
 
 import { Colors } from "../../../Assets";
 import BurgerMenu from "../../BurgerMenu";
+import ShowBurgerMenuContext from "../../../Context/ShowBurgerMenu";
+
 const BurgerMenuIcon = () => {
   let BurgerMenuRef = useRef();
-  const [ShowMenu, setShowMenu] = useState(false);
+  const [ShowMenu, setShowMenu] = useState(true);
   const [Animation, setAnimation] = useState(null);
 
   useEffect(() => {
@@ -30,14 +32,14 @@ const BurgerMenuIcon = () => {
   }
 
   return (
-    <>
+    <ShowBurgerMenuContext.Provider value={() => Toggle()}>
       <Container onClick={() => Toggle()}>
         <Line w={15} t={20} />
         <Line w={21} t={30} />
         <Line w={28} t={40} />
       </Container>
       <BurgerMenu ref={BurgerMenuRef} show={ShowMenu} />
-    </>
+    </ShowBurgerMenuContext.Provider>
   );
 };
 

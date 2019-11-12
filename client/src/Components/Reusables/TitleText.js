@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Colors } from "../../Assets";
 import Media from "../../Assets/Varibles/media";
+import ShowBurgerMenuContext from "../../Context/ShowBurgerMenu";
 
-const TitleText = ({ children }) => (
-  <TTContainer>
-    <Span>{children}</Span>
-  </TTContainer>
-);
+const TitleText = ({ children, myLink }, props) => {
+  let Hello = useContext(ShowBurgerMenuContext);
+  return (
+    <>
+      {myLink ? (
+        <LinkContainer to={myLink} onClick={Hello}>
+          <Span>{children}</Span>
+        </LinkContainer>
+      ) : (
+        <TTContainer>
+          <Span>{children}</Span>
+        </TTContainer>
+      )}
+    </>
+  );
+};
 
 export default React.memo(TitleText);
 
@@ -15,6 +28,22 @@ const TTContainer = styled.div`
   height: 40px;
   margin-top: auto;
   background-color: ${Colors.WHITE_GREEN};
+
+  ${Media.large`
+      height: 30px;
+    `}
+`;
+
+const LinkContainer = styled(Link)`
+  height: 40px;
+  margin-top: auto;
+  background-color: ${Colors.WHITE_GREEN};
+  color: ${Colors.LIGHT_BLUE};
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   ${Media.large`
       height: 30px;
