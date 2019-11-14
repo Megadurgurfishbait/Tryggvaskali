@@ -55,7 +55,7 @@ export default MasonPictures;
 
 const PictureContainer = styled.div`
   overflow-y: auto;
-  background-color: black;
+  background-color: ${Colors.DARK_GREEN};
   ${Media.desktop`
     overflow-y: scroll;
     margin-right: 0px;

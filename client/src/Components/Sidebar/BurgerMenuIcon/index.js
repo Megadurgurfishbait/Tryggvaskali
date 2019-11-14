@@ -9,7 +9,7 @@ import ShowBurgerMenuContext from "../../../Context/ShowBurgerMenu";
 
 const BurgerMenuIcon = () => {
   let BurgerMenuRef = useRef();
-  const [ShowMenu, setShowMenu] = useState(true);
+  const [ShowMenu, setShowMenu] = useState(false);
   const [Animation, setAnimation] = useState(null);
 
   useEffect(() => {

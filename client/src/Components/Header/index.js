@@ -27,11 +27,8 @@ width: 100%;
   right: 0px;
   justify-content: flex-end;
   align-items: center;
-  border-bottom: 1px solid ${Colors.WHITE};
-  background-color: black;
-  opacity: 0.35;
   box-sizing: border-box;
-  border: 2px solid black;
+  
 `;
 
 const LinkList = styled.ul`
@@ -50,7 +47,7 @@ const LinkList = styled.ul`
 `;
 
 const ListItems = styled(Link)`
-  color: white;
+  color: ${Colors.WHITE};
   text-decoration: none;
   &:hover {
     border-bottom: white;

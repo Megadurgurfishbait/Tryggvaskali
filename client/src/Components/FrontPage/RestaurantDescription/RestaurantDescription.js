@@ -2,11 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import { Colors, VAR } from "../../../Assets";
 import Media from "../../../Assets/Varibles/media";
+import ButtonStyle from "../../Reusables/Button";
 
 const RestaurantDescription = () => (
   <RDContainer>
-    <WhiteBackground>
-      <Title>Velkomin í Tryggvaskála</Title>
+    <TextContainer>
+      <TitleContainer>
+        <Title>{`Velkomin`}</Title>
+        <Title>{` í Tryggvaskála`}</Title>
+      </TitleContainer>
       <Paragraph>
         Tryggvaskáli er einstaklega fallegur a’la carte veitingastaður sem
         leggur áherslu á vandaða matreiðslu með fókus á hráefni úr héraði. Með
@@ -14,46 +18,45 @@ const RestaurantDescription = () => (
         vandaðan mat þar sem íslenskar- og erlendar matreiðsluaðferðir blandast
         skemmtilega saman.
       </Paragraph>
-      <Button>Sjá Matseðil</Button>
-    </WhiteBackground>
+        <ButtonStyle href="https://goo.gl/maps/i8qw8M8nZZrnCPNA9"  Text={"Sjá Staðsetningu"} />
+    </TextContainer>
   </RDContainer>
 );
 
 export default RestaurantDescription;
 
 const RDContainer = styled.div`
-  height: 100%;
-  width: 60%;
+  height: 500px;
+  width: 500px;
   display: flex;
-  place-items: center;
   font-size: 20px;
-  color: white;
+  color: ${Colors.LIGHT_GREEN};
   font-weight: 200;
+  flex-direction: column;
 
   ${Media.large`width: 80%;`}
   ${Media.phone`height: 60%;
   width: 90%;`}
 `;
 
-const WhiteBackground = styled.div`
-  background-color: white;
-  padding: 10px;
-  color: ${Colors.LIGHT_BLUE};
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 15px;
-  opacity: 0.9;
+const TitleContainer = styled.div`
+  height: 80px;
+  width: 100%;
+`;
 
-  ${Media.phone`border-radius: 0px;
-  min-height: 300px;`}
+const TextContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  padding: 5px 150px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 `;
 
 const Title = styled.h1`
-  margin: 15px auto;
-  font-weight: 100;
-  font-size: 32px;
+  margin: 0px 0px;
+  font-weight: 900;
+  font-size: 50px;
 
   ${Media.large`
     font-size: 25px;
@@ -69,11 +72,10 @@ const Title = styled.h1`
   `}
 `;
 const Paragraph = styled.p`
-  font-size: 16px;
-  width: 90%;
+  font-size: 18px;
+  width: 100%;
   font-weight: 100;
   line-height: 1.8;
-  margin: 40px auto;
 
   ${Media.large`
     width: 90%;
@@ -96,30 +98,4 @@ const Paragraph = styled.p`
     font-size: 12px;
   `}
 `;
-const Button = styled.button`
-  margin: 10px auto;
-  height: 40px;
-  background-color: ${Colors.LIGHT_BLUE};
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  font-weight: 100;
 
-  ${Media.desktop`
-    height: 50px;
-    padding: 15px 30px;
-    margin: 15px auto;
-    font-size: 16px;
-  `}
-
-  ${Media.phone`
-    height: 30px;
-    padding: 5px 10px;
-    margin: 7.5px auto;
-    font-size: 12px;
-  `}
-
-  &:hover {
-    ${VAR.Hover};
-  }
-`;

@@ -6,6 +6,7 @@ import FoodDisk4 from "./diskur4.png";
 import FoodDisk5 from "./diskur5.png";
 import BaruBakgrunnur from './bakgrunnurBara.jpg';
 import Ratings from './Ratings.PNG';
+import TryggvaBgImage from './bgmedshade.jpg';
 
 const Food = [FoodDisk1, FoodDisk2, FoodDisk3, FoodDisk4, FoodDisk5];
 
@@ -13,5 +14,6 @@ export default {
   BackgroundImage,
   Food,
   BaruBakgrunnur,
-  Ratings
+  Ratings,
+  TryggvaBgImage
 };

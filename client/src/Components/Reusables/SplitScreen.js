@@ -8,7 +8,8 @@ const SplitScreen = ({
   compBg,
   compHeight = `100`,
   compJc = `Space-between`,
-  compAi = `stretch`
+  compAi = `stretch`,
+  bgImage = ""
 }) => (
   <DIV
     compWidth={compWidth}
@@ -17,6 +18,7 @@ const SplitScreen = ({
     compBg={compBg}
     column={column}
     compJc={compJc}
+    bgImage={bgImage}
   >
     {children}
   </DIV>
@@ -32,4 +34,7 @@ const DIV = styled.div`
   justify-content: ${props => props.compJc};
   background-color: ${props => props.compBg};
   align-items: ${props => props.compAi};
+  background-image: url(${props => props.bgImage});
+  background-size: cover;
+  
 `;

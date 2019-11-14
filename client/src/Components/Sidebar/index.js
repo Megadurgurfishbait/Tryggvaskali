@@ -49,6 +49,6 @@ const SidebarContainer = styled.aside`
   background-color: ${props => props.transparent ? "transparent" : null};
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: 600000; /* Á meðan ég er að gera Fullscreen Menu */
 `;

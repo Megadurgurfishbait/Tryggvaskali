@@ -44,18 +44,15 @@ const HeroText = () => {
 export default HeroText;
 
 const Container = styled.div`
-  height: 300px;
+  height: 200px;
   width: 100%;
   display: flex;
-  transform: translate3d(-40px, 100px, 0px);
-  ${VAR.Border}
+  justify-content: flex-start;
   ${Media.large`
     height: 200px;
-    transform: translate3d(0px, 100px, 0px);
   `}
   ${Media.phone`
     height: 100px;
-    transform: translate3d(0px, 60px, 0px);
   `}
 `;
 
@@ -65,7 +62,7 @@ const TrailMain = styled.div`
   height: 100%;
   overflow: hidden;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   margin-right: 40px;
 

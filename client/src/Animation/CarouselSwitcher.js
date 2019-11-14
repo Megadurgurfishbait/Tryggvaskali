@@ -9,8 +9,8 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
         .fromTo(
           NodeArray[0],
           0.5,
-          { x: 500, opacity: 0 },
-          { x: 10, opacity: 1 }
+          { x: 300, opacity: 0 },
+          { x: 70, opacity: 1 }
         )
         .delay(1);
     case 0:
@@ -19,27 +19,27 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
             .fromTo(
               NodeArray[1],
               0.5,
-              { x: 10, opacity: 1 },
-              { x: 500, opacity: 0 }
+              { x: 70, opacity: 1 },
+              { x: 300, opacity: 0 }
             )
             .fromTo(
               NodeArray[0],
               0.5,
-              { x: 500, opacity: 0 },
-              { x: 10, opacity: 1 }
+              { x: 300, opacity: 0 },
+              { x: 70, opacity: 1 }
             ))
         : (Animation = tl
             .fromTo(
               NodeArray[4],
               0.5,
-              { x: 10, opacity: 1 },
-              { x: 500, opacity: 0 }
+              { x: 70, opacity: 1 },
+              { x: 300, opacity: 0 }
             )
             .fromTo(
               NodeArray[0],
               0.5,
-              { x: 500, opacity: 0 },
-              { x: 10, opacity: 1 }
+              { x: 300, opacity: 0 },
+              { x: 70, opacity: 1 }
             ));
       break;
     case 1:
@@ -48,27 +48,27 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
             .fromTo(
               NodeArray[2],
               0.5,
-              { x: 10, opacity: 1 },
-              { x: 500, opacity: 0 }
+              { x: 70, opacity: 1 },
+              { x: 300, opacity: 0 }
             )
             .fromTo(
               NodeArray[1],
               0.5,
-              { x: 500, opacity: 0 },
-              { x: 10, opacity: 1 }
+              { x: 300, opacity: 0 },
+              { x: 70, opacity: 1 }
             ))
         : (Animation = tl
             .fromTo(
               NodeArray[0],
               0.5,
-              { x: 10, opacity: 1 },
-              { x: 500, opacity: 0 }
+              { x: 70, opacity: 1 },
+              { x: 300, opacity: 0 }
             )
             .fromTo(
               NodeArray[1],
               0.5,
-              { x: 500, opacity: 0 },
-              { x: 10, opacity: 1 }
+              { x: 300, opacity: 0 },
+              { x: 70, opacity: 1 }
             ));
       break;
 
@@ -78,27 +78,27 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
             .fromTo(
               NodeArray[3],
               0.5,
-              { x: 10, opacity: 1 },
-              { x: 500, opacity: 0 }
+              { x: 70, opacity: 1 },
+              { x: 300, opacity: 0 }
             )
             .fromTo(
               NodeArray[2],
               0.5,
-              { x: 500, opacity: 0 },
-              { x: 10, opacity: 1 }
+              { x: 300, opacity: 0 },
+              { x: 70, opacity: 1 }
             ))
         : (Animation = tl
             .fromTo(
               NodeArray[1],
               0.5,
-              { x: 10, opacity: 1 },
-              { x: 500, opacity: 0 }
+              { x: 70, opacity: 1 },
+              { x: 300, opacity: 0 }
             )
             .fromTo(
               NodeArray[2],
               0.5,
-              { x: 500, opacity: 0 },
-              { x: 10, opacity: 1 }
+              { x: 300, opacity: 0 },
+              { x: 70, opacity: 1 }
             ));
       break;
 
@@ -108,27 +108,27 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
             .fromTo(
               NodeArray[4],
               0.5,
-              { x: 10, opacity: 1 },
-              { x: 500, opacity: 0 }
+              { x: 70, opacity: 1 },
+              { x: 300, opacity: 0 }
             )
             .fromTo(
               NodeArray[3],
               0.5,
-              { x: 500, opacity: 0 },
-              { x: 10, opacity: 1 }
+              { x: 300, opacity: 0 },
+              { x: 70, opacity: 1 }
             ))
         : (Animation = tl
             .fromTo(
               NodeArray[2],
               0.5,
-              { x: 10, opacity: 1 },
-              { x: 500, opacity: 0 }
+              { x: 70, opacity: 1 },
+              { x: 300, opacity: 0 }
             )
             .fromTo(
               NodeArray[3],
               0.5,
-              { x: 500, opacity: 0 },
-              { x: 10, opacity: 1 }
+              { x: 300, opacity: 0 },
+              { x: 70, opacity: 1 }
             ));
       break;
     case 4:
@@ -137,27 +137,27 @@ export default function CaruselSwitcher(NodeArray, position, Direction) {
             .fromTo(
               NodeArray[0],
               0.5,
-              { x: 10, opacity: 1 },
-              { x: 500, opacity: 0 }
+              { x: 70, opacity: 1 },
+              { x: 300, opacity: 0 }
             )
             .fromTo(
               NodeArray[4],
               0.5,
-              { x: 500, opacity: 0 },
-              { x: 10, opacity: 1 }
+              { x: 300, opacity: 0 },
+              { x: 70, opacity: 1 }
             ))
         : (Animation = tl
             .fromTo(
               NodeArray[3],
               0.5,
-              { x: 10, opacity: 1 },
-              { x: 500, opacity: 0 }
+              { x: 70, opacity: 1 },
+              { x: 300, opacity: 0 }
             )
             .fromTo(
               NodeArray[4],
               0.5,
-              { x: 500, opacity: 0 },
-              { x: 10, opacity: 1 }
+              { x: 300, opacity: 0 },
+              { x: 70, opacity: 1 }
             ));
       break;
   }

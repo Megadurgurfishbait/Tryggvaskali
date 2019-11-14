@@ -10,7 +10,6 @@ import BlueScreen from "./BlueScreen";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import MobileFooter from "./MobileFooter";
 import Media, { sizes } from "../../Assets/Varibles/media";
-import MobilePopup from "./MobilePopup/MobilePopup";
 
 // eslint-disable-next-line no-lone-blocks
 {
@@ -27,7 +26,7 @@ const BugerMenu = React.forwardRef((props, ref) => {
     if (props.show) {
       tl.set(".test", { opacity: 0 })
         .staggerFrom(".test", 1, { y: "-=20", opacity: 0 }, 0.2)
-        .delay(1.5);
+        .delay(1.2);
     }
   }, [props.show]);
 

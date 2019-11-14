@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/static/js/main.a3516512.chunk.js",
-    "main.js.map": "/static/js/main.a3516512.chunk.js.map",
+    "main.js": "/static/js/main.c14ef3db.chunk.js",
+    "main.js.map": "/static/js/main.c14ef3db.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.59b932a4.js",
     "runtime-main.js.map": "/static/js/runtime-main.59b932a4.js.map",
-    "static/js/2.842a0f31.chunk.js": "/static/js/2.842a0f31.chunk.js",
-    "static/js/2.842a0f31.chunk.js.map": "/static/js/2.842a0f31.chunk.js.map",
+    "static/js/2.41478f00.chunk.js": "/static/js/2.41478f00.chunk.js",
+    "static/js/2.41478f00.chunk.js.map": "/static/js/2.41478f00.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.5388db005206e7b5ca7fb57ea281846f.js": "/precache-manifest.5388db005206e7b5ca7fb57ea281846f.js",
+    "precache-manifest.22057f7171cc54b0533fcb34a6a9f6f3.js": "/precache-manifest.22057f7171cc54b0533fcb34a6a9f6f3.js",
     "service-worker.js": "/service-worker.js",
     "static/media/56529025_2038002189586199_4847026749956947968_n.jpg": "/static/media/56529025_2038002189586199_4847026749956947968_n.729ddcce.jpg",
     "static/media/73106907_2359644897421925_468420493490257920_n.jpg": "/static/media/73106907_2359644897421925_468420493490257920_n.66fab157.jpg",
-    "static/media/Bakgrunnur.jpg": "/static/media/Bakgrunnur.018d96ab.jpg",
+    "static/media/Bakgrunnur.jpg": "/static/media/Bakgrunnur.a97f8dc0.jpg",
     "static/media/Food1.jpg": "/static/media/Food1.bbdfc19e.jpg",
     "static/media/Food2.jpg": "/static/media/Food2.af54d7c9.jpg",
     "static/media/Food3.jpg": "/static/media/Food3.ba40d91c.jpg",
@@ -37,6 +37,7 @@
     "static/media/Res8.jpg": "/static/media/Res8.44178530.jpg",
     "static/media/Res9.jpg": "/static/media/Res9.82528907.jpg",
     "static/media/bakgrunnurBara.jpg": "/static/media/bakgrunnurBara.e293b1bd.jpg",
+    "static/media/bgmedshade.jpg": "/static/media/bgmedshade.17aad32a.jpg",
     "static/media/diskur1.png": "/static/media/diskur1.410168a4.png",
     "static/media/diskur2.png": "/static/media/diskur2.d1754180.png",
     "static/media/diskur3.png": "/static/media/diskur3.60ddc1f8.png",
@@ -63,7 +64,7 @@
   },
   "entrypoints": [
     "static/js/runtime-main.59b932a4.js",
-    "static/js/2.842a0f31.chunk.js",
-    "static/js/main.a3516512.chunk.js"
+    "static/js/2.41478f00.chunk.js",
+    "static/js/main.c14ef3db.chunk.js"
   ]
 }

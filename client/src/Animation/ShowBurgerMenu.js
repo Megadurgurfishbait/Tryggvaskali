@@ -6,8 +6,7 @@ export default function ShowBurgerMenu(Node, height, width) {
   
 console.log(height, width);
   Animation = tl
-    .fromTo(Node, 0, { height: 0}, { height: `${height}` })
-    .fromTo(Node, 0, { x: 0 }, { x: `${-width+60}` });
-
+    .fromTo(Node, .5, { height: 0}, { height: `${height}` })
+    .fromTo(Node, .5, { x: -width+120 }, { x: 60 });
   return Animation;
 }
