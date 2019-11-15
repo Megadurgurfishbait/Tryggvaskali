@@ -6,6 +6,18 @@ import ListItems from "../Shared/ListItems";
 import MasonPictures from "./MasonPictures";
 import Photos from "../../Assets/Images/Gallery/";
 import Media from "../../Assets/Varibles/media";
+import MobileControl from "../Reusables/MobileControl/MobileControl";
+const MobileControlObj = {
+  LeftArrow: {
+    Link: "/WhatWeDo",
+    Title: "Þjónusta"
+  },
+  RightArrow: {
+    Link: "/",
+    Title: "Forsíða"
+  }
+}
+
 
 const About = () => {
   const [ShowMasonPictures, setShowMasonPictures] = React.useState(
@@ -32,6 +44,7 @@ const About = () => {
           />
           {/* Index kemur í veg fyrir að það komi border til hægri við "The Restaurant" Textann */}
         </ListButtons>
+        <MobileControl ControlObject={MobileControlObj} />
       </Container>
     </Layout>
   );
@@ -45,6 +58,7 @@ const Container = styled.div`
   margin: 60px auto 0px auto;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   ${Media.desktop`
     margin: 0px auto;
@@ -59,7 +73,7 @@ const ListButtons = styled.ul`
   align-items: flex-end;
   justify-content: flex-end;
   right: 0px;
-  bottom: 0px;
+  top: 0px;
   margin-bottom: 0px;
 
   ${Media.desktop`
@@ -67,7 +81,7 @@ const ListButtons = styled.ul`
   `}
 
   ${Media.tablet`
-    position: Sticky;
+    width: calc(100vw - 60px);
     margin-top: 0px;
     padding: 0px;
   

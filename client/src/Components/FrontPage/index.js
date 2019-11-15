@@ -12,6 +12,20 @@ import useRD from "../../hooks/useWindowDimensions";
 import Media, { sizes } from "../../Assets/Varibles/media";
 import MediaHeight from "../../Assets/Varibles/MediaHeight";
 import ButtonStyle from "../Reusables/Button";
+import MobileControl from '../Reusables/MobileControl/MobileControl'; 
+
+
+const MobileControlObj = {
+  LeftArrow: {
+    Link: "/About",
+    Title: "About"
+  },
+  RightArrow: {
+    Link: "/Menu",
+    Title: "Menu"
+  }
+}
+
 
 const FrontPage = () => {
   let { width } = useRD();
@@ -39,6 +53,7 @@ const FrontPage = () => {
     <Layout bgColor={Colors.WHITE}>
       <TryContainer bgImage={Images.TryggvaBgImage}>
         <RestaurantDescription />
+        <MobileControl ControlObject={MobileControlObj} />
       </TryContainer>
 
       {width > sizes.desktop && (
@@ -73,8 +88,6 @@ const Fake = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
-
-  
 `;
 
 const TryContainer = styled.div`
@@ -85,6 +98,7 @@ const TryContainer = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   flex: 0 0 65%;
+  position: relative;
 
   ${MediaHeight.large`
       align-items: center;

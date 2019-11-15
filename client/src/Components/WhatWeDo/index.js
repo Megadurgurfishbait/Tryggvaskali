@@ -14,11 +14,23 @@ import useWD from "../../hooks/useWindowDimensions";
 import Media, { sizes } from "../../Assets/Varibles/media";
 import MobileScroll from "./MobileScroll";
 import ScrollableInformation from "./ScrollableInformation";
+import MobileControl from "../Reusables/MobileControl/MobileControl";
 
 const WhatWeDo = () => {
   let textRef = useRef([createRef(), createRef()]);
   const [InfoText, setInfoText] = useState(WhatWeDoText["hopa"]);
   const [Animation, setAnimation] = useState(null);
+
+  const MobileControlObj = {
+    LeftArrow: {
+      Link: "/Menu",
+      Title: "Matseðill"
+    },
+    RightArrow: {
+      Link: "/About",
+      Title: "Gallery"
+    }
+  };
 
   const { width } = useWD();
 
@@ -28,7 +40,7 @@ const WhatWeDo = () => {
   };
 
   return (
-    <Layout >
+    <Layout>
       {width > sizes.tablet ? (
         <WWDContainer>
           <SplitScreen
@@ -49,15 +61,18 @@ const WhatWeDo = () => {
           </ListButtons>
         </WWDContainer>
       ) : (
-        <MobileScroll>
-          {Object.values(WhatWeDoText).map(v => (
-            <ScrollableInformation
-              title={v.owner}
-              paragraph={v.Par}
-              list={v.List}
-            />
-          ))}
-        </MobileScroll>
+        <>
+          <MobileScroll>
+            {Object.values(WhatWeDoText).map(v => (
+              <ScrollableInformation
+                title={v.owner}
+                paragraph={v.Par}
+                list={v.List}
+              />
+            ))}
+          </MobileScroll>
+          <MobileControl ControlObject={MobileControlObj} />
+        </>
       )}
     </Layout>
   );
@@ -72,9 +87,8 @@ const WWDContainer = styled.div`
   position: relative;
   flex-direction: column;
   background: url(${Images.TryggvaBgImage}) no-repeat;
-  background-size:  cover;
+  background-size: cover;
   background-position: 0% 100%;
-  
 `;
 
 const ListButtons = styled.ul`
