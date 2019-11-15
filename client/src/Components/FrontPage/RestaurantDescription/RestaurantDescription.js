@@ -26,16 +26,22 @@ const RestaurantDescription = () => (
 export default RestaurantDescription;
 
 const RDContainer = styled.div`
-  height: 500px;
-  width: 500px;
+  height: 600px;
+  width: 600px;
   display: flex;
   font-size: 20px;
   color: ${Colors.LIGHT_GREEN};
   font-weight: 200;
   flex-direction: column;
+  ${Media.large`
+    width: 70%;
+    padding-left: 30px;
+  `}
 
-  ${Media.large`width: 80%;`}
-  ${Media.phone`height: 60%;
+ 
+
+  ${Media.phone`
+  height: 60%;
   width: 90%;`}
 `;
 
@@ -45,12 +51,15 @@ const TitleContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-  width: 100%;
+  width: 80%;
   height: 100%;
-  padding: 5px 150px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+
+  ${Media.large`
+    width: 100%;
+  `}
 `;
 
 const Title = styled.h1`
@@ -59,16 +68,15 @@ const Title = styled.h1`
   font-size: 50px;
 
   ${Media.large`
-    font-size: 25px;
-    margin: 7.5px auto;-
+    font-size: 40px;
+    margin: 7.5px auto;
   `}
   ${Media.desktop`
     font-size: 30px;
     margin: 20px auto;
   `}
   ${Media.phone`
-    font-size: 18px;
-    text-align: center;
+    font-size: 28px;
   `}
 `;
 const Paragraph = styled.p`
@@ -78,23 +86,21 @@ const Paragraph = styled.p`
   line-height: 1.8;
 
   ${Media.large`
-    width: 90%;
-    font-size: 13px;
+    width: 80%;
+    font-size: 18px;
     line-height: 1.4;
-    margin: 20px auto;
   `}
 
   ${Media.desktop`
     width: 80%;
     font-size: 14px;
     line-height: 1.8;
-    margin: 30px auto;
   `}
 
   ${Media.phone`
     width: 95%;
     margin: 10px auto;
-    line-height: 1.7;
+    line-height: 2;
     font-size: 12px;
   `}
 `;

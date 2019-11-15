@@ -49,25 +49,36 @@ const ShowFood = () => {
         <Button onClick={disableButton ? null : () => goLeft()}>{"<"}</Button>
         <Button onClick={disableButton ? null : () => goRight()}>{">"}</Button>
       </ArrowButtons>
-
     </DIV>
   );
 };
 
 export default ShowFood;
 
-
-
 const ImageDiv = styled.div`
   min-height: 500px;
   min-width: 100%;
   background: url(${props => props.source}) no-repeat;
+  background-position: 50% 50%;
   position: absolute;
   opacity: 0;
   z-index: 40;
   background-size: contain;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   ${Media.large`
-  background-size: cover;
+    ${maxSize(400)}
+    align-self: flex-start;
+  `}
+
+
+  ${Media.desktop`
+    ${maxSize(300)}
+    align-self: flex-start;
+    
   `}
 `;
 
@@ -79,9 +90,10 @@ const DIV = styled.div`
   flex-direction: column;
   align-items: center;
   transform: translateX(-50%);
+  overflow: hidden;
 
   ${Media.large`
-    height: 400px;
+    height: 600px;
     width: 400px;
   `}
 `;
@@ -118,4 +130,19 @@ const ImagesContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
+
+  ${Media.large`
+    height: 400px;
+    width: 400px;
+  `}
 `;
+
+
+function maxSize(size) {
+  return `
+  max-height: ${size}px;
+  max-width: ${size}px;
+  min-height: ${size}px;
+  min-width: ${size}px;
+  `
+}

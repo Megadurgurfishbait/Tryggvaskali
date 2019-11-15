@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { sizes } from "../Assets/Varibles/media";
+import Media from "../Assets/Varibles/media";
 
 const Layout = ({ children, bgColor, bgImage }) => {
   const { width } = useWindowDimensions();
@@ -25,7 +26,16 @@ const Div = styled.div`
   background-color: ${props => props.bg};
   will-change: transform, opacity;
   overflow: hidden;
+
   padding-left: 60px;
+
+
+  ${Media.phone`
+    padding-left: 0px !important;
+  
+  `}
+
+
   & > div {
     z-index: 2;
   }

@@ -7,7 +7,7 @@ import FoodDisk5 from "./diskur5.png";
 import BaruBakgrunnur from './bakgrunnurBara.jpg';
 import Ratings from './Ratings.PNG';
 import TryggvaBgImage from './bgmedshade.jpg';
-
+import polka from './polkapolka.png';
 const Food = [FoodDisk1, FoodDisk2, FoodDisk3, FoodDisk4, FoodDisk5];
 
 export default {
@@ -15,5 +15,6 @@ export default {
   Food,
   BaruBakgrunnur,
   Ratings,
-  TryggvaBgImage
+  TryggvaBgImage,
+  polka
 };

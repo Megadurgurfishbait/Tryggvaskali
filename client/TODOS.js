@@ -24,9 +24,6 @@
     
     TODO:
 
-
-
-
     TODO: 
     Setja Modal í sér Component og tengja hann við Portal.
     Laga útlið, ekki flott hjá þér Guðmundur Snorri!

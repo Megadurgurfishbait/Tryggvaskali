@@ -20,7 +20,6 @@ export default function ShowModal(Node, windowSize) {
     .fromTo(Modal.current, time, { height: 0, y: 0 }, { height: 700, y: -800 })
     .fromTo(OpacityModal.current, time, { opacity: 0 }, { opacity: 1 });
   }else {
-    console.log("HER")
     Animation = tl
     .fromTo(
       Modal.current,

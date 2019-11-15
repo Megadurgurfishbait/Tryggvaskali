@@ -13,8 +13,7 @@ import { Colors, Images } from "../../Assets";
 import useWD from "../../hooks/useWindowDimensions";
 import Media, { sizes } from "../../Assets/Varibles/media";
 import MobileScroll from "./MobileScroll";
-import ScrollableInformation from './ScrollableInformation';
-
+import ScrollableInformation from "./ScrollableInformation";
 
 const WhatWeDo = () => {
   let textRef = useRef([createRef(), createRef()]);
@@ -29,7 +28,7 @@ const WhatWeDo = () => {
   };
 
   return (
-    <Layout bgColor={Colors.LIGHT_GREEN} bgImage={Images.BaruBakgrunnur}>
+    <Layout >
       {width > sizes.tablet ? (
         <WWDContainer>
           <SplitScreen
@@ -38,7 +37,7 @@ const WhatWeDo = () => {
             compWidth={"100"}
           >
             <Information ref={textRef} {...InfoText} />
-            {width > sizes.tablet && <Picture />}
+            {width > sizes.desktop && <Picture />}
           </SplitScreen>
           {/* setja þetta í nýjan component */}
 
@@ -51,7 +50,13 @@ const WhatWeDo = () => {
         </WWDContainer>
       ) : (
         <MobileScroll>
-              {Object.values(WhatWeDoText).map(v => <ScrollableInformation title={v.owner} paragraph={v.Par} list={v.List}/>)}
+          {Object.values(WhatWeDoText).map(v => (
+            <ScrollableInformation
+              title={v.owner}
+              paragraph={v.Par}
+              list={v.List}
+            />
+          ))}
         </MobileScroll>
       )}
     </Layout>
@@ -66,6 +71,10 @@ const WWDContainer = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
+  background: url(${Images.TryggvaBgImage}) no-repeat;
+  background-size:  cover;
+  background-position: 0% 100%;
+  
 `;
 
 const ListButtons = styled.ul`
@@ -76,10 +85,11 @@ const ListButtons = styled.ul`
   align-self: flex-end;
   justify-content: flex-end;
   margin-bottom: 0px;
+  position: absolute;
+  bottom: 0;
   border: none;
-  ${Media.tablet`
+  ${Media.desktop`
     width: 100%;
     margin: 0px;
-  
   `}
 `;

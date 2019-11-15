@@ -1,8 +1,9 @@
 import React, { useRef, useState } from "react";
 import styled from "styled-components";
 import { TimelineMax } from "gsap";
-import { Colors } from "../../Assets";
+import { Colors, Images } from "../../Assets";
 import MyImage, {StripeImage} from "../../Assets/Images/WhatWeDo/";
+import Media from "../../Assets/Varibles/media";
 
 const Picture = () => {
   let imgRef = useRef();
@@ -51,23 +52,38 @@ const PContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  background: url(${Images.TryggvaBgImage}) no-repeat;
+  background-size: cover;
+  background-position-x: 100%;
+
+  ${Media.large`
+    background-position-x: 0%;
+  `}
 `;
 
 const Background = styled.div`
   position: relative;
   height: 500px;
   width: 500px;
+
+  ${Media.large`
+    height: 300px;
+    width: 300px;
+  `}
+  
 `;
 
 const BackgroundAnimation = styled.div`
-  background-color: ${Colors.LIGHT_BLUE};
+  background-color: ${Colors.GREEN};
+  background-size: cover;
   box-sizing: border-box;
   position: absolute;
-  top: 0px;
   left: 0px;
+  top: 0px;
   height: 100%;
   width: 100%;
-  opacity: .5;
+
+
 `;
 
 const Image = styled.img`

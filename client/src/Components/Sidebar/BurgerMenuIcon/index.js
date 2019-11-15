@@ -44,6 +44,7 @@ const BurgerMenuIcon = () => {
 };
 
 export default BurgerMenuIcon;
+
 const Container = styled.div`
   height: 60px;
   width: 60px;
