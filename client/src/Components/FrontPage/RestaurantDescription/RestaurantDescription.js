@@ -52,7 +52,7 @@ const TitleContainer = styled.div`
 `;
 
 const TextContainer = styled.div`
-  width: 80%;
+  width: 90%;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -60,6 +60,11 @@ const TextContainer = styled.div`
 
   ${Media.desktop`
     width: 100%;
+  `}
+
+  ${Media.phone`
+    justify-content: center;
+  
   `}
 `;
 
@@ -73,8 +78,7 @@ const Title = styled.h1`
     margin: 7.5px auto;
   `}
   ${Media.desktop`
-    font-size: 30px;
-    margin: 20px auto;
+    line-height: .8;
   `}
   ${Media.phone`
     font-size: 28px;
@@ -94,13 +98,12 @@ const Paragraph = styled.p`
 
   ${Media.desktop`
     width: 80%;
-    font-size: 14px;
     line-height: 1.8;
   `}
 
   ${Media.phone`
     width: 95%;
-    margin: 10px auto;
+    margin: 30px 0px;
     line-height: 2;
     font-size: 12px;
   `}

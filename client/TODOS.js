@@ -64,6 +64,8 @@
     Setja Home Icon í hornið hægra megin
 
 
+    TODO: Menu Takki á forsíðu
+    Breyta honum í hönninna í XD
 
     FIXME: ÞAÐ SEM Á AÐ GERA EFTIR AÐ SÍÐAN ER KLÁR FIXME:
 
