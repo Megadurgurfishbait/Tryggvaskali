@@ -33,7 +33,7 @@ const BugerMenu = React.forwardRef((props, ref) => {
   return (
     <BurgerContainer ref={ref} myWidth={width}>
       <SplitScreen
-        compWidth={width > 1300 ? 65 : 100}
+        compWidth={width > sizes.desktop ? 65 : 100}
         compBg={Colors.LIGHT_GREEN}
       >
         <MenuList>
@@ -47,7 +47,7 @@ const BugerMenu = React.forwardRef((props, ref) => {
           ))}
         </MenuList>
       </SplitScreen>
-      {width > 1300 ? (
+      {width > sizes.desktop ? (
         <SplitScreen compWidth={35} compBg={Colors.GREEN}>
           <BlueScreen />
         </SplitScreen>
@@ -70,7 +70,9 @@ const BurgerContainer = styled.div`
   z-index: 50000;
   overflow: hidden;
   background-color: ${Colors.LIGHT_GREEN};
-  ${Media.large`
+
+
+  ${Media.desktop`
   flex-direction: column;
   `}
 `;

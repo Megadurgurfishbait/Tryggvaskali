@@ -92,7 +92,7 @@ const DIV = styled.div`
   transform: translateX(-50%);
   overflow: hidden;
 
-  ${Media.large`
+  ${Media.desktop`
     height: 600px;
     width: 400px;
   `}
@@ -103,6 +103,12 @@ const ArrowButtons = styled.div`
   width: 40%;
   display: flex;
   justify-content: space-between;
+
+  ${Media.large`
+      height: 25%;
+  `}
+
+
 `;
 
 const Button = styled.button`

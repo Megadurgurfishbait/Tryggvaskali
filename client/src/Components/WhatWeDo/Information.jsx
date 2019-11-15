@@ -30,7 +30,13 @@ const IContainer = styled.div`
         justify-content: flex-end; `}
 
   ${Media.large`
+    width: 80%;
+  `}
+
+  ${Media.desktop`
       width: 100%;
+      align-items: center;
+      justify-content: center;
     `}
 `;
 
@@ -40,9 +46,15 @@ const Title = styled.h1`
   font-size: 35px;
   font-weight: 800;
 
+
+
   ${Media.large`
     font-size: 35px;
   `}
+
+  ${Media.desktop`
+      width: 60%;
+    `}
 
   ${Media.tablet`
         width: 90%;
@@ -61,6 +73,10 @@ const Paragraph = styled.p`
       height: 300px;
       font-size: 18px;
       line-height: 1.6;
+    `}
+
+    ${Media.desktop`
+      width: 60%;
     `}
 
   ${Media.tablet`

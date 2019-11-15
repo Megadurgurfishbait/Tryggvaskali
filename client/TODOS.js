@@ -49,6 +49,20 @@
     Stytta Animation tíma á að opna Burger menu og delay á listanum fyrir burgermenu.
 
 
+    TODO:
+    Gera Sjá staðsetningu textann þykkari.
+
+    TODO: Mobile Popup
+    Setja mynd í bakgrunn
+    Setja það bara í Phone, ekkert annað.
+
+    TODO:
+    Laga Header í Ipad. 
+
+    TODO:  Modal
+    Setja texta lengst til vinstri.
+    Setja Home Icon í hornið hægra megin
+
 
 
     FIXME: ÞAÐ SEM Á AÐ GERA EFTIR AÐ SÍÐAN ER KLÁR FIXME:

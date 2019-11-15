@@ -29,8 +29,8 @@ const RestaurantDescription = () => (
 export default RestaurantDescription;
 
 const RDContainer = styled.div`
-  height: 600px;
-  width: 600px;
+  height: 500px;
+  width: 500px;
   display: flex;
   font-size: 20px;
   color: ${Colors.LIGHT_GREEN};
@@ -58,7 +58,7 @@ const TextContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
 
-  ${Media.large`
+  ${Media.desktop`
     width: 100%;
   `}
 `;
