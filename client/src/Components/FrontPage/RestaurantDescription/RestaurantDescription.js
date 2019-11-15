@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Colors, VAR } from "../../../Assets";
+import { Colors } from "../../../Assets";
 import Media from "../../../Assets/Varibles/media";
 import ButtonStyle from "../../Reusables/Button";
 
@@ -18,7 +18,10 @@ const RestaurantDescription = () => (
         vandaðan mat þar sem íslenskar- og erlendar matreiðsluaðferðir blandast
         skemmtilega saman.
       </Paragraph>
-        <ButtonStyle href="https://goo.gl/maps/i8qw8M8nZZrnCPNA9"  Text={"Sjá Staðsetningu"} />
+      <ButtonStyle
+        href="https://goo.gl/maps/i8qw8M8nZZrnCPNA9"
+        Text={"Sjá Staðsetningu"}
+      />
     </TextContainer>
   </RDContainer>
 );
@@ -37,8 +40,6 @@ const RDContainer = styled.div`
     width: 70%;
     padding-left: 30px;
   `}
-
- 
 
   ${Media.phone`
   height: 60%;
@@ -104,4 +105,3 @@ const Paragraph = styled.p`
     font-size: 12px;
   `}
 `;
-
