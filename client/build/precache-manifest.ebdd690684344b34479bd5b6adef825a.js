@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e0a1918a851fbecf0e6f9cc762b8c078",
+    "revision": "4926aebcef6d5133d1948e6aa5649ead",
     "url": "/index.html"
   },
   {
-    "revision": "31f714fa13cac6607c0b",
-    "url": "/static/js/2.e18c40d2.chunk.js"
+    "revision": "b565af886be069c79232",
+    "url": "/static/js/2.2ae4bfdb.chunk.js"
   },
   {
-    "revision": "783b4ce54a69c6215650",
-    "url": "/static/js/main.8b8fb551.chunk.js"
+    "revision": "c5136af4e518bdcf6628",
+    "url": "/static/js/main.83701c55.chunk.js"
   },
   {
     "revision": "60f6e40bb1455a3769fd",
@@ -218,6 +218,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f8eb758e64aaa9c752c08968a9cce404",
     "url": "/static/media/food9.f8eb758e.jpg"
+  },
+  {
+    "revision": "ecf2065b87c7b9cb03e07c2cf11c02ca",
+    "url": "/static/media/popupbakgrunnur.ecf2065b.png"
   },
   {
     "revision": "4ae9d2777bfd5c02476bcc8c4a602af9",
