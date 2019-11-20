@@ -3,10 +3,12 @@ import { Switch, Route } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { useTransition, animated } from "react-spring";
 import useRouter from "./hooks/useRouter";
+import Routes from "./Routes";
 
-import { About, FrontPage, Menu, Sidebar, Header } from "./Components";
+import { About, FrontPage, Menu, Sidebar, Header, ButtonModal } from "./Components";
 
 import LangContext from "./Context/Lang";
+import ShowModalContext from "./Context/ShowModal";
 import useLocalStorage from "./hooks/useLocalStorage";
 import WhatWeDo from "./Components/WhatWeDo";
 import useWD from "./hooks/useWindowDimensions";
@@ -18,9 +20,8 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default function App() {
-  const [English, setEnglish] = React.useState(
-    useLocalStorage("EnglishLanguage")[0]
-  );
+  const [English, setEnglish] = React.useState(useLocalStorage("EnglishLanguage")[0]);
+  const [showModal, setShowModal] = React.useState(false);
   const { location } = useRouter();
   const transitions = useTransition(location, location => location.pathname, {
     from: { opacity: 0, transform: "translate3d(100%,0,0)" },
@@ -31,26 +32,28 @@ export default function App() {
   let { width } = useWD();
 
   return (
-    <LangContext.Provider value={{ English, setEnglish }}>
-      <GlobalStyles />
-      <Container>
-        {/* Tökum Header fyrir utan Animations */}
-        {width > 767 && <Header />}
-        {/* Setja inn Sidebar hér svo svo að Sidebar verði ekki partur af Animation heldur */}
-        <Sidebar />
-        {transitions.map(({ item, props, key }) => (
-          <Animate key={key} style={props}>
-            <Switch location={item}>
-              <Route path="/" exact component={FrontPage} />
-              <Route path="/frontpage" component={FrontPage} />
-              <Route path="/whatwedo" component={WhatWeDo} />
-              <Route path="/menu" component={Menu} />
-              <Route path="/about" component={About} />
-            </Switch>
-          </Animate>
-        ))}
-      </Container>
-    </LangContext.Provider>
+    <ShowModalContext.Provider value={{ showModal, setShowModal }}>
+      <LangContext.Provider value={{ English, setEnglish }}>
+        <GlobalStyles />
+
+        <Container>
+          {/* Tökum Header fyrir utan Animations */}
+          {width > 767 && <Header />}
+          {/* Setja inn Sidebar hér svo svo að Sidebar verði ekki partur af Animation heldur */}
+          <Sidebar />
+          {transitions.map(({ item, props, key }) => (
+            <Animate key={key} style={props}>
+              <Switch location={item}>
+                <Route path={Routes.frontPage} exact component={FrontPage} />
+                <Route path={Routes.whatwedo} component={WhatWeDo} />
+                <Route path={Routes.menu} component={Menu} />
+                <Route path={Routes.gallery} component={About} />
+              </Switch>
+            </Animate>
+          ))}
+        </Container>
+      </LangContext.Provider>
+    </ShowModalContext.Provider>
   );
 }
 

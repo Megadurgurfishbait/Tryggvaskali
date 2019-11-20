@@ -10,7 +10,7 @@ import { Colors, Icon } from "../../Assets";
 import LangSwitch from "./LangSwitch";
 import BurgerMenuIcon from "./BurgerMenuIcon";
 import useWD from "../../hooks/useWindowDimensions";
-import { sizes } from "../../Assets/Varibles/media";
+import Media, { sizes } from "../../Assets/Varibles/media";
 
 const Sidebar = () => {
   const { width } = useWD();
@@ -43,5 +43,10 @@ const SidebarContainer = styled.aside`
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 600000; /* Á meðan ég er að gera Fullscreen Menu */
+  z-index: 60; /* Á meðan ég er að gera Fullscreen Menu */
+
+  ${Media.tablet`
+  
+    height: 60px;
+  `}
 `;

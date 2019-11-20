@@ -13,13 +13,7 @@ const BurgerMenuIcon = () => {
   const [Animation, setAnimation] = useState(null);
 
   useEffect(() => {
-    setAnimation(
-      ShowBurgerMenu(
-        BurgerMenuRef.current,
-        window.innerHeight,
-        window.innerWidth
-      )
-    );
+    setAnimation(ShowBurgerMenu(BurgerMenuRef.current, window.innerHeight, window.innerWidth));
   }, []);
 
   function Toggle() {
@@ -52,7 +46,7 @@ const Container = styled.div`
   margin: 0px auto;
   position: relative;
   background-color: ${Colors.LIGHT_GREEN};
-  z-index: 100000000000000000000000000000;
+  z-index: 700;
   &:hover {
     cursor: pointer;
   }

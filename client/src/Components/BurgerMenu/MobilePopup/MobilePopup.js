@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { Colors } from "../../../Assets";
+import { Colors, Images } from "../../../Assets";
+import Media from "../../../Assets/Varibles/media";
 
 const MobilePopup = ({ ShowMe, ItemsToShow }) => (
   <MPContainer show={ShowMe}>
@@ -21,6 +22,7 @@ export default MobilePopup;
 const MPContainer = styled.div`
   position: absolute;
   background-color: ${Colors.GREEN};
+  background-size: cover;
   border-top: 2px solid ${Colors.LIGHT_BLUE};
   height: 40vh;
   width: 100%;
@@ -56,4 +58,10 @@ const Title = styled.h4`
 const Text = styled.text`
   font-size: 25px;
   font-weight: 100;
+
+
+${Media.phone`
+        font-size: 20px;
+`}
+
 `;

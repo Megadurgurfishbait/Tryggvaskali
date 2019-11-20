@@ -3,31 +3,19 @@ import styled from "styled-components";
 import { Colors } from "../../Assets";
 import Media from "../../Assets/Varibles/media";
 
-const InputField = React.forwardRef(
-  ({ Text, Name, Placeholder, myType, isError }, ref) => (
-    <IFContainer myType={myType}>
-      {isError ? (
-        <ErrorMessage> {isError} </ErrorMessage>
-      ) : (
-        <ErrorMessage></ErrorMessage>
-      )}
-      {myType === "textArea" ? (
-        <textarea id={Name} ref={ref} placeholder={Placeholder} />
-      ) : (
-        <>
-          <label htmlFor={Name}>{Text}</label>
-          <Input
-            type={myType}
-            id={Name}
-            ref={ref}
-            placeholder={Placeholder}
-            myType={myType}
-          />
-        </>
-      )}
-    </IFContainer>
-  )
-);
+const InputField = React.forwardRef(({ Text, Name, Placeholder, myType, isError }, ref) => (
+  <IFContainer myType={myType}>
+    {isError ? <ErrorMessage> {isError} </ErrorMessage> : <ErrorMessage></ErrorMessage>}
+    {myType === "textArea" ? (
+      <textarea id={Name} ref={ref} placeholder={Placeholder} />
+    ) : (
+      <>
+        <label htmlFor={Name}>{Text}</label>
+        <Input type={myType} id={Name} ref={ref} placeholder={Placeholder} myType={myType} />
+      </>
+    )}
+  </IFContainer>
+));
 
 export default InputField;
 
@@ -70,8 +58,6 @@ const IFContainer = styled.div`
     width: 150px;
     color: ${Colors.WHITE};
     text-align: center;
-
-
   }
 
   & > textarea {
@@ -91,7 +77,7 @@ const IFContainer = styled.div`
 
     ${Media.tablet`
     width: 90%;
-    height: fill-available ;
+    height: 100% ;
     border-radius: none;
 `}
   }
@@ -122,6 +108,7 @@ const Input = styled.input`
 
   ${Media.tablet` 
   border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-bottom-right-radius: 0px;  
+  height: 30px;
 `}
 `;

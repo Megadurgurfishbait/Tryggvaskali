@@ -7,60 +7,27 @@ import HeroText from "./HeroText";
 import { Colors, Images } from "../../Assets";
 import { SplitScreen } from "../Reusables";
 import ShowFood from "./ShowFood";
+import Routes from "../../Routes";
+
 import RestaurantDescription from "./RestaurantDescription/RestaurantDescription";
 import useRD from "../../hooks/useWindowDimensions";
 import Media, { sizes } from "../../Assets/Varibles/media";
 import MediaHeight from "../../Assets/Varibles/MediaHeight";
 import ButtonStyle from "../Reusables/Button";
-import MobileControl from '../Reusables/MobileControl/MobileControl'; 
-
-
-const MobileControlObj = {
-  LeftArrow: {
-    Link: "/About",
-    Title: "About"
-  },
-  RightArrow: {
-    Link: "/Menu",
-    Title: "Menu"
-  }
-}
-
 
 const FrontPage = () => {
   let { width } = useRD();
-  /*
-  return (
-    <Layout bgColor={Colors.LIGHT_BLUE} bgImage={Images.BackgroundImage}>
-      <SplitScreen
-        column
-        compWidth={width > sizes.desktop ? 50 : 100}
-        compAi={"center"}
-      >
-        <HeroText />
-        <RestaurantDescription />
-      </SplitScreen comp>
-      {width > sizes.desktop && (
-        <SplitScreen compWidth={50}>
-          <ShowFood />
-        </SplitScreen>
-      )}
-    </Layout>
-  );
-  */
-
   return (
     <Layout bgColor={Colors.WHITE}>
       <TryContainer bgImage={Images.TryggvaBgImage}>
         <RestaurantDescription />
-        <MobileControl ControlObject={MobileControlObj} />
       </TryContainer>
 
       {width > sizes.desktop && (
         <Fake>
           <ShowFood />
           <Con>
-            <ButtonStyle Link={"/Menu"} Text={"Menu"} />
+            <ButtonStyle Link={Routes.menu} Text={"Menu"} />
           </Con>
         </Fake>
       )}

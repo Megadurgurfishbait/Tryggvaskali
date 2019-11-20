@@ -8,6 +8,11 @@ import BaruBakgrunnur from './bakgrunnurBara.jpg';
 import Ratings from './Ratings.PNG';
 import TryggvaBgImage from './bgmedshade.jpg';
 import polka from './polkapolka.png';
+import popup from './popupbakgrunnur.png';
+
+
+
+
 const Food = [FoodDisk1, FoodDisk2, FoodDisk3, FoodDisk4, FoodDisk5];
 
 export default {
@@ -16,5 +21,6 @@ export default {
   BaruBakgrunnur,
   Ratings,
   TryggvaBgImage,
-  polka
+  polka,
+  popup
 };

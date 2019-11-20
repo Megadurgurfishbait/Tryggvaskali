@@ -14,23 +14,13 @@ import useWD from "../../hooks/useWindowDimensions";
 import Media, { sizes } from "../../Assets/Varibles/media";
 import MobileScroll from "./MobileScroll";
 import ScrollableInformation from "./ScrollableInformation";
-import MobileControl from "../Reusables/MobileControl/MobileControl";
+
+import ShowModalContext from "../../Context/ShowModal";
 
 const WhatWeDo = () => {
   let textRef = useRef([createRef(), createRef()]);
   const [InfoText, setInfoText] = useState(WhatWeDoText["hopa"]);
   const [Animation, setAnimation] = useState(null);
-
-  const MobileControlObj = {
-    LeftArrow: {
-      Link: "/Menu",
-      Title: "Matseðill"
-    },
-    RightArrow: {
-      Link: "/About",
-      Title: "Gallery"
-    }
-  };
 
   const { width } = useWD();
 
@@ -43,11 +33,7 @@ const WhatWeDo = () => {
     <Layout>
       {width > sizes.tablet ? (
         <WWDContainer>
-          <SplitScreen
-            compJc={"space-evenly"}
-            compAi={"center"}
-            compWidth={"100"}
-          >
+          <SplitScreen compJc={"space-evenly"} compAi={"center"} compWidth={"100"}>
             <Information ref={textRef} {...InfoText} />
             {width > sizes.desktop && <Picture />}
           </SplitScreen>
@@ -64,14 +50,9 @@ const WhatWeDo = () => {
         <>
           <MobileScroll>
             {Object.values(WhatWeDoText).map(v => (
-              <ScrollableInformation
-                title={v.owner}
-                paragraph={v.Par}
-                list={v.List}
-              />
+              <ScrollableInformation title={v.owner} paragraph={v.Par} list={v.List} />
             ))}
           </MobileScroll>
-          <MobileControl ControlObject={MobileControlObj} />
         </>
       )}
     </Layout>

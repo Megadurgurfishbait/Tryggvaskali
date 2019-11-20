@@ -48,13 +48,15 @@ const ButtonStyle = styled.button`
   height: 50px;
   color: ${Colors.LIGHT_BLUE};
   border: none;
-  font-weight: 100;
+  font-weight: bold;
   width: 200px;
   width: 80%;
   text-align: center;
   background-color: transparent;
   align-self: center;
+  letter-spacing: 1.05px;
   padding: 0px;
+  font-family: "Montserrat", serif !important;
 
   ${Media.desktop`
     height: 50px;
@@ -67,7 +69,7 @@ const ButtonStyle = styled.button`
     height: 30px;
     padding: 5px 10px;
     margin: 7.5px auto;
-    font-size: 12px;
+    font-size: 14px;
   `}
 
   &:hover {

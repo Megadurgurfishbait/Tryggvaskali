@@ -11,7 +11,7 @@ import LangContext from "../../Context/Lang";
 const LangSwitch = () => {
   const [language, setLanguage] = useLocalStorage("EnglishLanguage", false);
   const { English, setEnglish } = React.useContext(LangContext);
-
+  console.log("LangContext", English, setEnglish);
   const ChangeLang = () => {
     setLanguage(!language);
     setEnglish(!language);
@@ -43,6 +43,6 @@ const Button = styled.button`
   &:hover,
   &:focus {
     cursor: pointer;
-    outline: none;    
+    outline: none;
   }
 `;

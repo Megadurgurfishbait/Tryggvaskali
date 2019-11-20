@@ -3,14 +3,15 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Colors } from "../../Assets";
 import Media from "../../Assets/Varibles/media";
+import Routes from "../../Routes";
 
 const Header = () => (
   <Container>
     <LinkList>
-      <ListItems to="/">Heim</ListItems>
-      <ListItems to="/menu">Matseðill</ListItems>
-      <ListItems to="/whatwedo">Þjónusta</ListItems>
-      <ListItems to="/about">Gallery</ListItems>
+      <ListItems to={Routes.frontPage}>Heim</ListItems>
+      <ListItems to={Routes.menu}>Matseðill</ListItems>
+      <ListItems to={Routes.whatwedo}>Þjónusta</ListItems>
+      <ListItems to={Routes.gallery}>Gallery</ListItems>
     </LinkList>
   </Container>
 );
@@ -18,7 +19,7 @@ const Header = () => (
 export default Header;
 
 const Container = styled.header`
-width: 100%;
+  width: 100%;
   height: 60px;
   display: flex;
   position: fixed !important;
@@ -28,7 +29,6 @@ width: 100%;
   justify-content: flex-end;
   align-items: center;
   box-sizing: border-box;
-  
 `;
 
 const LinkList = styled.ul`

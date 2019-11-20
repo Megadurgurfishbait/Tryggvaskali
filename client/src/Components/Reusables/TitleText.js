@@ -5,7 +5,7 @@ import { Colors } from "../../Assets";
 import Media from "../../Assets/Varibles/media";
 import ShowBurgerMenuContext from "../../Context/ShowBurgerMenu";
 
-const TitleText = ({ children, myLink }, props) => {
+const TitleText = ({ children, myLink, fontSize }) => {
   let Hello = useContext(ShowBurgerMenuContext);
   return (
     <>
@@ -15,7 +15,7 @@ const TitleText = ({ children, myLink }, props) => {
         </LinkContainer>
       ) : (
         <TTContainer>
-          <Span>{children}</Span>
+          <Span fontSize={fontSize}>{children}</Span>
         </TTContainer>
       )}
     </>
@@ -51,8 +51,9 @@ const LinkContainer = styled(Link)`
 `;
 
 const Span = styled.h1`
-  transform: translate3d(-20px, -25px, 0px);
-  font-size: 50px;
+  transform: ${({ fontSize }) =>
+    fontSize ? "translate3d(-12px, -17px, 0px)" : "translate3d(-20px, -25px, 0px)"};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "50")}px;
   margin: 0px;
   transition: transform 0.3s;
   ${Media.large`

@@ -25,17 +25,14 @@ const BugerMenu = React.forwardRef((props, ref) => {
     let tl = new TimelineMax();
     if (props.show) {
       tl.set(".test", { opacity: 0 })
-        .staggerFrom(".test", 1, { y: "-=20", opacity: 0 }, 0.2)
-        .delay(1.2);
+        .staggerFrom(".test", 1, { y: "-=20", opacity: 0 }, 0.15)
+        .delay(0.5);
     }
   }, [props.show]);
 
   return (
     <BurgerContainer ref={ref} myWidth={width}>
-      <SplitScreen
-        compWidth={width > sizes.desktop ? 65 : 100}
-        compBg={Colors.LIGHT_GREEN}
-      >
+      <SplitScreen compWidth={width > sizes.desktop ? 65 : 100} compBg={Colors.LIGHT_GREEN}>
         <MenuList>
           {BurgerMenuText.map((v, i) => (
             <ListItem
@@ -52,7 +49,7 @@ const BugerMenu = React.forwardRef((props, ref) => {
           <BlueScreen />
         </SplitScreen>
       ) : (
-          <MobileFooter />
+        <MobileFooter />
       )}
     </BurgerContainer>
   );
@@ -60,17 +57,14 @@ const BugerMenu = React.forwardRef((props, ref) => {
 
 export default React.memo(BugerMenu);
 
-
 const BurgerContainer = styled.div`
   position: absolute;
   top: 0;
   display: flex;
-  width: ${props =>
-    props.myWidth > sizes.phone ? "calc(100vw - 60px)" : "100vw"};
-  z-index: 50000;
+  width: ${props => (props.myWidth > sizes.phone ? "calc(100vw - 60px)" : "100vw")};
+  z-index: 50;
   overflow: hidden;
   background-color: ${Colors.LIGHT_GREEN};
-
 
   ${Media.desktop`
   flex-direction: column;

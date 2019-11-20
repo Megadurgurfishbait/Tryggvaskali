@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import CaruselSwitcher from "../../../Animation/CarouselSwitcher";
 import ButtonStyle from "../../Reusables/Button";
 // Assets
@@ -74,7 +74,6 @@ const ImageDiv = styled.div`
     align-self: flex-start;
   `}
 
-
   ${Media.desktop`
     ${maxSize(300)}
     align-self: flex-start;
@@ -107,8 +106,18 @@ const ArrowButtons = styled.div`
   ${Media.large`
       height: 25%;
   `}
+`;
 
-
+const jump = keyframes`
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 `;
 
 const Button = styled.button`
@@ -118,6 +127,10 @@ const Button = styled.button`
   color: ${Colors.LIGHT_GREEN};
   font-size: 30px;
   border: none;
+
+  &:hover {
+    animation: ${jump} 0.85s infinite linear;
+  }
 
   &:hover,
   &:focus {
@@ -143,12 +156,11 @@ const ImagesContainer = styled.div`
   `}
 `;
 
-
 function maxSize(size) {
   return `
   max-height: ${size}px;
   max-width: ${size}px;
   min-height: ${size}px;
   min-width: ${size}px;
-  `
+  `;
 }

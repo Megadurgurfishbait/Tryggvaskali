@@ -1,23 +1,46 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import styled from "styled-components";
 import { Colors, VAR } from "../../Assets/index";
 import { SplitScreen } from "../Reusables";
 import InputField from "./inputfield";
 import useValidation from "../../hooks/useValidation";
-import Media from "../../Assets/Varibles/media";
-
+import Media, { sizes } from "../../Assets/Varibles/media";
+import ShowModalContext from "../../Context/ShowModal";
+import ShowModalAnimation from "../../Animation/ShowModal";
+import useWD from "../../hooks/useWindowDimensions";
 /*
   FIXME: Til að hafa modalið opið að forrita, breyta Animation tímanum í Animation/ShowModal í 0.
 */
 
 const ButtonModal = React.forwardRef((props, ref) => {
-  const [values, setValues] = useState({});
-  const [error, setError] = useState();
-
+  let animationContainer = useRef();
+  let opacityRef = useRef();
   let nafnRef = useRef();
   let simarnumerRef = useRef();
   let netfangRef = useRef();
   let textiRef = useRef();
+
+  const { showModal, setShowModal } = useContext(ShowModalContext);
+  const [Animation, setAnimation] = useState(null);
+  const [values, setValues] = useState({});
+  const [error, setError] = useState();
+
+  let { width, height } = useWD();
+  const ModalSize = {
+    height: width > sizes.tablet ? 700 : height,
+    width: width > sizes.tablet ? 600 : width
+  };
+
+  useEffect(() => {
+    // Init Animaiton
+    if (!Animation) setAnimation(ShowModalAnimation(animationContainer, opacityRef));
+
+    // If there is no Animation
+    if (Animation === null) return;
+
+    // Show Animation && Reverse Animation
+    showModal ? Animation.play() : Animation.reverse();
+  }, [showModal]);
 
   useEffect(() => {
     //  Values er tómt á fyrsta render.
@@ -46,8 +69,12 @@ const ButtonModal = React.forwardRef((props, ref) => {
   };
 
   return (
-    <BMContainer ref={ref.current[0]}>
-      <OpacityContainer ref={ref.current[1]} noValidate onSubmit={handleSubmit}>
+    <BMContainer ModalSize={ModalSize} showModal={showModal} ref={e => (animationContainer = e)}>
+      <OpacityContainer
+        noValidate
+        ModalSize={ModalSize}
+        onSubmit={handleSubmit}
+        ref={e => (opacityRef = e)}>
         <h1>Hvernig getum við aðstoðað þig í dag?</h1>
         <InputContainer>
           <SplitScreen
@@ -55,8 +82,7 @@ const ButtonModal = React.forwardRef((props, ref) => {
             compJc={"space-around"}
             compWidth={100}
             compHeight={100}
-            column
-          >
+            column>
             <InputField
               Text={"Nafn"}
               Name={"nafnEinstaklings"}
@@ -93,8 +119,10 @@ const ButtonModal = React.forwardRef((props, ref) => {
           </SplitScreen>
         </InputContainer>
         <ButtonContainer>
-          <button type="submit">Senda fyrirspurn</button>
-          <button type="button" onClick={() => props.clickFunction()}>Hætta við </button>
+          <button type='submit'>Senda fyrirspurn</button>
+          <button type='button' onClick={() => setShowModal(!showModal)}>
+            Hætta við
+          </button>
         </ButtonContainer>
       </OpacityContainer>
     </BMContainer>
@@ -127,25 +155,29 @@ const ButtonContainer = styled.div`
   width: 90%;
   justify-content: center;
   align-items: center;
-  
   `}
 `;
 
 const BMContainer = styled.div`
   position: absolute;
-  left: 50%;
-  top: 0%;
-  right: 50%;
-  height: 0px;
-  width: 0px;
+  left: ${({ ModalSize }) => `calc(50% - ${ModalSize.width}px / 2)`};
+  top: ${({ ModalSize }) => `calc(50% - ${ModalSize.height}px / 2)`};
+  height: ${({ ModalSize }) => ModalSize.height}px;
+  width: ${({ ModalSize }) => ModalSize.width}px;
   box-sizing: border-box;
-  border: 3px solid ${Colors.LIGHT_BLUE};
+  background-color: ${Colors.GREEN};
   border-radius: 5px;
-  z-index: 10;
-  overflow: hidden;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  ${Media.tablet`
+    min-height: 100%;
+    overflow-y: scroll;
+  `}
 `;
 const OpacityContainer = styled.form`
-  height: 100%;
   width: 100%;
   background-color: ${Colors.GREEN};
   display: flex;
@@ -153,6 +185,7 @@ const OpacityContainer = styled.form`
   align-items: center;
   justify-content: space-between;
   z-index: 10;
+  opacity: 0;
 
   & > h1 {
     font-size: 25px;
@@ -161,6 +194,8 @@ const OpacityContainer = styled.form`
 
     ${Media.tablet`
       font-size: 14px;
+      height: initial;
+      overflow: scroll;
     `}
   }
 `;

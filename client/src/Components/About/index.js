@@ -6,17 +6,7 @@ import ListItems from "../Shared/ListItems";
 import MasonPictures from "./MasonPictures";
 import Photos from "../../Assets/Images/Gallery/";
 import Media from "../../Assets/Varibles/media";
-import MobileControl from "../Reusables/MobileControl/MobileControl";
-const MobileControlObj = {
-  LeftArrow: {
-    Link: "/WhatWeDo",
-    Title: "Þjónusta"
-  },
-  RightArrow: {
-    Link: "/",
-    Title: "Forsíða"
-  }
-}
+
 
 
 const About = () => {
@@ -44,7 +34,7 @@ const About = () => {
           />
           {/* Index kemur í veg fyrir að það komi border til hægri við "The Restaurant" Textann */}
         </ListButtons>
-        <MobileControl ControlObject={MobileControlObj} />
+   
       </Container>
     </Layout>
   );
@@ -55,7 +45,6 @@ export default About;
 const Container = styled.div`
   height: 100%;
   width: 100%;
-  margin: 60px auto 0px auto;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -72,10 +61,9 @@ const ListButtons = styled.ul`
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  bottom: 0px;
   right: 0px;
-  top: 0px;
   margin-bottom: 0px;
-
   ${Media.desktop`
     margin-right: 0px;
   `}
@@ -84,7 +72,9 @@ const ListButtons = styled.ul`
     width: calc(100vw - 60px);
     margin-top: 0px;
     padding: 0px;
-  
-  
+    bottom: auto;
+    right: 0px;
+    top: 0px;
+    
   `}
 `;

@@ -1,35 +1,14 @@
-import React, { useState, useEffect, useRef, createRef } from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
-import ButtonModal from "./ButtonModal";
-import ShowModal from "../../Animation/ShowModal";
+
 import { Colors, VAR } from "../../Assets";
-import Media from "../../Assets/Varibles/media";
-import useWD from "../../hooks/useWindowDimensions";
+import ShowModalContext from "../../Context/ShowModal";
 
 const MegaButton = () => {
-  let ButtonModalRef = useRef([createRef(), createRef()]);
-  const [ShowMenu, setShowMenu] = useState(false);
-  const [Animation, setAnimation] = useState(null);
-
-  let WindowSize = useWD();
-
-  useEffect(() => {
-    setAnimation(ShowModal(ButtonModalRef, WindowSize));
-  }, [WindowSize]);
-
-  function Toggle() {
-    if (!ShowMenu) {
-      Animation.play();
-    } else {
-      Animation.reverse();
-    }
-    setShowMenu(!ShowMenu);
-  }
-
+  const { showModal, setShowModal } = useContext(ShowModalContext);
   return (
     <MBContainer>
-      <MyButton onClick={() => Toggle()}>Hafa Samband</MyButton>
-      <ButtonModal clickFunction={Toggle}l ref={ButtonModalRef}></ButtonModal>
+      <MyButton onClick={() => setShowModal(!showModal)}> Hafa Samband</MyButton>
     </MBContainer>
   );
 };
