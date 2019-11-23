@@ -4,23 +4,16 @@ import FoodDisk2 from "./diskur2.png";
 import FoodDisk3 from "./diskur3.png";
 import FoodDisk4 from "./diskur4.png";
 import FoodDisk5 from "./diskur5.png";
-import BaruBakgrunnur from './bakgrunnurBara.jpg';
-import Ratings from './Ratings.PNG';
-import TryggvaBgImage from './bgmedshade.jpg';
-import polka from './polkapolka.png';
-import popup from './popupbakgrunnur.png';
-
-
-
+import TryggvaBgImage from "./bgmedshade.jpg";
+import Gallery from "./Gallery";
+import WhatWeDo from "./WhatWeDo";
 
 const Food = [FoodDisk1, FoodDisk2, FoodDisk3, FoodDisk4, FoodDisk5];
 
 export default {
   BackgroundImage,
   Food,
-  BaruBakgrunnur,
-  Ratings,
   TryggvaBgImage,
-  polka,
-  popup
+  Gallery,
+  WhatWeDo
 };

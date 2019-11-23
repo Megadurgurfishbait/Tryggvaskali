@@ -1,8 +1,9 @@
 import About from "./About/";
 import FrontPage from "./FrontPage";
-import Menu from "./Menu";
-import Sidebar from "./Sidebar";
 import Header from "./Header";
-import ButtonModal from "./Modal/ButtonModal";
+import Menu from "./Menu";
+import Modal from "./Modal";
+import Sidebar from "./Sidebar";
+import WhatWeDo from "./WhatWeDo";
 
-export { About, FrontPage, Menu, Sidebar, Header, ButtonModal };
+export { About, FrontPage, Menu, Sidebar, Header, Modal, WhatWeDo };

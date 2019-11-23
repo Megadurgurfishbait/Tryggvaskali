@@ -2,16 +2,13 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { useTransition, animated } from "react-spring";
-import useRouter from "./hooks/useRouter";
+
+import { useRouter, useWD } from "@Hooks/";
 import Routes from "./Routes";
 
-import { About, FrontPage, Menu, Sidebar, Header, ButtonModal } from "./Components";
+import { LangContextProvider, ShowModalContextProvider } from "@Context/";
 
-import LangContext from "./Context/Lang";
-import ShowModalContext from "./Context/ShowModal";
-import useLocalStorage from "./hooks/useLocalStorage";
-import WhatWeDo from "./Components/WhatWeDo";
-import useWD from "./hooks/useWindowDimensions";
+import { About, FrontPage, Menu, Sidebar, Header, WhatWeDo } from "@Components";
 
 const GlobalStyles = createGlobalStyle`
   body {
@@ -20,8 +17,6 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 export default function App() {
-  const [English, setEnglish] = React.useState(useLocalStorage("EnglishLanguage")[0]);
-  const [showModal, setShowModal] = React.useState(false);
   const { location } = useRouter();
   const transitions = useTransition(location, location => location.pathname, {
     from: { opacity: 0, transform: "translate3d(100%,0,0)" },
@@ -32,10 +27,9 @@ export default function App() {
   let { width } = useWD();
 
   return (
-    <ShowModalContext.Provider value={{ showModal, setShowModal }}>
-      <LangContext.Provider value={{ English, setEnglish }}>
+    <ShowModalContextProvider>
+      <LangContextProvider>
         <GlobalStyles />
-
         <Container>
           {/* Tökum Header fyrir utan Animations */}
           {width > 767 && <Header />}
@@ -52,8 +46,8 @@ export default function App() {
             </Animate>
           ))}
         </Container>
-      </LangContext.Provider>
-    </ShowModalContext.Provider>
+      </LangContextProvider>
+    </ShowModalContextProvider>
   );
 }
 

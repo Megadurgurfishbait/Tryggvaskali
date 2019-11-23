@@ -30,41 +30,49 @@
     DONE: 
     * Laga Modal og Tengja
     
+    
+    DONE:
+    Breyta Hamburg iconinu.
+    
+    DONE: Mobile Popup.
+    Hættur við - Setja mynd í bakgrunn 
+    * Setja það bara í Phone, ekkert annað.
+    
+    
+    DONE: -webkit-tap-hightlight-color! 
+    Taka af focus og/eða active á Mobile Control tökkunum þegar þú ýtir á þá. 
+    
+    DONE:  Modal
+    Setja texta lengst til vinstri.
+    
+    DONE: 
+    * Burger Menu á > tablet.
+    Hætta við - Setja Home Icon í hornið hægra megin
+    * Laga útlitið á Burger Menu. Ipad.
+    * BlueScreen i rugli. 
+    
+    DONE:
+    Tengja Icons við Facebook, Twitter(?), Instagram og TripAdvisor.
+    
+    DONE:
+    Laga Header í öllum stærðum.
+    DONE: Book Now á BurgeR Menu í Portal.
+    
+    DONE: Menu Takki á forsíðu
+    Breyta honum í hönninna í XD
+    
+    DONE: Gallerý setja Innri Menu niður þegar það er komið yfir phone
+
+    
+    TODO: Gera Loading screen sem að lookar svipað og Header í burger menu.
+
+    
+    Erfiðara:
+
     TODO: 
     Laga útlið á Modal, ekki flott hjá þér Guðmundur Snorri!
     Sérstaklega í síma. Það er í fokkinu.
-
-    TODO: 
-    Breyta Hamburg iconinu.
     
-    TODO: 
-    Laga útlitið á popup button í mobile valmynd.
-
-    TODO: Mobile Popup
-    Setja mynd í bakgrunn
-    Setja það bara í Phone, ekkert annað.
-    TODO: 
-    Taka af focus og/eða active á Mobile Control tökkunum þegar þú ýtir á þá.
-       
-    TODO:  Modal
-    Setja texta lengst til vinstri.
-
-    TODO: Burger Menu á > tablet.
-    Setja Home Icon í hornið hægra megin
-    
-    TODO:
-    Tengja Icons við Facebook, Twitter(?), Instagram og TripAdvisor.
-
-    TODO:
-    Laga Header í öllum stærðum.
-    
-     TODO: Menu Takki á forsíðu
-     Breyta honum í hönninna í XD
-     
-
-    Erfiðara:
-    
-        
     
     TODO: 
     Ef að þú velur úr lista í Burger Menu ferðu á réttan stað í Þjónustu. Ekk bara alltaf fyrsta textann.
@@ -73,9 +81,8 @@
     TODO: 
     Þjónunsta: Myndin
     Sýna 4 myndir og á tíma skipta þeim úr fyrir aðrar.
-        
-    TODO: Gallerý setja Innri Menu niður þegar það er komið yfir phone
-
+    
+    
     
     TODO: 
     Búa til Contentful fyrir:
@@ -91,6 +98,24 @@
     Athuga stærðir á myndum. (400x400) HELST 
     Finna aðrar myndir líka.
     Laga Component Structure, setja CSS-In-JS í sér file.
+
     
     
+    
+
+
+
+
+
+
+
+
+
+
+
+    TODO: Hlutir sem að mætti laga en eru fínir eins og er, fá feedback.
+
+
+
+    * Laga útlitið á popup button í mobile valmynd. ?
     */
