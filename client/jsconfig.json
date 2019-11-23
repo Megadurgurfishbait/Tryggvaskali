@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@Assets/*": ["Assets/*", "Assets"],
+      "@Components/*": ["Components/*", "Components"],
+      "@Context/*": ["Context/*", "Context"],
+      "@Hooks/*": ["Hooks/*", "Hooks"],
+      "@Animate/*": ["Animate/*", "Animate"]
+    }
+  }
+}
