@@ -44,8 +44,8 @@ const ShowFood = () => {
         ))}
       </ImagesContainer>
       <ArrowButtons>
-        <Button onClick={!disableButton ? null : () => goLeft()}>{"<"}</Button>
-        <Button onClick={!disableButton ? null : () => goRight()}>{">"}</Button>
+        <Button onClick={disableButton ? null : () => goLeft()}>{"<"}</Button>
+        <Button onClick={disableButton ? null : () => goRight()}>{">"}</Button>
       </ArrowButtons>
     </DIV>
   );

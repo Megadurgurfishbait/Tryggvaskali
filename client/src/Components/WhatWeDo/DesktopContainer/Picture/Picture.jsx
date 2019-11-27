@@ -23,10 +23,11 @@ const Picture = () => {
     });
 
     let { current } = imgRef;
-
+    /*
     tl.set(current, { opacity: 0 })
       .to(current, 1, { opacity: 1 }, "together")
       .from(current, 5, { x: 20, y: 20 }, "together");
+      */
   }, []);
 
   return (

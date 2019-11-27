@@ -18,7 +18,6 @@ export const MFContainer = styled.div`
   background-color: ${Colors.LIGHT_GREEN};
   color: ${Colors.LIGHT_BLUE};
   position: relative;
-  z-index: 10;
 `;
 
 export const List = styled.ul`

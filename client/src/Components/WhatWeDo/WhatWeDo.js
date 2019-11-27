@@ -1,4 +1,4 @@
-import React, { useState, useRef, createRef } from "react";
+import React, { useState, useRef, createRef, useContext } from "react";
 
 import { Slide } from "Animate/";
 import { sizes, WhatWeDoText } from "@Assets";
@@ -8,25 +8,26 @@ import MobileScroll from "./MobileScroll/";
 import Layout from "@Components/Layout";
 
 import DesktopContainer from "./DesktopContainer";
+import { WhatWeDoSelectionContext } from "@Context/WhatWeDoSelection";
 
 const WhatWeDo = () => {
+  const { Selection } = useContext(WhatWeDoSelectionContext);
   let textRef = useRef([createRef(), createRef()]);
-  const [InfoText, setInfoText] = useState(WhatWeDoText["hopa"]);
+  const [InfoText, setInfoText] = useState(WhatWeDoText[Selection]);
   const [Animation, setAnimation] = useState(null);
-
   const { width } = useWD();
 
-  const changeMyView = url => {
-    setAnimation(Slide(textRef.current));
-    setInfoText(WhatWeDoText[url]);
-  };
+  React.useEffect(() => {
+    width > sizes.tablet && setAnimation(Slide(textRef.current));
+    setInfoText(WhatWeDoText[Selection]);
+  }, [Selection, width]);
 
   return (
     <Layout>
       {width > sizes.tablet ? (
-        <DesktopContainer ref={textRef} InfoText={InfoText} changeMyView={changeMyView} />
+        <DesktopContainer ref={textRef} InfoText={InfoText} />
       ) : (
-        <MobileScroll />
+        <MobileScroll InfoText={InfoText} />
       )}
     </Layout>
   );

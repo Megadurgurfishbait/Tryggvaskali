@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Colors } from "@Assets/";
 
 export const BurgerHeader = styled.header`
-  height: 200px;
+  height: 150px;
   width: 100%;
   background: linear-gradient(${Colors.GREEN} 0%, ${Colors.LIGHT_GREEN} 49%, ${Colors.GREEN} 100%);
   display: flex;
@@ -15,7 +15,7 @@ export const BurgerHeader = styled.header`
 `;
 
 export const Text = styled.h1`
-  font-size: 35px;
+  font-size: 25px;
   margin: 0px;
   font-weight: 100;
 `;

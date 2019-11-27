@@ -2,15 +2,11 @@ import styled from "styled-components";
 import { Colors } from "@Assets";
 
 export const SIContainer = styled.div`
-  min-width: 280px;
-  min-height: 400px;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: ${Colors.LIGHT_GREEN};
-  margin-right: 30px;
-  border-radius: 10px;
-  border: 2px solid ${Colors.LIGHT_BLUE};
   box-sizing: border-box;
   color: ${Colors.LIGHT_BLUE};
 `;
@@ -31,5 +27,5 @@ export const Paragraph = styled.p`
   padding-left: 10px;
   margin: 20px 0px;
   height: 100%;
-  line-height: 1.4;
+  line-height: 1.7;
 `;

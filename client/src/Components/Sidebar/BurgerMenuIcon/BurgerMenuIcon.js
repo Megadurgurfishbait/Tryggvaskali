@@ -13,7 +13,7 @@ const BurgerMenuIcon = () => {
         <Line w={26} t={36} />
       </Container>
       <ThinContainer>
-        <BurgerMenu show={ShowMenu} />
+        <BurgerMenu show={ShowMenu} setShow={setShowMenu} />
       </ThinContainer>
     </>
   );

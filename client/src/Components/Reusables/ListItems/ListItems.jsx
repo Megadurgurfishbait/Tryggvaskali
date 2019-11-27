@@ -1,10 +1,18 @@
 import React from "react";
 
 import { ListItem, Button } from "./ListItems.styled";
-const ListItems = ({ Title, url, setInfoText }) => (
-  <ListItem>
-    <Button onClick={() => setInfoText(url)}>{Title}</Button>
-  </ListItem>
-);
+import { WhatWeDoSelectionContext } from "@Context/WhatWeDoSelection";
 
+const ListItems = ({ Title, url, setInfoText }) => {
+  const { setSelection } = React.useContext(WhatWeDoSelectionContext);
+  return (
+    <ListItem>
+      {setInfoText ? (
+        <Button onClick={() => setInfoText(url)}>{Title}</Button>
+      ) : (
+        <Button onClick={() => setSelection(url)}>{Title}</Button>
+      )}
+    </ListItem>
+  );
+};
 export default ListItems;

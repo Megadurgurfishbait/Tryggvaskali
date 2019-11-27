@@ -87,7 +87,7 @@ export const AnchorButton = styled.a`
   height: 50px;
   width: 240px;
   background-color: ${Colors.LIGHT_GREEN};
-  border-bottom-right-radius: 30% 120%;
+  border-bottom-right-radius: 30% 140%;
 
   &:focus {
     outline: none;

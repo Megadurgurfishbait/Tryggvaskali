@@ -6,7 +6,7 @@ export default function ShowModalAnimation(Node, otherNode) {
 
   tl.fromTo(Node, time, { opacity: 0 }, { opacity: 1 }, "together");
   tl.fromTo(Node, time, { scale: 0 }, { scale: 1 }, "together-=.4");
-  tl.to(otherNode, time, { opacity: 1 });
+  tl.to(otherNode, 0.2, { opacity: 1 });
 
   return tl;
 }

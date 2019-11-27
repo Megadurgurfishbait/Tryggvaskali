@@ -14,7 +14,7 @@ export const Container = styled.div`
   margin: 0px auto;
   position: relative;
   background-color: ${Colors.LIGHT_GREEN};
-  z-index: 70000000000;
+  z-index: 10000000000000000000000000000000000000000000000;
   &:hover {
     cursor: pointer;
   }

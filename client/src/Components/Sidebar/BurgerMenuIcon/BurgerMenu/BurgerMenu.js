@@ -13,7 +13,7 @@ import { SplitScreen } from "@Components/Reusables";
 
 import { BurgerContainer } from "./BurgerMenu.styled";
 
-const BugerMenu = ({ show }) => {
+const BugerMenu = ({ show, setShow }) => {
   let { width } = useWD();
 
   return (
@@ -21,7 +21,7 @@ const BugerMenu = ({ show }) => {
       {width < sizes.desktop && <MobileHeader />}
 
       <SplitScreen compWidth={width > sizes.desktop ? 55 : 100} compBg={Colors.LIGHT_GREEN}>
-        <MenuList show={show} />
+        <MenuList show={show} setShow={setShow} />
       </SplitScreen>
 
       {width > sizes.desktop ? (

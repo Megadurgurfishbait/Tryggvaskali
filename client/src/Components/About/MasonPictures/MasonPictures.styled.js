@@ -7,6 +7,7 @@ export const PictureContainer = styled.div`
   ${Media.desktop`
   overflow-y: scroll;
   margin-right: 0px;
+  opacity: 0;
 `}
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);

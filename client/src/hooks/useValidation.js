@@ -8,7 +8,6 @@ export default function useValidation({ nafn, simanumer, netfang, texti }) {
     errors.email = "Email er ekki á réttu sniði";
   }
 
-  console.log(/\d{7,20}/.test(simanumer))
   if (!/\d{7,20}/.test(simanumer)) {
     errors.phone = "Símanúmer er ekki á réttu sniði";
   }

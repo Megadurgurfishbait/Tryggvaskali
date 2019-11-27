@@ -2,18 +2,22 @@ import React from "react";
 
 import MegaButton from "../DesktopContainer/AttentionButton";
 import ScrollableInformation from "./ScrollableInformation";
-import { MSContainer, MBContainer, Scrollable } from "./MobileScroll.styled";
-import { WhatWeDoText } from "@Assets/";
+import { MSContainer, MBContainer, MSHeader, TestContainer } from "./MobileScroll.styled";
+import { textB } from "@Assets/";
+import { ListItems } from "@Components/Reusables";
 
-const MobileScroll = () => (
+const MobileScroll = ({ InfoText }) => (
   <MSContainer>
-    <Scrollable>
-      {Object.values(WhatWeDoText).map(v => (
-        <ScrollableInformation title={v.owner} paragraph={v.Par} list={v.List} />
+    <MSHeader>
+      {textB.map((v, i) => (
+        <ListItems {...v} key={i} index={i} />
       ))}
-    </Scrollable>
+    </MSHeader>
+    <TestContainer>
+      <ScrollableInformation {...InfoText} />
+    </TestContainer>
     <MBContainer>
-      <MegaButton />
+      <MegaButton cHeight={50} cWidth={200} cFontSize={14} />
     </MBContainer>
   </MSContainer>
 );
