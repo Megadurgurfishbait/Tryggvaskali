@@ -3,10 +3,13 @@ import { render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import SliderContextProvider from "./Context/Slider";
 
 render(
   <BrowserRouter>
-    <App />
+    <SliderContextProvider>
+      <App />
+    </SliderContextProvider>
   </BrowserRouter>,
   document.getElementById("root")
 );

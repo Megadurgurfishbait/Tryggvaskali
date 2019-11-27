@@ -3,6 +3,7 @@ import React from "react";
 // Assets
 import { Images } from "@Assets";
 import { Container, ListButtons } from "./About.styled";
+import Slide from "Animate/SingleSimpleSlide";
 
 // Components
 import Layout from "@Components/Layout";
@@ -11,14 +12,18 @@ import MasonPictures from "./MasonPictures";
 
 const About = () => {
   const [ShowMasonPictures, setShowMasonPictures] = React.useState("Restaurant");
-
+  const ContainerRef = React.useRef();
   const changeMyView = url => setShowMasonPictures(url);
   const RenderTheseImages = Photos => Photos[ShowMasonPictures];
+
+  React.useEffect(() => {
+    Slide(ContainerRef);
+  }, [ShowMasonPictures]);
 
   return (
     <Layout>
       <Container>
-        <MasonPictures Photos={RenderTheseImages(Images.Gallery)} />
+        <MasonPictures ref={ContainerRef} Photos={RenderTheseImages(Images.Gallery)} />
         <ListButtons>
           <ListItems Title='The Food' url={"Food"} setInfoText={changeMyView} />
           <ListItems

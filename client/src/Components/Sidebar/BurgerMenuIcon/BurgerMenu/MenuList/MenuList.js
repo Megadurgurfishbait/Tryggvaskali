@@ -7,10 +7,10 @@ import { BurgerMenuText } from "@Assets/";
 import ListItem from "./ListItem";
 import { MLContainer } from "./MenuList.styled";
 
-const MenuList = ({ show }) => (
+const MenuList = ({ show, setShow }) => (
   <MLContainer>
     {BurgerMenuText.map(v => (
-      <ListItem show={show} {...v} />
+      <ListItem show={show} setShow={setShow} {...v} />
     ))}
   </MLContainer>
 );

@@ -7,7 +7,7 @@ const MobileText = {
       Title: "Forsíða"
     },
     RightArrow: {
-      Link: `${Routes.whatwedo}`,
+      Link: `${Routes.whatwedo}/hopa`,
       Title: "Þjónusta"
     }
   },
@@ -21,6 +21,16 @@ const MobileText = {
       Title: "Menu"
     }
   },
+  "/gallery": {
+    LeftArrow: {
+      Link: `${Routes.whatwedo}`,
+      Title: "Þjónusta"
+    },
+    RightArrow: {
+      Link: `${Routes.frontPage}`,
+      Title: "Forsíða"
+    }
+  },
   "/thjonusta": {
     LeftArrow: {
       Link: `${Routes.menu}`,
@@ -31,14 +41,34 @@ const MobileText = {
       Title: "Gallery"
     }
   },
-  "/gallery": {
+  "/thjonusta/hopa": {
     LeftArrow: {
-      Link: `${Routes.whatwedo}`,
-      Title: "Þjónusta"
+      Link: `${Routes.menu}`,
+      Title: "Matseðill"
     },
     RightArrow: {
-      Link: `${Routes.frontPage}`,
-      Title: "Forsíða"
+      Link: `${Routes.gallery}`,
+      Title: "Gallery"
+    }
+  },
+  "/thjonusta/gjafa": {
+    LeftArrow: {
+      Link: `${Routes.menu}`,
+      Title: "Matseðill"
+    },
+    RightArrow: {
+      Link: `${Routes.gallery}`,
+      Title: "Gallery"
+    }
+  },
+  "/thjonusta/veislu": {
+    LeftArrow: {
+      Link: `${Routes.menu}`,
+      Title: "Matseðill"
+    },
+    RightArrow: {
+      Link: `${Routes.gallery}`,
+      Title: "Gallery"
     }
   }
 };

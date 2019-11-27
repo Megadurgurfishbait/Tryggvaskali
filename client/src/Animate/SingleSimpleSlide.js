@@ -5,9 +5,9 @@ export default function Slide(Node) {
 
   let Animation;
 
-
   Animation = tl
-    .fromTo(Node.current, 0.8, { x: 400, opacity: 0 }, { x: 0, opacity: 1 })
+    .set(Node.current, { opacity: 0 })
+    .fromTo(Node.current, 0.8, { opacity: 0 }, { opacity: 1 });
 
   return Animation;
 }

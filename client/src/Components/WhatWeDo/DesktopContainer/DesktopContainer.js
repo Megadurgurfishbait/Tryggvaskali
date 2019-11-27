@@ -8,8 +8,9 @@ import Picture from "./Picture/";
 import { SplitScreen, ListItems } from "@Components/Reusables/";
 import { DContainer, ListButtons } from "./DesktopContainer.styled";
 
-const DesktopContainer = React.forwardRef(({ changeMyView, InfoText }, ref) => {
+const DesktopContainer = React.forwardRef(({ InfoText }, ref) => {
   const { width } = useWD();
+
   return (
     <DContainer>
       <SplitScreen compJc={"space-evenly"} compAi={"center"} compWidth={"100"}>
@@ -20,7 +21,7 @@ const DesktopContainer = React.forwardRef(({ changeMyView, InfoText }, ref) => {
       <ListButtons>
         <AttentionButton />
         {textB.map((v, i) => (
-          <ListItems {...v} key={i} index={i} setInfoText={changeMyView} />
+          <ListItems {...v} key={i} index={i} />
         ))}
       </ListButtons>
     </DContainer>

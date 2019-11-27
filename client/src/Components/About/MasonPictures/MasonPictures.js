@@ -1,13 +1,11 @@
-import React, { useState, useCallback, useRef, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import Gallery from "react-photo-gallery";
 
 // Assets
 import { PictureContainer } from "./MasonPictures.styled";
-import Slide from "Animate/SingleSimpleSlide";
 
-const MasonPictures = ({ Photos }) => {
-  const ContainerRef = useRef();
+const MasonPictures = React.forwardRef(({ Photos }, ref) => {
   const [currentImage, setCurrentImage] = useState(null);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
@@ -21,12 +19,8 @@ const MasonPictures = ({ Photos }) => {
     setViewerIsOpen(false);
   };
 
-  useEffect(() => {
-    Slide(ContainerRef);
-  }, [Photos]);
-
   return (
-    <PictureContainer ref={ContainerRef}>
+    <PictureContainer ref={ref}>
       <Gallery photos={Photos} onClick={openLightbox} direction={"column"} margin={5} />
       <ModalGateway>
         {viewerIsOpen && (
@@ -34,8 +28,7 @@ const MasonPictures = ({ Photos }) => {
             <Carousel
               currentIndex={currentImage}
               views={Photos.map(x => ({
-                ...x,
-                caption: x.caption ? x.caption : "Lýsing á mat?"
+                ...x
               }))}
             />
           </Modal>
@@ -43,6 +36,6 @@ const MasonPictures = ({ Photos }) => {
       </ModalGateway>
     </PictureContainer>
   );
-};
+});
 
 export default MasonPictures;

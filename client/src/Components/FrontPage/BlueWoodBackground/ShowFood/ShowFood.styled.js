@@ -75,7 +75,7 @@ export const Button = styled.button`
   border: none;
 
   &:hover {
-    animation: ${jump} 0.85s infinite linear;
+    animation: ${jump} 1s infinite linear;
   }
 
   &:hover,

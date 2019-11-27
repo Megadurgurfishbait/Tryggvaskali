@@ -7,7 +7,7 @@ const WhatWeDoText = {
   },
   gjafa: {
     owner: "Gjafabréf",
-    Tit: "TILVALIN GJÖF FYRIR ÞÁ SEM EIGA ALLT",
+    Tit: "Tilvalin gjöf fyrir þá sem eiga allt",
     Par: `Við bjóðum uppá 5.000,- kr, 10.000,- kr gjafabréf, þriggja rétta óvissuferð og fimm rétta óvissuferð. Þriggja rétta óvissuferð kostar 17.000,- kr fyrir tvo og fimm rétta óvissuferð kostar 21.800.- kr fyrir tvo.
 
     Gjafabréfin gilda bæði í Tryggvaskála og á Kaffi Krús. Smelltu á hafa samband hér fyrir neðan til að fá frekari upplýsingar eða hringdu í síma 482 1390.`,

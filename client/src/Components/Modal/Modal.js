@@ -10,6 +10,7 @@ import ButtonModal from "./ButtonModal/";
 
 const Modal = () => {
   const modalRoot = document.getElementById("modal-root");
+
   const [Animation, setAnimation] = useState(null);
   let animationRef = useRef([createRef(), createRef()]);
 

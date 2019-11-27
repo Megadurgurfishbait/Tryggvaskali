@@ -64,6 +64,8 @@
     DONE: Gallerý setja Innri Menu niður þegar það er komið yfir phone
 
     
+
+    
     TODO: Gera Loading screen sem að lookar svipað og Header í burger menu.
 
     
