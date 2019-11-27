@@ -18,7 +18,7 @@ import {
 
 const BlueScreen = () => {
   const { showModal, setShowModal } = React.useContext(ShowModalContext);
-
+  console.log(showModal);
   return (
     <BSContainer>
       <SplitScreen compWidth={100} compJc={"space-evenly"} column>
