@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Media } from "@Assets/";
 
 export const MLContainer = styled.ul`
-  height: 100%;
   margin: 20px auto;
   display: flex;
   flex-direction: column;

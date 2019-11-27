@@ -77,16 +77,14 @@ export default function App() {
 
 const Container = styled.div`
   margin: 0px;
-  min-height: 100vh;
-  min-width: 100vw;
-  max-height: 100vh;
-  max-width: 100vw;
+  min-height: 100%;
+  min-width: 100%;
+  max-height: 100%;
+  max-width: 100%;
   overflow-x: hidden;
-  position: fixed;
+  position: absolute;
   top: 0px;
   left: 0px;
-  right: 0px;
-  bottom: 0px;
 `;
 
 const Animate = styled(animated.div)`

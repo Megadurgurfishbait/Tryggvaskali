@@ -26,17 +26,6 @@ export const Text = styled.h6`
   align-items: center;
   font-size: 14px;
 `;
-/*
-export const MBContainer = styled.div`
-  position: absolute;
-  display: flex;
-  height: 50px;
-  width: 100%;
-  bottom: 0px;
-  align-items: flex-end;
-  justify-content: space-between;
-`;
-*/
 
 const rotate = keyframes`
       0% {
