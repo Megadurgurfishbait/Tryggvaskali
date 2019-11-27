@@ -6,18 +6,22 @@ export const AnchorAndButtonStyles = () => {
     align-items: center;
     padding: 10px 0px;
     text-align: center;
-    margin: 5px auto;
+    margin: 0px auto;
     ${Media.phone`flex-direction: column;`}
     `;
 };
 
 export const MFContainer = styled.div`
+  height: 60px;
   width: 100%;
   display: flex;
   justify-content: center;
   background-color: ${Colors.LIGHT_GREEN};
   color: ${Colors.LIGHT_BLUE};
-  position: relative;
+  position: absolute;
+  bottom: 0px;
+  align-items: flex-end;
+  left: 0px;
 `;
 
 export const List = styled.ul`
@@ -26,10 +30,10 @@ export const List = styled.ul`
   width: 100%;
   display: flex;
   list-style: none;
+  height: 100%;
   justify-content: space-evenly;
   align-items: center;
-  padding: 10px 0px;
-  bottom: 0px;
+  padding: 0px;
   z-index: 1;
   margin: 0px;
 
