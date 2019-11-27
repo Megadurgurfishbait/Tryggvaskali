@@ -44,7 +44,7 @@ export default function App() {
 
   const transitions = useTransition(location, location => location.pathname, Config(Direction));
 
-  let { width } = useWD();
+  let { width, height } = useWD();
 
   return (
     <ShowModalContextProvider>
@@ -52,7 +52,9 @@ export default function App() {
         <WhatWeDoContextProvider>
           <GlobalStyles />
           <Modal />
-          <Container>
+          <Container
+            forPhoneHeight={width < sizes.tablet ? height : "100vh"}
+            forPhoneWidth={width < sizes.tablet ? width : "100vw"}>
             {width < sizes.phone && <MobileControl />}
             {/* Tökum Header fyrir utan Animations */}
             {width > 767 && <Header />}
@@ -77,10 +79,11 @@ export default function App() {
 
 const Container = styled.div`
   margin: 0px;
-  min-height: 100vh;
-  min-width: 100vw;
-  max-height: 100vh;
-  max-width: 100vw;
+
+  min-height: ${({ forPhoneHeight }) => forPhoneHeight};
+  min-width: ${({ forPhoneWidth }) => forPhoneWidth};
+  max-height: ${({ forPhoneHeight }) => forPhoneHeight};
+  max-width: ${({ forPhoneWidth }) => forPhoneWidth};
   overflow-x: hidden;
   position: fixed;
   top: 0px;
