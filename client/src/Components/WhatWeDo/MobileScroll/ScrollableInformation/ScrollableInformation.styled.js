@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "@Assets";
+import { Media } from "@Assets/";
 
 export const SIContainer = styled.div`
   width: 80%;
@@ -21,6 +22,10 @@ export const Title = styled.h3`
   line-height: 2;
   font-weight: 800;
   align-self: flex-start;
+
+  ${Media.phone`
+    font-size: 12px;
+  `}
 `;
 export const Paragraph = styled.p`
   font-size: 12px;
@@ -28,4 +33,8 @@ export const Paragraph = styled.p`
   margin: 20px 0px;
   height: 100%;
   line-height: 1.7;
+
+  ${Media.phone`
+    line-height: 1.3;
+  `}
 `;

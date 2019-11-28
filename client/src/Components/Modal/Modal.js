@@ -10,7 +10,7 @@ import ButtonModal from "./ButtonModal/";
 
 const Modal = () => {
   const modalRoot = document.getElementById("modal-root");
-
+  modalRoot.setAttribute("style", "z-index: 500000000000000000000000000");
   const [Animation, setAnimation] = useState(null);
   let animationRef = useRef([createRef(), createRef()]);
 

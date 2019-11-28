@@ -8,23 +8,37 @@ import { Images } from "@Assets/";
 import { MBContainer, Selection, ArrowContainer, Text } from "./MobileControl.styled";
 import { SliderContext } from "@Context/Slider";
 
-const MobileControl = ({ children }) => {
-  let myRef = React.useRef();
+const MobileControl = () => {
   const [mounted, setMounted] = React.useState(false);
   let history = useHistory();
-  let { setPosition, Position, URL, setDirection } = React.useContext(SliderContext);
+  let { setPosition, URL, setDirection } = React.useContext(SliderContext);
 
   React.useLayoutEffect(() => {
-    if (!mounted && myRef.current) {
-      const h = new Hammer(myRef.current);
-      h.on("swipeleft", () => {
+    let myRef = document.getElementsByClassName("DRASL")[0];
+    if (!mounted && myRef) {
+      const h = new Hammer.Manager(myRef, {
+        recognizers: [
+          // RecognizerClass, [options], [recognizeWith, ...], [requireFailure, ...]
+          [Hammer.Swipe, { direction: Hammer.DIRECTION_HORIZONTAL, threshold: 100 }]
+        ]
+      });
+      h.set({ enable: true });
+      h.on("swipeleft", ev => {
+        ev.preventDefault();
+
+        /*
         setPosition(Position => Position + 1);
         setDirection("left");
+        */
+        alert(ev.target.className);
       });
+      /*
       h.on("swiperight", () => {
         setPosition(Position => Position - 1);
         setDirection("right");
       });
+
+      */
       setMounted(true);
     }
   }, []);
@@ -34,8 +48,7 @@ const MobileControl = ({ children }) => {
   }, [URL]);
 
   return (
-    <MBContainer ref={myRef}>
-      <div></div>
+    <MBContainer className={"DRASL"}>
       <img src={`${Images.Swipe}`} alt='Swipe here' />
     </MBContainer>
   );

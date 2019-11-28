@@ -41,6 +41,10 @@ export const List = styled.ul`
     ${AnchorAndButtonStyles};
     text-decoration: none;
     color: inherit;
+
+    ${Media.phone`
+      font-size: 12px;
+    `}
   }
 `;
 export const ListItems = styled.button`
@@ -50,7 +54,9 @@ export const ListItems = styled.button`
   font-family: inherit;
   color: inherit;
   font-size: inherit;
-
+  ${Media.phone`
+      font-size: 12px;
+    `}
   &:hover,
   &:focus {
     outline: none;

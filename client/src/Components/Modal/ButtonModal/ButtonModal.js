@@ -15,7 +15,7 @@ import {
   InputContainer
 } from "./ButtonModal.styled";
 
-const MAX_MODAL_HEIGHT = 700;
+const MAX_MODAL_HEIGHT = 600;
 const MAX_MODAL_WIDTH = 600;
 
 const ButtonModal = React.forwardRef((props, ref) => {

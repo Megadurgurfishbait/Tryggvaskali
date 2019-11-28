@@ -4,7 +4,8 @@ export const sizes = {
   large: 1300,
   desktop: 992,
   tablet: 767,
-  phone: 700
+  phone: 700,
+  EinarPhone: 600
 };
 
 // Iterate through the sizes and create a media template

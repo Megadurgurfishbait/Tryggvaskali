@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { Colors, Media } from "@Assets";
 
 export const PictureContainer = styled.div`
-  overflow-y: auto;
   background-color: ${Colors.DARK_GREEN};
   ${Media.desktop`
   overflow-y: scroll;
   margin-right: 0px;
   opacity: 0;
+  cursor: pointer;
 `}
   &::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
