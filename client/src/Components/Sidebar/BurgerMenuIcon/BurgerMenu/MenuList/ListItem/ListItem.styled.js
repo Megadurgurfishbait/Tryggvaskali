@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Colors, Media } from "@Assets/";
+import { Colors, Media, MediaHeight } from "@Assets/";
 
 export const ListItemContainer = styled.li`
   height: 80px;
@@ -9,7 +9,7 @@ export const ListItemContainer = styled.li`
   color: ${Colors.LIGHT_BLUE};
 
   ${Media.large`height: 60px;`}
-  ${Media.phone`height: 40px;`}
+  ${Media.phone`height: 30px;`}
 &:hover {
     cursor: pointer;
   }

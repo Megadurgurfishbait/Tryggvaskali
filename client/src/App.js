@@ -82,7 +82,7 @@ const Container = styled.div`
   max-height: 100%;
   max-width: 100%;
   overflow-x: hidden;
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: 0px;
 `;

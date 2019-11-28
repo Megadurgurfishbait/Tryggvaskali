@@ -10,7 +10,7 @@ const SplitScreen = ({
   compBg,
   compHeight = `100`,
   compJc = `Space-between`,
-  compAi = `stretch`,
+  compAi = `center`,
   bgImage = ""
 }) => (
   <SSContainer

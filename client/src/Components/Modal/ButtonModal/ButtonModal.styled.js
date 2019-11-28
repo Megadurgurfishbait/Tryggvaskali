@@ -39,7 +39,7 @@ export const BMContainer = styled.div`
   box-sizing: border-box;
   background-color: ${Colors.GREEN};
   border-radius: 5px;
-  z-index: 6000000000000;
+  z-index: 60000000000000000000000;
   display: flex;
   justify-content: center;
   align-items: center;

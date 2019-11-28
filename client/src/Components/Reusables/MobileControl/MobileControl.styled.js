@@ -61,6 +61,8 @@ export const MBContainer = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 5000000;
+  background-color: red;
+  cursor: pointer !important;
 
   & > div {
     position: absolute;

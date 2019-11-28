@@ -84,7 +84,8 @@ export const Paragraph = styled.p`
 
 export const AnchorButton = styled.a`
   display: flex;
-  height: 50px;
+  min-height: 50px;
+  max-height: 50px;
   width: 240px;
   background-color: ${Colors.LIGHT_GREEN};
   border-bottom-right-radius: 30% 140%;

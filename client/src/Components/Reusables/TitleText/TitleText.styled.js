@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Colors, Media } from "@Assets";
+import { MediaHeight } from "@Assets/";
 
 export const TTContainer = styled.div`
   height: 40px;
@@ -23,6 +24,10 @@ export const LinkContainer = styled(Link)`
   ${Media.large`
       height: 30px;
     `}
+
+  ${MediaHeight.phone`
+      height: 25px;
+  `}
 `;
 
 export const Span = styled.h1`
