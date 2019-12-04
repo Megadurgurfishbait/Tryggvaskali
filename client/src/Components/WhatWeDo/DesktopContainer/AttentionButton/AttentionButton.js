@@ -4,7 +4,7 @@ import { ShowModalContext } from "@Context/ShowModal";
 import { MBContainer, MyButton } from "./AttentionButton.styled";
 import { LangContext } from "@Context/Lang";
 
-const AttentionButton = ({ cHeight = 60, cWidth = 240, cFontSize = 16 }) => {
+const AttentionButton = ({ cHeight = 60, cWidth = 240, cFontSize = 14 }) => {
   const { English } = useContext(LangContext);
   const { showModal, setShowModal } = useContext(ShowModalContext);
   return (

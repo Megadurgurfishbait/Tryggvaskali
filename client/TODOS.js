@@ -71,11 +71,11 @@
     DONE: Gera PICTURE ANIMATION KÚL
     Done: Gera Slide fyrir WhatWeDo DesktopContainer  Textan.
     DONE: Setja Loading screen bara á síma
+    DONE: Gera breyta tungumál Animation
+    DONE: BREYTA ATTENTION BUTTON FONT SIZE
     
     
-    TODO: Gera breyta tungumál Animation
     
-    tODO: BREYTA ATTENTION BUTTON FONT SIZE
 
     TODO: BREYTA FONTS Á SÍÐUNNI
     

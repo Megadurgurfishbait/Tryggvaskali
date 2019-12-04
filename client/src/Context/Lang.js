@@ -39,7 +39,7 @@ const LangContextProvider = props => {
     }
     setForground(false);
     setLanguage(English);
-  }, [English, forground, setLanguage]);
+  }, [English, forground, setLanguage, tl]);
   return (
     <LangContext.Provider value={{ English, setEnglish, setForground }}>
       <DIV ref={firstForgroundRef} />
