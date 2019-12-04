@@ -1,15 +1,15 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4c14748148fdbcb3c3e3ba2f8458a991",
+    "revision": "f279c827c6a35373ecab083b12aeb154",
     "url": "/index.html"
   },
   {
-    "revision": "7929d9490282d3b48366",
-    "url": "/static/js/2.cc4c2533.chunk.js"
+    "revision": "304d437dc28ef2babcdb",
+    "url": "/static/js/2.f3a9662b.chunk.js"
   },
   {
-    "revision": "409b284c45699bdaedd4",
-    "url": "/static/js/main.42d70ca0.chunk.js"
+    "revision": "a1e76404408cb3604fa7",
+    "url": "/static/js/main.b6c05078.chunk.js"
   },
   {
     "revision": "60f6e40bb1455a3769fd",
@@ -210,6 +210,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f8eb758e64aaa9c752c08968a9cce404",
     "url": "/static/media/food9.f8eb758e.jpg"
+  },
+  {
+    "revision": "318d72d47bc11a62fabaf34cf8f8a1e8",
+    "url": "/static/media/plate-fork-and-knife.318d72d4.svg"
   },
   {
     "revision": "6bbe0b0a532734bc11dd99618f662395",
