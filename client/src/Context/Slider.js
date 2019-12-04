@@ -24,7 +24,6 @@ const SliderContextProvider = props => {
     if (Position < 0) {
       setPosition(3);
     }
-    console.log(Position);
     setURL(SliderArray[Position]);
   }, [Position]);
   return (

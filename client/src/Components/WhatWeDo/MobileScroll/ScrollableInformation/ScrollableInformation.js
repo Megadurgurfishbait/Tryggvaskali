@@ -3,11 +3,11 @@ import React from "react";
 import { SIContainer, Title, Paragraph } from "./ScrollableInformation.styled";
 import ListMapping from "./ListMapping";
 
-const ScrollableInformation = ({ Tit, Par, List }) => (
+const ScrollableInformation = ({ TextForSite: { titill, texti, listi } }) => (
   <SIContainer>
-    <Title>{Tit}</Title>
-    <Paragraph>{Par}</Paragraph>
-    {List && <ListMapping list={List} />}
+    <Title>{titill}</Title>
+    <Paragraph>{texti}</Paragraph>
+    {listi && <ListMapping list={listi} />}
   </SIContainer>
 );
 

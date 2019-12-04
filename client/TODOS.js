@@ -62,29 +62,25 @@
     Breyta honum í hönninna í XD
     
     DONE: Gallerý setja Innri Menu niður þegar það er komið yfir phone
-
-    
-
-    
-    TODO: Gera Loading screen sem að lookar svipað og Header í burger menu.
-
-    
-    Erfiðara:
-
-    TODO: 
+    DONE: 
+    Ef að þú velur úr lista í Burger Menu ferðu á réttan stað í Þjónustu. Ekk bara alltaf fyrsta textann.
+    DONE: 
     Laga útlið á Modal, ekki flott hjá þér Guðmundur Snorri!
     Sérstaklega í síma. Það er í fokkinu.
+
+    DONE: Gera PICTURE ANIMATION KÚL
+    Done: Gera Slide fyrir WhatWeDo DesktopContainer  Textan.
+    DONE: Setja Loading screen bara á síma
     
     
-    TODO: 
-    Ef að þú velur úr lista í Burger Menu ferðu á réttan stað í Þjónustu. Ekk bara alltaf fyrsta textann.
+    TODO: Gera breyta tungumál Animation
+    
+    tODO: BREYTA ATTENTION BUTTON FONT SIZE
+
+    TODO: BREYTA FONTS Á SÍÐUNNI
     
     
-    TODO: 
-    Þjónunsta: Myndin
-    Sýna 4 myndir og á tíma skipta þeim úr fyrir aðrar.
-    
-    
+    TODO: Búa til Menu component til að sýna PDF Matseðil.
     
     TODO: 
     Búa til Contentful fyrir:

@@ -16,8 +16,6 @@ import { BurgerContainer } from "./BurgerMenu.styled";
 const BugerMenu = ({ show, setShow }) => {
   let { width, height } = useWD();
 
-  console.log(height);
-
   return (
     <BurgerContainer myHeight={height} ShowMenu={show} myWidth={width}>
       {width < sizes.desktop && <MobileHeader />}

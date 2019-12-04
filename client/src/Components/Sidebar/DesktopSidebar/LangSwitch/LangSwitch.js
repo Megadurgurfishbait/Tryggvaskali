@@ -7,10 +7,16 @@ import { LangContext } from "@Context/Lang";
 import { LangSwitchContainer, Button } from "./LangSwitch.styled";
 
 const LangSwitch = () => {
-  const { English, setEnglish } = React.useContext(LangContext);
+  const { English, setEnglish, setForground, forground } = React.useContext(LangContext);
+
+  function handleChange() {
+    setForground(!forground);
+    setTimeout(() => setEnglish(!English), 1000);
+  }
+
   return (
     <LangSwitchContainer>
-      <Button onClick={() => setEnglish(!English)}> {English ? "EN" : "IS"} </Button>
+      <Button onClick={() => handleChange()}>{!English ? "EN" : "IS"}</Button>
     </LangSwitchContainer>
   );
 };

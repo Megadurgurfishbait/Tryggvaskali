@@ -43,7 +43,7 @@ export const List = styled.ul`
     color: inherit;
 
     ${Media.phone`
-      font-size: 12px;
+      font-size: 11px;
     `}
   }
 `;
@@ -55,7 +55,7 @@ export const ListItems = styled.button`
   color: inherit;
   font-size: inherit;
   ${Media.phone`
-      font-size: 12px;
+      font-size: 11px;
     `}
   &:hover,
   &:focus {

@@ -32,9 +32,6 @@ height: 120px;
 width: 80%;
 font-size: 35px;
 font-weight: 800;
-
-
-
 ${Media.large`
   font-size: 35px;
 `}
@@ -50,7 +47,7 @@ ${Media.tablet`
   `}
 `;
 export const Paragraph = styled.p`
-height: 500px;
+
 width: 100%;
 line-height: 1.8;
 font-size: 20px;

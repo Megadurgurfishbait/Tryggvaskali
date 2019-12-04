@@ -1,12 +1,22 @@
-import React, { forwardRef } from "react";
+import React, { useRef, createRef } from "react";
 
 import { IContainer, Title, Paragraph } from "./Information.styled";
+import ListMapping from "./ListMapping";
+import { Slide } from "@Animate/";
 
-const Information = forwardRef(({ Tit, Par }, ref) => (
-  <IContainer>
-    <Title ref={ref.current[0]}> {Tit}</Title>
-    <Paragraph ref={ref.current[1]}>{Par}</Paragraph>
-  </IContainer>
-));
+const Information = ({ TextForSite: { titill, texti, listi } }) => {
+  let SlideRefs = useRef([createRef(), createRef()]);
+  React.useEffect(() => {
+    Slide(SlideRefs.current);
+  }, [titill, texti]);
+
+  return (
+    <IContainer>
+      <Title ref={SlideRefs.current[0]}>{titill}</Title>
+      <Paragraph ref={SlideRefs.current[1]}>{texti}</Paragraph>
+      {listi && <ListMapping list={listi} />}
+    </IContainer>
+  );
+};
 
 export default Information;

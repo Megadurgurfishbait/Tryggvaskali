@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import Routes from "../../Routes";
 import { Container, LinkList, ListItems } from "./Header.styled";
+import { LangContext } from "@Context/Lang";
 
-const Header = () => (
-  <Container>
-    <LinkList>
-      <ListItems to={Routes.frontPage}>Heim</ListItems>
-      <ListItems to={Routes.menu}>Matseðill</ListItems>
-      <ListItems to={Routes.whatwedo}>Þjónusta</ListItems>
-      <ListItems to={Routes.gallery}>Gallery</ListItems>
-    </LinkList>
-  </Container>
-);
+const Header = () => {
+  const { English } = useContext(LangContext);
+
+  return (
+    <Container>
+      <LinkList>
+        <ListItems to={Routes.frontPage}>{English ? "Home" : "Heim"}</ListItems>
+        <ListItems to={Routes.menu}>{English ? "Menu" : "Matseðill"}</ListItems>
+        <ListItems to={Routes.whatwedo}>{English ? "Service" : "Þjónusta"}</ListItems>
+        <ListItems to={Routes.gallery}>Gallery</ListItems>
+      </LinkList>
+    </Container>
+  );
+};
 
 export default Header;

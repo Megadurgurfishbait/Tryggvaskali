@@ -14,6 +14,7 @@ import {
   OpacityContainer,
   InputContainer
 } from "./ButtonModal.styled";
+import { LangContext } from "@Context/Lang";
 
 const MAX_MODAL_HEIGHT = 600;
 const MAX_MODAL_WIDTH = 600;
@@ -22,12 +23,14 @@ const ButtonModal = React.forwardRef((props, ref) => {
   const [values, setValues] = useState({});
   const [error, setError] = useState();
   const { showModal, setShowModal } = useContext(ShowModalContext);
+  const { English } = useContext(LangContext);
+
   let nafnRef = useRef();
   let simarnumerRef = useRef();
   let netfangRef = useRef();
   let textiRef = useRef();
-
   let { width, height } = useWD();
+
   const ModalSize = {
     height: width > sizes.tablet ? MAX_MODAL_HEIGHT : height,
     width: width > sizes.tablet ? MAX_MODAL_WIDTH : width
@@ -60,10 +63,12 @@ const ButtonModal = React.forwardRef((props, ref) => {
   return (
     <BMContainer ModalSize={ModalSize} ref={e => (ref.current[0] = e)}>
       <OpacityContainer ref={e => (ref.current[1] = e)} noValidate onSubmit={handleSubmit}>
-        <h1>Hvernig getum við aðstoðað þig í dag?</h1>
+        <h1>
+          {English ? "How can we assist you today?" : "Hvernig getum við aðstoðað þig í dag?"}
+        </h1>
         <InputContainer>
           <InputField
-            Text={"Nafn"}
+            Text={English ? "Name" : "Nafn"}
             Name={"nafnEinstaklings"}
             Placeholder={"Jón Jónsson"}
             ref={nafnRef}
@@ -71,7 +76,7 @@ const ButtonModal = React.forwardRef((props, ref) => {
             isError={error && error.name}
           />
           <InputField
-            Text={"Símanúmer"}
+            Text={English ? "Phone" : "Símanúmer"}
             Name={"simarnumerEinstaklings"}
             Placeholder={"4821390"}
             myType={"tel"}
@@ -79,7 +84,7 @@ const ButtonModal = React.forwardRef((props, ref) => {
             isError={error && error.phone}
           />
           <InputField
-            Text={"Netfang"}
+            Text={English ? "Email" : "Netfang"}
             Name={"netfangEinstaklings"}
             Placeholder={"Tryggvaskali@Tryggvaskali.is"}
             ref={netfangRef}
@@ -87,18 +92,18 @@ const ButtonModal = React.forwardRef((props, ref) => {
             isError={error && error.email}
           />
           <InputField
-            Text={"Texti"}
+            Text={English ? "Text" : "Texti"}
             Name={"textiEinstaklings"}
-            Placeholder={"Þín fyrirspurn"}
+            Placeholder={English ? "Your query here" : "Þín fyrirspurn"}
             ref={textiRef}
             myType={"textArea"}
             isError={error && error.text}
           />
         </InputContainer>
         <ButtonContainer>
-          <Button type='submit'>Senda fyrirspurn</Button>
+          <Button type='submit'>{English ? "Send query" : "Senda fyrirspurn"}</Button>
           <Button cancelButton type='button' onClick={() => setShowModal(!showModal)}>
-            Hætta við
+            {English ? "Cancel" : "Hætta við"}
           </Button>
         </ButtonContainer>
       </OpacityContainer>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 // Assets
 import { Images } from "@Assets";
@@ -9,13 +9,14 @@ import Slide from "Animate/SingleSimpleSlide";
 import Layout from "@Components/Layout";
 import { ListItems } from "@Components/Reusables/";
 import MasonPictures from "./MasonPictures";
+import { LangContext } from "@Context/Lang";
 
 const About = () => {
   const [ShowMasonPictures, setShowMasonPictures] = React.useState("Restaurant");
+  const { English } = useContext(LangContext);
   const ContainerRef = React.useRef();
   const changeMyView = url => setShowMasonPictures(url);
   const RenderTheseImages = Photos => Photos[ShowMasonPictures];
-
   React.useEffect(() => {
     Slide(ContainerRef);
   }, [ShowMasonPictures]);
@@ -25,10 +26,14 @@ const About = () => {
       <Container>
         <MasonPictures ref={ContainerRef} Photos={RenderTheseImages(Images.Gallery)} />
         <ListButtons>
-          <ListItems Title='The Food' url={"Food"} setInfoText={changeMyView} />
+          <ListItems
+            Title={English ? "The Food" : "Maturinn"}
+            url={"Food"}
+            setInfoText={changeMyView}
+          />
           <ListItems
             index={2}
-            Title='The Restaurant'
+            Title={English ? "The Restaurant" : "Veitingastaðurinn"}
             url={"Restaurant"}
             setInfoText={changeMyView}
           />

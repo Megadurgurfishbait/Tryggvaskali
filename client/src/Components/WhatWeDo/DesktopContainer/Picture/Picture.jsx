@@ -1,12 +1,19 @@
 import React, { useRef, useState } from "react";
-import { TimelineMax } from "gsap";
+import { TimelineMax, Linear } from "gsap";
 
 import { Images } from "@Assets";
 
-import { PContainer, Background, Image, BackgroundAnimation } from "./Picture.styled";
+import {
+  PContainer,
+  Background,
+  Image,
+  DynamicBackgroundAnimation,
+  StaticBackgroundAnimation
+} from "./Picture.styled";
 
 const Picture = () => {
   let imgRef = useRef();
+  let backgroundRef = useRef();
   let [ShowImage, setShowImage] = useState(0);
 
   React.useEffect(() => {
@@ -22,19 +29,19 @@ const Picture = () => {
       }
     });
 
-    let { current } = imgRef;
-    /*
-    tl.set(current, { opacity: 0 })
-      .to(current, 1, { opacity: 1 }, "together")
-      .from(current, 5, { x: 20, y: 20 }, "together");
-      */
+    let { current } = backgroundRef;
+
+    tl.fromTo(imgRef.current, 0.8, { opacity: 0 }, { opacity: 1 })
+      .to(current, 3, { width: 0, ease: Linear.easeNone })
+      .to(imgRef.current, 0.7, { opacity: 0 }, "-=.3");
   }, []);
 
   return (
     <PContainer>
       <Background>
-        <Image src={`${Images.WhatWeDo[ShowImage]}`} />
-        <BackgroundAnimation ref={imgRef} />
+        <Image src={`${Images.WhatWeDo[ShowImage]}`} ref={imgRef} />
+        <DynamicBackgroundAnimation ref={backgroundRef} />
+        <StaticBackgroundAnimation />
       </Background>
     </PContainer>
   );

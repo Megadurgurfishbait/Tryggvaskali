@@ -6,6 +6,7 @@ const SidebarIcons = ({ IconItems: { Icon, IconInformation } }) => (
   <SidebarIconsContainer>
     {IconInformation.map(value => (
       <Image
+        target='_blank'
         backgroundPos={value.Backgroundpos}
         title={value.Tooltip}
         alt={value.Tooltip}

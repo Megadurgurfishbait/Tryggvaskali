@@ -17,6 +17,7 @@ const FrontPage = () => {
     <Layout bgColor={Colors.WHITE}>
       <PictureContainer bgImage={Images.TryggvaBgImage}>
         <RestaurantDescription />
+        {console.log("ég lika sko!!")}
       </PictureContainer>
       {width > sizes.desktop && <BlueWoodBackground />}
     </Layout>

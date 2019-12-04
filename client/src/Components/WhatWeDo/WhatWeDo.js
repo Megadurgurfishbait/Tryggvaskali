@@ -1,7 +1,6 @@
-import React, { useState, useRef, createRef, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
-import { Slide } from "Animate/";
-import { sizes, WhatWeDoText } from "@Assets";
+import { sizes } from "@Assets";
 import { useWD } from "@Hooks/";
 
 import MobileScroll from "./MobileScroll/";
@@ -9,25 +8,35 @@ import Layout from "@Components/Layout";
 
 import DesktopContainer from "./DesktopContainer";
 import { WhatWeDoSelectionContext } from "@Context/WhatWeDoSelection";
+import { FetchedText } from "@Context/fetchedText";
+import { LangContext } from "@Context/Lang";
 
 const WhatWeDo = () => {
+  const [TextForSite, setTextForSite] = useState();
+  const { English } = useContext(LangContext);
   const { Selection } = useContext(WhatWeDoSelectionContext);
-  let textRef = useRef([createRef(), createRef()]);
-  const [InfoText, setInfoText] = useState(WhatWeDoText[Selection]);
-  const [Animation, setAnimation] = useState(null);
+  const { text } = useContext(FetchedText);
+
+  useEffect(() => {
+    switch (Selection) {
+      case "hopa":
+        return setTextForSite(English ? text.enskaHopamatsedlar : text.veisluthjonusta);
+      case "veislu":
+        return setTextForSite(English ? text.enskaVeisluthjonusta : text.veisluthjonusta1);
+      case "gjafa":
+        return setTextForSite(English ? text.enskaGjafabref : text.gjafabref);
+      default:
+        return setTextForSite(English ? text.enskaHopamatsedlar : text.veisluthjonusta);
+    }
+  }, [Selection, text, English]);
+
   const { width } = useWD();
-
-  React.useEffect(() => {
-    width > sizes.tablet && setAnimation(Slide(textRef.current));
-    setInfoText(WhatWeDoText[Selection]);
-  }, [Selection, width]);
-
   return (
     <Layout>
       {width > sizes.tablet ? (
-        <DesktopContainer ref={textRef} InfoText={InfoText} />
+        <DesktopContainer TextForSite={TextForSite} />
       ) : (
-        <MobileScroll InfoText={InfoText} />
+        <MobileScroll TextForSite={TextForSite} />
       )}
     </Layout>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import styled, { createGlobalStyle } from "styled-components";
 import { useTransition, animated } from "react-spring";
@@ -6,12 +6,17 @@ import { useTransition, animated } from "react-spring";
 import { useRouter, useWD } from "@Hooks/";
 import Routes from "./Routes";
 
-import { LangContextProvider, ShowModalContextProvider, WhatWeDoContextProvider } from "@Context/";
+import {
+  LangContextProvider,
+  ShowModalContextProvider,
+  WhatWeDoContextProvider,
+  FetchedTextProvider
+} from "@Context/";
 
-import { About, FrontPage, Menu, Sidebar, Header, WhatWeDo } from "@Components";
+import { About, FrontPage, Menu, Sidebar, Header, WhatWeDo, Loading } from "@Components";
 import { Modal } from "./Components";
 import { SliderContext } from "@Context/Slider";
-import { sizes, MobileText } from "./Assets";
+import { sizes } from "./Assets";
 import { MobileControl } from "@Components/Reusables";
 
 const GlobalStyles = createGlobalStyle`
@@ -39,36 +44,42 @@ function Config(Direction) {
 
 export default function App() {
   const { location } = useRouter();
-
   const { Direction } = React.useContext(SliderContext);
-
   const transitions = useTransition(location, location => location.pathname, Config(Direction));
-
+  const [loaded, setLoaded] = useState(false);
   let { width } = useWD();
+  window.onload = function() {
+    setLoaded(true);
+  };
 
   return (
     <ShowModalContextProvider>
       <LangContextProvider>
         <WhatWeDoContextProvider>
-          <GlobalStyles />
-          <Modal />
-          <Container>
-            {width < sizes.phone && <MobileControl />}
-            {/* Tökum Header fyrir utan Animations */}
-            {width > 767 && <Header />}
-            {/* Setja inn Sidebar hér svo svo að Sidebar verði ekki partur af Animation heldur */}
-            <Sidebar />
-            {transitions.map(({ item, props, key }) => (
-              <Animate key={key} style={props}>
-                <Switch location={item}>
-                  <Route path={Routes.frontPage} exact component={FrontPage} />
-                  <Route path={Routes.whatwedo} component={WhatWeDo} />
-                  <Route path={Routes.menu} component={Menu} />
-                  <Route path={Routes.gallery} component={About} />
-                </Switch>
-              </Animate>
-            ))}
-          </Container>
+          <FetchedTextProvider>
+            <GlobalStyles />
+            <Modal />
+
+            <Container>
+              {width < sizes.phone && <MobileControl />}
+              {/* Tökum Header fyrir utan Animations */}
+              {width > 767 && <Header />}
+              {/* Setja inn Sidebar hér svo svo að Sidebar verði ekki partur af Animation heldur */}
+              <Sidebar />
+              {transitions.map(({ item, props, key }) => (
+                <Animate key={key} style={props}>
+                  <Switch location={item}>
+                    <Route path={Routes.frontPage} exact component={FrontPage} />
+                    <Route path={Routes.whatwedo} component={WhatWeDo} />
+                    <Route path={Routes.menu} component={Menu} />
+                    <Route path={Routes.gallery} component={About} />
+                  </Switch>
+                </Animate>
+              ))}
+            </Container>
+
+            {width < sizes.tablet && !loaded && <Loading />}
+          </FetchedTextProvider>
         </WhatWeDoContextProvider>
       </LangContextProvider>
     </ShowModalContextProvider>

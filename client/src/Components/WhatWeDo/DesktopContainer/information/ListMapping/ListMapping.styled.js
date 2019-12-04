@@ -4,9 +4,9 @@ import { Colors } from "@Assets";
 export const List = styled.ul`
   columns: ${({ col }) => col};
   width: 95%;
-  margin: auto auto 25px auto;
+  margin: 50px auto;
   padding: 0px;
-  font-size: 11px;
+  font-size: 16px;
   text-align: left;
   list-style: none;
   padding-left: 20px;
@@ -15,7 +15,7 @@ export const List = styled.ul`
     font-weight: 800;
     display: flex;
     align-items: center;
-    padding: 3px 0px;
+    padding: 10px 0px;
 
     &::before {
       content: "";
@@ -23,7 +23,7 @@ export const List = styled.ul`
       margin-right: 5px;
       height: 5px;
       width: 5px;
-      background-color: ${Colors.LIGHT_BLUE};
+      background-color: ${Colors.GREEN};
       border-radius: 50%;
     }
   }
