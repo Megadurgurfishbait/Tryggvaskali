@@ -27,7 +27,19 @@ export const Background = styled.div`
 `}
 `;
 
-export const BackgroundAnimation = styled.div`
+export const DynamicBackgroundAnimation = styled.div`
+  background-color: ${Colors.LIGHT_GREEN};
+  background-size: cover;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+`;
+
+export const StaticBackgroundAnimation = styled.div`
   background-color: ${Colors.GREEN};
   background-size: cover;
   box-sizing: border-box;
@@ -36,6 +48,7 @@ export const BackgroundAnimation = styled.div`
   top: 0px;
   height: 100%;
   width: 100%;
+  z-index: 2;
 `;
 
 export const Image = styled.img`

@@ -20,7 +20,7 @@ export const RDContainer = styled.div`
 `;
 
 export const TitleContainer = styled.div`
-  height: 80px;
+  height: auto;
   width: 100%;
 `;
 
@@ -55,6 +55,7 @@ export const Title = styled.h1`
   `}
   ${Media.phone`
     font-size: 28px;
+    line-height: 1;
   `}
 `;
 export const Paragraph = styled.p`

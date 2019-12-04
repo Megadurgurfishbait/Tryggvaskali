@@ -3,9 +3,7 @@ import Hammer from "hammerjs";
 import { useHistory } from "react-router-dom";
 
 import { Images } from "@Assets/";
-
-// Components
-import { MBContainer, Selection, ArrowContainer, Text } from "./MobileControl.styled";
+import { MBContainer } from "./MobileControl.styled";
 import { SliderContext } from "@Context/Slider";
 
 const MobileControl = () => {

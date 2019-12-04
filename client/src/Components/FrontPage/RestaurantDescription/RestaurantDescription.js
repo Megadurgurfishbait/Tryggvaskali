@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState, useEffect } from "react";
 
 import {
   RDContainer,
@@ -10,26 +10,29 @@ import {
   ButtonStyle,
   Span
 } from "./RestaurantDescription.styled";
+import { LangContext } from "@Context/Lang";
+import { FetchedText } from "@Context/fetchedText";
 
-const RestaurantDescription = () => (
-  <RDContainer>
-    <TextContainer>
-      <TitleContainer>
-        <Title>{`Velkomin`}</Title>
-        <Title>{` í Tryggvaskála`}</Title>
-      </TitleContainer>
-      <Paragraph>
-        Tryggvaskáli er einstaklega fallegur a’la carte veitingastaður sem leggur áherslu á vandaða
-        matreiðslu með fókus á hráefni úr héraði. Með virðingu fyrir störfum bænda, útbúa
-        matreiðslumenn staðarins virkilega vandaðan mat þar sem íslenskar- og erlendar
-        matreiðsluaðferðir blandast skemmtilega saman.
-      </Paragraph>
-      <AnchorButton href='https://goo.gl/maps/i8qw8M8nZZrnCPNA9'>
-        <ButtonStyle> Staðsetning </ButtonStyle>
-        <Span> {">"} </Span>
-      </AnchorButton>
-    </TextContainer>
-  </RDContainer>
-);
+const RestaurantDescription = () => {
+  const { English } = useContext(LangContext);
+  const { text } = useContext(FetchedText);
+  let { enskaForsida, forsida } = text;
+  return (
+    <RDContainer>
+      {(enskaForsida || forsida) && (
+        <TextContainer>
+          <TitleContainer>
+            <Title>{English ? enskaForsida.titill : forsida.titill}</Title>
+          </TitleContainer>
+          <Paragraph>{English ? enskaForsida.texti : forsida.texti}</Paragraph>
+          <AnchorButton target='_blank' href='https://goo.gl/maps/i8qw8M8nZZrnCPNA9'>
+            <ButtonStyle> {English ? "Location" : "Staðsetning"} </ButtonStyle>
+            <Span> {">"} </Span>
+          </AnchorButton>
+        </TextContainer>
+      )}
+    </RDContainer>
+  );
+};
 
 export default RestaurantDescription;

@@ -9,4 +9,13 @@ const BurgerMenuText = [
   { Number: `06`, Title: `Gallerý`, Link: `${Routes.gallery}` }
 ];
 
-export default BurgerMenuText;
+const BurgerMenuTextEN = [
+  { Number: `01`, Title: `Home`, Link: `${Routes.frontPage}` },
+  { Number: `02`, Title: `Menu`, Link: `${Routes.menu}` },
+  { Number: `03`, Title: `Catering`, Link: `${Routes.whatwedo}`, nestedRoute: `veislu` },
+  { Number: `04`, Title: `Groups`, Link: `${Routes.whatwedo}`, nestedRoute: `hopa` },
+  { Number: `05`, Title: `Gift Certificates`, Link: `${Routes.whatwedo}`, nestedRoute: `gjafa` },
+  { Number: `06`, Title: `Gallery`, Link: `${Routes.gallery}` }
+];
+
+export { BurgerMenuText, BurgerMenuTextEN };

@@ -5,7 +5,7 @@ import { List } from "./ListMapping.styled";
 const ListMapping = ({ list }) => (
   <List col={list.length > 4 ? 2 : 1}>
     {list.map(v => (
-      <li>{v}</li>
+      <li className='StutterLi'>{v}</li>
     ))}
   </List>
 );
