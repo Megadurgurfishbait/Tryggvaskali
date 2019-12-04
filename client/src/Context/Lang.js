@@ -14,12 +14,15 @@ const LangContextProvider = props => {
   const [forground, setForground] = useState(false);
   let tl = new TimelineMax();
   useEffect(() => {
+    let SF = secondForgroundRef.current;
+    let FF = firstForgroundRef.current;
+
     if (forground) {
-      tl.to(secondForgroundRef.current, 0.6, { width: "100%" })
-        .to(firstForgroundRef.current, 0.5, { width: "100%", opacity: 0.6 }, "-=.2")
-        .to(firstForgroundRef.current, 0.5, { height: 0, opacity: 0 })
+      tl.to(SF, 0.6, { width: "100%" })
+        .to(FF, 0.5, { width: "100%", opacity: 0.6 }, "-=.2")
+        .to(FF, 0.5, { height: 0, opacity: 0 })
         .to(
-          secondForgroundRef.current,
+          SF,
           0.4,
           {
             height: 0,
@@ -27,16 +30,16 @@ const LangContextProvider = props => {
           },
           "-=.35"
         )
-        .set(secondForgroundRef.current, {
+        .set(SF, {
           height: "100%",
           width: "0%",
           opacity: 1
         })
-        .set(firstForgroundRef.current, { height: "100%", width: "0%", opacity: 1 });
+        .set(FF, { height: "100%", width: "0%", opacity: 1 });
     }
     setForground(false);
     setLanguage(English);
-  }, [English, forground]);
+  }, [English, forground, setLanguage]);
   return (
     <LangContext.Provider value={{ English, setEnglish, setForground }}>
       <DIV ref={firstForgroundRef} />
