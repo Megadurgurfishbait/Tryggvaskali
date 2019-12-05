@@ -89,12 +89,44 @@
     TODO: 
     - Setja Icons í stað Texta á Burger Menu
     - Setja í SpriteImg
-    
+
 
     TODO: Audit allar síður og laga það sem þarf
     TODO: Laga villur í CMDER og Console.
-    
-    
+    TODO: Minnka bgMedShade og bakgrunn, þær eru of stórar
+    TODO: Setja React Header í gang
+    TODO: Gera Structure Data : https://developers.google.com/search/docs/guides/intro-structured-data?hl=en
+    TODO: Schema.org
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "Example",
+ "url" : "https://www.example.com",
+ "sameAs" : [
+   "https://twitter.com/example",
+   "https://www.facebook.com/example",
+   "https://foursquare.com/v/example/4e296473149554c77442cc98",
+   "http://www.yelp.com/biz/your-business-url-from-yelp", 
+   "https://www.instagram.com/example/?hl=en"
+   ],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Example Street",
+    "addressRegion": "CA",
+    "postalCode": "94040",
+    "addressCountry": "US"
+  }
+}
+</script>
+
+
+    TODO: Open Graph Protocol
+    TODO: Gera Sitemap
+    TODO: Finna Favicon
+    TODO: 404 Ekki til síða
+    TODO: Downloada fonts í stað þess að ná í þau til GOOGLE: https://medium.com/clio-calliope/making-google-fonts-faster-aadf3c02a36d
+
     
     
     
