@@ -7,6 +7,6 @@ export default function ShowBurgerMenu(Node, height, width) {
   let widthpadding = width > sizes.phone ? 60 : 0;
   Animation = tl
     .set(Node, { height: `${height}` })
-    .fromTo(Node, 0.5, { x: -width }, { x: widthpadding });
+    .fromTo(Node, 0.2, { x: -width }, { x: widthpadding });
   return Animation;
 }

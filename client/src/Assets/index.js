@@ -1,10 +1,7 @@
-export { default as Icon } from "./Icons/";
+export { default as Icons } from "./Icons/";
 export { default as Colors } from "./Varibles/Colors";
 export { default as Images } from "./Images";
 export { default as VAR } from "./Varibles/Variables";
-export { BurgerMenuText } from "./Texts/BurgerMenuText";
-export { BurgerMenuTextEN } from "./Texts/BurgerMenuText";
 export { default as Media } from "./Varibles/media";
 export { default as MediaHeight } from "./Varibles/MediaHeight";
 export { sizes } from "./Varibles/media";
-export { textB, textB_EN } from "./Texts/WhatWeDo";

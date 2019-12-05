@@ -7,14 +7,14 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   position: relative;
-
+  overflow-y: scroll;
   ${Media.desktop`
     margin: 0px auto;
   `}
 `;
 
 export const ListButtons = styled.ul`
-  position: absolute;
+  position: fixed;
   width: 100%;
   list-style: none;
   display: flex;

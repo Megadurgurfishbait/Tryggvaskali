@@ -3,20 +3,17 @@ import React, { useContext } from "react";
 import MegaButton from "../DesktopContainer/AttentionButton";
 import ScrollableInformation from "./ScrollableInformation";
 import { MSContainer, MBContainer, MSHeader, TestContainer } from "./MobileScroll.styled";
-import { textB, textB_EN } from "@Assets/";
 import { ListItems } from "@Components/Reusables";
 import { LangContext } from "@Context/Lang";
 
 const MobileScroll = ({ TextForSite }) => {
   const { English } = useContext(LangContext);
-
-  let Mapping = English ? textB_EN : textB;
   return (
     <MSContainer>
       <MSHeader>
-        {Mapping.map((v, i) => (
-          <ListItems {...v} key={i} index={i} />
-        ))}
+        <ListItems Title={English ? "Catering" : "Veisluþjónusta"} url='veislu' />
+        <ListItems Title={English ? "Groups" : "Hópamatseðlar"} url='hopa' />
+        <ListItems Title={English ? "Gift Certificate" : "Gjafabréf"} url='gjafa' />
       </MSHeader>
       <TestContainer>
         {TextForSite && <ScrollableInformation TextForSite={TextForSite} />}

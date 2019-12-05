@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { Colors, Images, Media } from "@Assets";
+import { VAR } from "@Assets/";
 
 export const IContainer = styled.div`
 height: 100%;
@@ -32,6 +33,7 @@ height: 120px;
 width: 80%;
 font-size: 35px;
 font-weight: 800;
+${VAR.FontFamilyHeader};
 ${Media.large`
   font-size: 35px;
 `}

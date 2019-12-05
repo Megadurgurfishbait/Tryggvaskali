@@ -6,7 +6,7 @@ import LangSwitch from "./LangSwitch";
 import BurgerMenuIcon from "../BurgerMenuIcon";
 import { Half } from "./DesktopSidebar.styled";
 
-import { Colors, Icon } from "@Assets";
+import { Colors } from "@Assets";
 
 const DesktopSidebar = () => (
   <>
@@ -14,7 +14,7 @@ const DesktopSidebar = () => (
       <BurgerMenuIcon />
     </Half>
     <Half bgCol={`${Colors.GREEN}`}>
-      <Icons IconItems={Icon} Icon />
+      <Icons />
       <LangSwitch />
     </Half>
   </>

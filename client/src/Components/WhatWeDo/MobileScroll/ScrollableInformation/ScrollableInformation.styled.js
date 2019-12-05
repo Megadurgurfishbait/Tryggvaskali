@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Colors } from "@Assets";
-import { Media } from "@Assets/";
+import { Media, VAR } from "@Assets/";
 
 export const SIContainer = styled.div`
   width: 80%;
@@ -20,7 +20,7 @@ export const Title = styled.h3`
   font-size: 16px;
   border-bottom: 2px solid ${Colors.LIGHT_BLUE};
   line-height: 2;
-  font-weight: 800;
+  ${VAR.FontFamilyHeader};
   align-self: flex-start;
 
   ${Media.phone`

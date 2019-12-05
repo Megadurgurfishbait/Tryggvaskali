@@ -10,7 +10,7 @@ const AttentionButton = ({ cHeight = 60, cWidth = 240, cFontSize = 14 }) => {
   return (
     <MBContainer cHeight={cHeight} cWidth={cWidth} cFontSize={cFontSize}>
       <MyButton onClick={() => setShowModal(!showModal)}>
-        {English ? "Contact" : "Hafa Samband"}
+        {English ? "Contact Us" : "Hafa Samband"}
       </MyButton>
     </MBContainer>
   );

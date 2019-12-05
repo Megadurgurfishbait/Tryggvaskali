@@ -23,7 +23,7 @@ export const BSContainer = styled.div`
   justify-content: space-evenly;
 `;
 
-export const BookNowText = styled.div`
+export const BookNowText = styled.p`
   width: 60%;
   display: flex;
   align-items: center;
@@ -63,7 +63,6 @@ export const TextInfo = styled.div`
     font-size: 20px;
     text-decoration: none;
     color: ${Colors.LIGHT_BLUE};
-    font-weight: 600;
     line-height: 2;
 
     & > span {

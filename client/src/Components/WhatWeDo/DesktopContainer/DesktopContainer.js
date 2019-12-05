@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 
-import { sizes, textB, textB_EN } from "@Assets";
+import { sizes } from "@Assets";
 import { useWD } from "@Hooks/";
 import AttentionButton from "./AttentionButton";
 import Information from "./information/";
@@ -13,7 +13,6 @@ const DesktopContainer = ({ TextForSite }) => {
   const { width } = useWD();
   const { English } = useContext(LangContext);
 
-  let Mapping = English ? textB_EN : textB;
   return (
     <DContainer>
       <SplitScreen compJc={"space-evenly"} compAi={"center"} compWidth={"100"}>
@@ -22,9 +21,9 @@ const DesktopContainer = ({ TextForSite }) => {
       </SplitScreen>
       <ListButtons>
         <AttentionButton />
-        {Mapping.map((v, i) => (
-          <ListItems {...v} key={i} index={i} />
-        ))}
+        <ListItems Title={English ? "Catering" : "Veisluþjónusta"} url='veislu' />
+        <ListItems Title={English ? "Groups" : "Hópamatseðlar"} url='hopa' />
+        <ListItems Title={English ? "Gift Certificate" : "Gjafabréf"} url='gjafa' />
       </ListButtons>
     </DContainer>
   );

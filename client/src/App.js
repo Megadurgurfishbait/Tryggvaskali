@@ -16,12 +16,17 @@ import {
 import { About, FrontPage, Menu, Sidebar, Header, WhatWeDo, Loading } from "@Components";
 import { Modal } from "./Components";
 import { SliderContext } from "@Context/Slider";
-import { sizes } from "./Assets";
+import { sizes, VAR } from "./Assets";
 import { MobileControl } from "@Components/Reusables";
+import FetchedImageProvider from "@Context/fetchImage";
 
 const GlobalStyles = createGlobalStyle`
-  body {
-    font-family: 'Montserrat', serif !important;
+  body,
+  button {
+    ${VAR.FontFamilyText};
+  }
+  h1 {
+    ${VAR.FontFamilyHeader};
   }
 `;
 
@@ -57,28 +62,30 @@ export default function App() {
       <LangContextProvider>
         <WhatWeDoContextProvider>
           <FetchedTextProvider>
-            <GlobalStyles />
-            <Modal />
+            <FetchedImageProvider>
+              <GlobalStyles />
+              <Modal />
 
-            <Container>
-              {width < sizes.phone && <MobileControl />}
-              {/* Tökum Header fyrir utan Animations */}
-              {width > 767 && <Header />}
-              {/* Setja inn Sidebar hér svo svo að Sidebar verði ekki partur af Animation heldur */}
-              <Sidebar />
-              {transitions.map(({ item, props, key }) => (
-                <Animate key={key} style={props}>
-                  <Switch location={item}>
-                    <Route path={Routes.frontPage} exact component={FrontPage} />
-                    <Route path={Routes.whatwedo} component={WhatWeDo} />
-                    <Route path={Routes.menu} component={Menu} />
-                    <Route path={Routes.gallery} component={About} />
-                  </Switch>
-                </Animate>
-              ))}
-            </Container>
+              <Container>
+                {width < sizes.phone && <MobileControl />}
+                {/* Tökum Header fyrir utan Animations */}
+                {width > 767 && <Header />}
+                {/* Setja inn Sidebar hér svo svo að Sidebar verði ekki partur af Animation heldur */}
+                <Sidebar />
+                {transitions.map(({ item, props, key }) => (
+                  <Animate key={key} style={props}>
+                    <Switch location={item}>
+                      <Route path={Routes.frontPage} exact component={FrontPage} />
+                      <Route path={Routes.whatwedo} component={WhatWeDo} />
+                      <Route path={Routes.menu} component={Menu} />
+                      <Route path={Routes.gallery} component={About} />
+                    </Switch>
+                  </Animate>
+                ))}
+              </Container>
 
-            {width < sizes.tablet && !loaded && <Loading />}
+              {width < sizes.tablet && !loaded && <Loading />}
+            </FetchedImageProvider>
           </FetchedTextProvider>
         </WhatWeDoContextProvider>
       </LangContextProvider>

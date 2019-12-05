@@ -1,9 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Layout from "@Components/Layout";
 import * as contentful from "contentful";
 import { Colors } from "@Assets";
-import Modal from "../Modal";
 import { Media } from "@Assets/";
 
 var client = contentful.createClient({
@@ -14,36 +12,43 @@ var client = contentful.createClient({
 const Menu = () => {
   const [Image, setImage] = React.useState(
     client
-      .getAsset("2I5WxJNMCj0h42uw3hBPFe")
-      .then(asset => setImage(asset.fields.file.url))
+      .getEntry("6lRcVVtV29ilUIU8wKinVO")
+      .then(entry => setImage(entry.fields.matsedill.fields.file.url))
       .catch(console.error)
   );
 
   return (
-    <Layout bgColor={Colors.GREEN}>
-      <MContainer src={`${Image}`} target='_blank'>
-        <img width='220' height='250' border='0' align='center' src='' />
-      </MContainer>
-    </Layout>
+    <MContainer>
+      <img alt='Matsedill Menu' src={`${Image}`} />
+    </MContainer>
   );
 };
 
 export default Menu;
 
-const MContainer = styled.a`
-  height: 100%;
-  width: 100%;
+const MContainer = styled.div`
+  min-height: 100%;
+  min-width: 100%;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: ${Colors.LIGHT_BLUE};
 
+  ${Media.tablet`
+    overflow: scroll;
+      
+  `}
+
   & > img {
-    background-size: contain;
+    position: absolute;
+    margin: 50px auto;
+    object-fit: cover;
     ${Media.tablet`
-
-
+    top: 0%;
+    left: 0%;
+      min-width: 100%;
+      
   `}
   }
 `;

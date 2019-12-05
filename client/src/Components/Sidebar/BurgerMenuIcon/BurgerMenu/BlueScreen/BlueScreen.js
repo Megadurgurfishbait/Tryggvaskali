@@ -31,7 +31,10 @@ const BlueScreen = () => {
           <TitleText fontSize={35}>
             {English ? "Location & Contact" : "Staðsetning & Upplýsingar"}
           </TitleText>
-          <a href='https://www.google.com/maps/dir//Tryggvask%C3%A1li,+Tryggvatorg,+800+Selfoss/@63.9371759,-21.0043274,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x48d65fcc69ecc0cb:0x90f7606fab01ab89!2m2!1d-21.0033058!2d63.9377307'>
+          <a
+            target='_blank'
+            rel='noopener noreferrer'
+            href='https://www.google.com/maps/dir//Tryggvask%C3%A1li,+Tryggvatorg,+800+Selfoss/@63.9371759,-21.0043274,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x48d65fcc69ecc0cb:0x90f7606fab01ab89!2m2!1d-21.0033058!2d63.9377307'>
             Austurvegi 2, 800 Selfoss
             <span>
               <FontAwesomeIcon icon={faExternalLinkAlt} />

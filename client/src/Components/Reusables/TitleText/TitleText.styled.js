@@ -32,10 +32,11 @@ export const LinkContainer = styled(Link)`
 
 export const Span = styled.h1`
   transform: ${({ fontSize }) =>
-    fontSize ? "translate3d(-12px, -17px, 0px)" : "translate3d(-20px, -25px, 0px)"};
+    fontSize ? "translate3d(-12px, -22px, 0px)" : "translate3d(-20px, -30px, 0px)"};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "50")}px;
   margin: 0px;
   transition: transform 0.3s;
+  letter-spacing: 1.5px;
   ${Media.large`
       font-size: 35px;
       transform: translate3d(-10px, -15px, 0px);

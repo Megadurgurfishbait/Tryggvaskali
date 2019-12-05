@@ -75,19 +75,27 @@
     DONE: BREYTA ATTENTION BUTTON FONT SIZE
     
     
-    
-
-    TODO: BREYTA FONTS Á SÍÐUNNI
-    
-    
-    TODO: Búa til Menu component til að sýna PDF Matseðil.
-    
-    TODO: 
+    DONE: 
     Búa til Contentful fyrir:
     Matseðilinn.
     Hádegisverðarmatseðil, þannig að ef að hann er til þá sýnum við valmöguleikann á að opna hann.
     Sér viku seðil,  þannig að ef að hann er til þá sýnum við valmöguleikann á að opna hann.
     Setja í Header og á Burger Menu.
+    DONE: Taka út lítil map functions
+    DONE: Búa til Menu component til að sýna PDF Matseðil.
+    DONE: BREYTA FONTS Á SÍÐUNNI    
+    
+
+    TODO: 
+    - Setja Icons í stað Texta á Burger Menu
+    - Setja í SpriteImg
+    
+
+    TODO: Audit allar síður og laga það sem þarf
+    TODO: Laga villur í CMDER og Console.
+    
+    
+    
     
     
     
@@ -96,19 +104,6 @@
     Athuga stærðir á myndum. (400x400) HELST 
     Finna aðrar myndir líka.
     Laga Component Structure, setja CSS-In-JS í sér file.
-
-    
-    
-    
-
-
-
-
-
-
-
-
-
 
 
     TODO: Hlutir sem að mætti laga en eru fínir eins og er, fá feedback.

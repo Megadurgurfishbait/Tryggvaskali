@@ -43,9 +43,8 @@ export const TextContainer = styled.div`
 
 export const Title = styled.h1`
   margin: 0px 0px;
-  font-weight: 900;
   font-size: 50px;
-
+  ${VAR.FontFamilyHeader};
   ${Media.large`
     font-size: 40px;
     margin: 7.5px auto;
@@ -61,7 +60,6 @@ export const Title = styled.h1`
 export const Paragraph = styled.p`
   font-size: 18px;
   width: 100%;
-  font-weight: 100;
   line-height: 1.8;
 
   ${Media.large`
@@ -78,8 +76,8 @@ export const Paragraph = styled.p`
   ${Media.phone`
     width: 95%;
     margin: 30px 0px;
-    line-height: 2;
-    font-size: 12px;
+    line-height: 1.6;
+    font-size: 14px;
   `}
 `;
 
@@ -101,7 +99,6 @@ export const ButtonStyle = styled.button`
   height: 50px;
   color: ${Colors.LIGHT_BLUE};
   border: none;
-  font-weight: bold;
   width: 200px;
   width: 80%;
   text-align: center;
@@ -109,7 +106,6 @@ export const ButtonStyle = styled.button`
   align-self: center;
   letter-spacing: 1.05px;
   padding: 0px;
-  font-family: "Montserrat", serif !important;
 
   ${Media.desktop`
     height: 50px;
