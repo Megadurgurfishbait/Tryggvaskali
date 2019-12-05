@@ -126,8 +126,12 @@
     TODO: Finna Favicon
     TODO: 404 Ekki til síða
     TODO: Downloada fonts í stað þess að ná í þau til GOOGLE: https://medium.com/clio-calliope/making-google-fonts-faster-aadf3c02a36d
-
-    
+    TODO: Laga á Blue Screen Breyta í Upplýsingar
+    TODO: Breyta width á Header.
+    TODO: Snýða myndir að Mobile.
+    TODO: Athuga hvort að það sé keki hægt að ná í öll Asset frá Contentful í einu XHR.
+    TODO: LazyLoad'a hluti
+  
     
     
     
