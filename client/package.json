@@ -8,7 +8,7 @@
     "@fortawesome/react-fontawesome": "^0.1.7",
     "contentful": "^7.10.0",
     "craco": "0.0.3",
-    "gsap": "^2.1.3",
+    "gsap": "^3.6.0",
     "hammerjs": "^2.0.8",
     "module-alias": "^2.2.2",
     "react": "^16.10.2",
